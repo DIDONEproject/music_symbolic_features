@@ -1,2 +1,5 @@
 *~
 datasets/
+telegram.json
+.pdm.toml
+musicxml2midi.sh
