@@ -1,10 +1,5 @@
-# Path to Josquin-La Rue dataset
-JLR_PATH = "datasets/mass-duos-corpus-josquin-larue"
-# Path to Asap dataset
-ASAP_PATH = "datasets/asap-dataset"
-# Path to Didone dataset
-DIDONE_PATH = "datasets/didone"
-# Path to MMD dataset
-MMD = "datasets/MMD"
-# Path to EWLD dataset
-MMD = "datasets/EWLD"
+import os
+
+DATASETS = [f for f in os.scandir('datasets/') if f.is_dir()]
+JSYMBOLIC_PATH = "./tools/jSymbolic_2_2_user/jSymbolic2.jar"
+MUSESCORE = "/home/federico/bin/MuseScore-3.6.2.548021370-x86_64.AppImage"
