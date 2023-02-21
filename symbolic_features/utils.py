@@ -1,5 +1,6 @@
 import json
 import sys
+from pathlib import Path
 
 import notifiers
 from loguru import logger
@@ -9,8 +10,8 @@ logger.remove()
 logger.add(
     sys.stdout, format="{time:YYYY-MM-DD HH:mm:ss}: <lvl>{message}</lvl>", level="INFO"
 )
-logger.add("errors.log", retention=0, backtrace=True, diagnose=True)
-logger.add("errors.short.log", retention=0, backtrace=True, diagnose=False)
+logger.add("errors.log", retention=2, backtrace=True, diagnose=True)
+logger.add("errors.short.log", retention=2, backtrace=True, diagnose=False)
 
 telegram = notifiers.get_notifier("telegram")
 try:
@@ -24,5 +25,6 @@ else:
 
 
 def telegram_notify(message: str):
+    message = str(Path(__file__).parent.parent) + ":\n\n" + message
     if telegram_ok:
         telegram.notify(message=message, **auth)
