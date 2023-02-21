@@ -1,6 +1,10 @@
 import subprocess
-from dataclasses import dataclass
+import time
+from dataclasses import asdict, dataclass
 from pathlib import Path
+
+import numpy as np
+from psutil import Popen
 
 from . import settings as S
 from .utils import logger, telegram_notify
@@ -8,16 +12,32 @@ from .utils import logger, telegram_notify
 
 @dataclass
 class Main:
-    jsymbolic: bool = True
+    """
+    Command-line options override the ones in settings.py!
+    """
+
+    datasets: list = None
+    mscore_exe: str = None
+    jsymbolic_exe: str = None
+    jsymbolic: bool = False
     musescore_timeout: float = 120
+    output: str = "features/"
+    n_trials_extraction: int = 3
+
+    def __post_init__(self):
+        for name, value in asdict(self).items():
+            if value is not None:
+                setattr(S, name.upper(), value)
+            else:
+                setattr(self, name, getattr(S, name.upper(), None))
 
     @logger.catch
     def musicxml2midi(self):
-        for dataset in S.DATASETS:
+        for dataset in self.datasets:
             for ext in ["xml", "musicxml", "mxl"]:
                 for file in Path(dataset).glob(f"**/*.{ext}"):
                     logger.info(f"Converting {file} to MIDI")
-                    cmd = [S.MUSESCORE, "-fo", file.with_suffix(".mid"), file]
+                    cmd = [self.mscore_exe, "-fo", file.with_suffix(".mid"), file]
 
                     try:
                         subprocess.run(
@@ -32,8 +52,75 @@ class Main:
                             + "".join(cmd)
                         )
 
+    def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time):
+        logger.info(f"Num processed files: {n_midi_files}")
+        logger.info(f"Max RAM (MB): {max_ram:.2e}")
+        logger.info(f"Avg RAM (MB): {avg_ram:.2e}")
+        logger.info(f"Time (sec): {sum_times:.2e}")
+        logger.info(f"Avg Time (sec): {avg_time:.2e}")
+        logger.info("_____________")
+        return max_ram, avg_ram, sum_times, avg_time
+
+    def _extract_jsymbolic(self, n_midi_files):
+        ram_stats = []
+        time_stats = []
+        for dataset in self.datasets:
+            dataset = Path(dataset)
+            output = Path(self.output) / dataset.name
+            output.mkdir(exist_ok=True)
+            cmd = [
+                "java",
+                "-jar",
+                self.jsymbolic_exe,
+                "-csv",
+                dataset.absolute(),
+                output / "jsymbolic",
+                output / "jsymbolic_def",
+            ]
+            logger.info(f"Using jSymbolic on {dataset}")
+            process = Popen(cmd, stdout=open("jsymbolic_output.txt", "wt"))
+            while process.poll() is None:
+                ram = process.memory_info().rss
+                times = process.cpu_times()
+                ram_stats.append(ram / (2**20))
+                ttt = times.user + times.system
+                time.sleep(1)
+            time_stats.append(ttt)
+
+        avg_ram = np.mean(ram_stats)
+        avg_time = sum(time_stats) / n_midi_files
+        max_ram = max(ram_stats)
+        sum_times = sum(time_stats)
+        return self._log_info(n_midi_files, max_ram, avg_ram, sum_times, avg_time)
+
+    @logger.catch
+    def extract(self):
+        midi_files = []
+        xml_files = []
+        for p in self.datasets:
+            midi_files += list(Path(p).glob("**/*.mid"))
+            xml_files += list(Path(p).glob("**/*.xml"))
+            xml_files += list(Path(p).glob("**/*.mxl"))
+            xml_files += list(Path(p).glob("**/*.musicxml"))
+
+        if self.jsymbolic:
+            stats = []
+            for i in range(self.n_trials_extraction):
+                logger.info(f"Trial number {i+1}")
+                stats.append(self._extract_jsymbolic(len(midi_files)))
+
+            logger.info("_____________")
+            logger.info(f"Statistics out of {self.n_trials_extraction} trials")
+            logger.info("Averages:")
+            stats_avg = np.mean(stats, axis=0)
+            self._log_info(len(midi_files), *stats_avg)
+            logger.info("Std (1 ddof):")
+            stats_std = np.std(stats, axis=0, ddof=1)
+            self._log_info(len(midi_files), *stats_std)
+
 
 if __name__ == "__main__":
     from fire import Fire
 
     Fire(Main)
+    telegram_notify("Ended!")
