@@ -22,4 +22,4 @@ Download the following datasets and set the paths to the root of each one in `sy
 
 ### Preprocessing
 
-1. **Convert MusicXML to MIDI**: `pdm musicxml2midi`
+1. **Convert MusicXML to MIDI**: `pdm musicxml2midi`. You will need to run `Xvfb :99 & export DISPLAY=:99` if you are running without display (e.g. in a remote ssh session)
