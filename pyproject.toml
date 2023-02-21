@@ -10,7 +10,7 @@ license = {text = "MIT"}
 dependencies = [
     "auto-sklearn==0.15.0",
     "scikit-learn==0.24.2",
-    "numpy==1.22.3",
+    "numpy>=1.22.3",
     "scipy==1.7.3",
     "pandas==1.5.3",
     "plotly==5.13.0",
@@ -26,6 +26,7 @@ dependencies = [
 [tool.pdm]
 [tool.pdm.scripts]
 musicxml2midi = "python -m symbolic_features.features musicxml2midi"
+extract = "python -m symbolic_features.features extract" 
 # install_pip = "python -m ensurepip"
 # install_deps = "python -m pip install kaleido==0.2.1 musif==1.0.1 --ignore-requires-python"
 # post_install = {composite = ["install_pip", "install_deps"]}

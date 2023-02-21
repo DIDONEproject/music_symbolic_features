@@ -776,7 +776,7 @@ dependencies = [
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:d2a8cf42669c76a293ef2593d4a7de4f4abc7557bb18a324fb0851d142a9faf4"
+content_hash = "sha256:43f9d19ed07629782f45a02a5e83942b972b7c5b30f0d12a64c6790448c06667"
 
 [metadata.files]
 "appnope 0.1.3" = [
