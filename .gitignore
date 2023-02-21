@@ -1,4 +1,5 @@
 *~
+.venv
 datasets/
 telegram.json
 .pdm.toml

@@ -613,7 +613,7 @@ dependencies = [
 
 [[package]]
 name = "setuptools"
-version = "67.3.2"
+version = "67.3.3"
 requires_python = ">=3.7"
 summary = "Easily download, build, install, upgrade, and uninstall Python packages"
 
@@ -776,7 +776,7 @@ dependencies = [
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:43f9d19ed07629782f45a02a5e83942b972b7c5b30f0d12a64c6790448c06667"
+content_hash = "sha256:971911e00614a5b774498d5a6e29f11658f2e5336ffae95ed34ee6ae84436330"
 
 [metadata.files]
 "appnope 0.1.3" = [
@@ -1643,9 +1643,9 @@ content_hash = "sha256:43f9d19ed07629782f45a02a5e83942b972b7c5b30f0d12a64c679044
     {url = "https://pypi.anaconda.org/intel/simple/scipy/1.7.3/scipy-1.7.3-2-cp39-cp39-manylinux2014_x86_64.whl", hash = "sha256:ebc05f8922aa8aff5eefc0664906770a00798558ba3ab1d972e66ba519133225"},
     {url = "https://pypi.anaconda.org/intel/simple/scipy/1.7.3/scipy-1.7.3-2-cp39-cp39-win_amd64.whl", hash = "sha256:00cd2f4f0125261f181f027bc8f1caa8b271f2eb1e42861d52d5212082ac20b0"},
 ]
-"setuptools 67.3.2" = [
-    {url = "https://files.pythonhosted.org/packages/86/7b/f35d72b7a6acbc27732e88d7ceb7f224b3e0683bf645e1c9e2ac2cd96c0d/setuptools-67.3.2-py3-none-any.whl", hash = "sha256:bb6d8e508de562768f2027902929f8523932fcd1fb784e6d573d2cafac995a48"},
-    {url = "https://files.pythonhosted.org/packages/a3/56/f49e7877e8d8a09faaeecde5ca61169e9cfd46d014def474daa31bf217ca/setuptools-67.3.2.tar.gz", hash = "sha256:95f00380ef2ffa41d9bba85d95b27689d923c93dfbafed4aecd7cf988a25e012"},
+"setuptools 67.3.3" = [
+    {url = "https://files.pythonhosted.org/packages/cf/c4/76600761f528b66389955ca299049c8414152712825bb8200eb855d82e89/setuptools-67.3.3-py3-none-any.whl", hash = "sha256:9d3de8591bd6f6522594406fa46a6418eabd0562dacb267f8556675762801514"},
+    {url = "https://files.pythonhosted.org/packages/d6/6f/9d257b50d60f67d0b54b88fb39d4a9bade8406d4a926da3e4f05bf04f38b/setuptools-67.3.3.tar.gz", hash = "sha256:ed4e75fafe103c79b692f217158ba87edf38d31004b9dbc1913debb48793c828"},
 ]
 "six 1.16.0" = [
     {url = "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
