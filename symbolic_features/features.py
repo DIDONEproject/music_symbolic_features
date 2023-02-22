@@ -135,9 +135,9 @@ class Main:
                 "python",
                 "-m",
                 "symbolic_features.musif",
-                f"--filetype {self.filetype}",
-                f"--output_path {csv_name}",
-                f"--source_dir {dataset}",
+                self.filetype,
+                dataset,
+                csv_name,
             ]
 
     def _extract_multiple_trials(self, n_files, feature_set):
