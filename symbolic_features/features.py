@@ -3,7 +3,9 @@ import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+import chardet
 import numpy as np
+import pandas as pd
 from psutil import Popen
 
 from . import settings as S
@@ -23,7 +25,7 @@ class Main:
     musescore_timeout: float = 120
     output: str = "features/"
     n_trials_extraction: int = 3
-    filetype: str = 'midi'
+    filetype: str = "midi"
 
     def __post_init__(self):
         for name, value in asdict(self).items():
@@ -75,6 +77,7 @@ class Main:
     def _extract_trial(self, n_music_scores, feature_set):
         ram_stats = []
         time_stats = []
+        errored = {}
         for dataset in self.datasets:
             dataset = Path(dataset)
             output = Path(self.output) / dataset.name
@@ -91,22 +94,35 @@ class Main:
                 ttt = times.user + times.system
                 time.sleep(1)
             time_stats.append(ttt)
+            fname = self._get_csv_name(feature_set, output)
+            enc = chardet.detect(open(fname, "rb").read())["encoding"]
+            n_converted = pd.read_csv(fname, encoding=enc).shape[0]
+            n_errors = n_music_scores - n_converted
+            errored[dataset] = n_errors, n_errors / n_music_scores
 
         avg_ram = np.mean(ram_stats)
-        avg_time = sum(time_stats) / n_midi_files
+        avg_time = sum(time_stats) / n_music_scores
         max_ram = max(ram_stats)
         sum_times = sum(time_stats)
-        return self._log_info(n_midi_files, max_ram, avg_ram, sum_times, avg_time)
+        return (
+            self._log_info(n_music_scores, max_ram, avg_ram, sum_times, avg_time),
+            errored,
+        )
+
+    def _get_csv_name(self, feature_set, output):
+        return output / feature_set
 
     def _get_cmd(self, feature_set, dataset, output):
+        csv_name = self._get_csv_name(feature_set, output)
         if feature_set == "jsymbolic":
             return [
                 "java",
+                "-Xmx25g",
                 "-jar",
                 self.jsymbolic_exe,
                 "-csv",
                 dataset.absolute(),
-                output / "jsymbolic",
+                csv_name,
                 output / "jsymbolic_def",
             ]
         if feature_set == "musif":
@@ -115,7 +131,7 @@ class Main:
                 "-m",
                 "symbolic_features.musif",
                 f"--filetype {self.filetype}",
-                f"--output_path {output / 'musif.csv'}",
+                f"--output_path {csv_name}",
                 f"--source_dir {dataset}",
             ]
 
@@ -123,10 +139,12 @@ class Main:
         stats = []
         for i in range(self.n_trials_extraction):
             logger.info(f"Trial number {i+1}")
-            stat = self._extract_trial(n_files, feature_set)
+            stat, errors = self._extract_trial(n_files, feature_set)
             stats.append(stat)
 
         logger.info("_____________")
+        logger.info("Number of errors per dataset:self.n_trials_extraction:")
+        logger.info(errors)
         logger.info(f"Statistics out of {self.n_trials_extraction} trials")
         logger.info("Averages:")
         stats_avg = np.mean(stats, axis=0)
@@ -148,7 +166,7 @@ class Main:
         if self.jsymbolic:
             self._extract_multiple_trials(len(midi_files), "jsymbolic")
         if self.musif:
-            if self.filetype == 'midi':
+            if self.filetype == "midi":
                 n_files = len(midi_files)
             else:
                 # xml
