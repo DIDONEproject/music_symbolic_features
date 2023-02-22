@@ -16,7 +16,6 @@ dependencies = [
     "numpy==1.22.3",
     "scipy==1.7.3",
     "pandas==1.5.3",
-    "musif==1.0.1-1",
 ]
 [project.optional-dependencies]
 
@@ -34,6 +33,7 @@ extract = "python -m symbolic_features.features extract"
 dev = [
     "ipdb>=0.13.11",
     "ipython>=8.10.0",
+    "-e file:///${PROJECT_ROOT}/../musiF_tests/musiF#egg=musif",
 ]
 [[tool.pdm.source]]
 url = "https://pypi.anaconda.org/intel/simple"
