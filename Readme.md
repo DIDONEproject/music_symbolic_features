@@ -25,6 +25,8 @@ Download the following datasets and set the paths to the root of each one in `sy
 
 ### Preprocessing
 
+**Fix invalid file names**: `pdm fix_names`. This will fix names containing `,` and `;` that cause errors in csv files.
+
 **Convert MusicXML to MIDI**: `pdm musicxml2midi`. You will need to run `Xvfb :99 & export DISPLAY=:99` if you are running without display (e.g. in a remote ssh session)
 
 ### Feature extraction

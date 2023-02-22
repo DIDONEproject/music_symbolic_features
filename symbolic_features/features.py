@@ -33,6 +33,16 @@ class Main:
                 setattr(self, name, getattr(S, name.upper(), None))
 
     @logger.catch
+    def fix_invalid_filenames(self):
+        for dataset in self.datasets:
+            for ext in ["xml", "musicxml", "mxl"]:
+                for file in Path(dataset).glob(f"**/*.{ext}"):
+                    if any(char in file.name for char in [",", ";"]):
+                        new_name = file.name.replace(",", "_")
+                        new_name = new_name.replace(";", "_")
+                        file.rename(new_name)
+
+    @logger.catch
     def musicxml2midi(self):
         for dataset in self.datasets:
             for ext in ["xml", "musicxml", "mxl"]:
@@ -62,7 +72,7 @@ class Main:
         logger.info("_____________")
         return max_ram, avg_ram, sum_times, avg_time
 
-    def _extract_trial(self, n_midi_files, feature_set):
+    def _extract_trial(self, n_music_scores, feature_set):
         ram_stats = []
         time_stats = []
         for dataset in self.datasets:
