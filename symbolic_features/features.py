@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import time
 from dataclasses import asdict, dataclass
@@ -50,6 +51,8 @@ class Main:
     @logger.catch
     def musicxml2midi(self):
         for dataset in self.datasets:
+            if "didone" in dataset:
+                shutil.rmtree(Path(dataset) / "midi")
             for ext in ["xml", "musicxml", "mxl"]:
                 for file in Path(dataset).glob(f"**/*.{ext}"):
                     logger.info(f"Converting {file} to MIDI")
