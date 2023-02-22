@@ -37,11 +37,14 @@ class Main:
     @logger.catch
     def fix_invalid_filenames(self):
         for dataset in self.datasets:
+            dataset = Path(dataset)
             for ext in ["xml", "musicxml", "mxl"]:
-                for file in Path(dataset).glob(f"**/*.{ext}"):
+                for file in dataset.glob(f"**/*.{ext}"):
                     if any(char in file.name for char in [",", ";"]):
-                        new_name = file.name.replace(",", "_")
+                        new_name = str(file).replace(",", "_")
                         new_name = new_name.replace(";", "_")
+                        logger.info(f"Renaming {file} -> {new_name}")
+                        Path(new_name).parent.mkdir(parents=True, exist_ok=True)
                         file.rename(new_name)
 
     @logger.catch
