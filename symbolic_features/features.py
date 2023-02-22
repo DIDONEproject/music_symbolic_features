@@ -86,8 +86,8 @@ class Main:
         for dataset in self.datasets:
             dataset = Path(dataset)
             output = Path(self.output) / dataset.name
-            output.mkdir(exist_ok=True)
-            logger.info(f"Using jSymbolic on {dataset}")
+            output.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Using {feature_set} on {dataset}")
             process = Popen(
                 self._get_cmd(feature_set, dataset, output),
                 stdout=open(feature_set + "_output.txt", "wt"),
@@ -99,7 +99,7 @@ class Main:
                 ttt = times.user + times.system
                 time.sleep(1)
             time_stats.append(ttt)
-            fname = self._get_csv_name(feature_set, output)
+            fname = self._get_csv_name(feature_set, output).with_suffix(".csv")
             enc = chardet.detect(open(fname, "rb").read())["encoding"]
             n_converted = pd.read_csv(fname, encoding=enc).shape[0]
             n_errors = n_music_scores - n_converted
