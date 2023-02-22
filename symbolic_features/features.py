@@ -22,7 +22,6 @@ class Main:
     datasets: list = None
     mscore_exe: str = None
     jsymbolic_exe: str = None
-    jsymbolic: bool = False
     musescore_timeout: float = 120
     output: str = "features/"
     n_trials_extraction: int = 3
@@ -160,7 +159,7 @@ class Main:
         self._log_info(n_files, *stats_std)
 
     @logger.catch
-    def extract(self):
+    def extract(self, jsymbolic=False, musif=False):
         midi_files = []
         xml_files = []
         for p in self.datasets:
@@ -169,9 +168,9 @@ class Main:
             xml_files += list(Path(p).glob("**/*.mxl"))
             xml_files += list(Path(p).glob("**/*.musicxml"))
 
-        if self.jsymbolic:
+        if jsymbolic:
             self._extract_multiple_trials(len(midi_files), "jsymbolic")
-        if self.musif:
+        if musif:
             if self.filetype == "midi":
                 n_files = len(midi_files)
             else:
