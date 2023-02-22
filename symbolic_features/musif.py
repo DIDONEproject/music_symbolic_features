@@ -10,7 +10,7 @@ from musif.process.processor import DataProcessor
 from .utils import logger
 
 
-def main(filetype: str, source_dir: str, output_path: str):
+def main(filetype: str, source_dir: str, output_path: str, njobs=-1):
     """
     Options:
         * filetype: 'midi' or 'musicxml'
@@ -48,6 +48,7 @@ def main(filetype: str, source_dir: str, output_path: str):
             "dynamics",
             "rhythm",
         ],
+        parallel=njobs
     )
     if musicxml_dir is not None:
         # trying all the musicxml extensions
