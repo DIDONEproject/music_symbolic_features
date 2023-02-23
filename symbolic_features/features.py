@@ -21,11 +21,12 @@ class Main:
 
     datasets: list = None
     mscore_exe: str = None
-    jsymbolic_exe: str = None
-    musescore_timeout: float = 120
+    jsymbolic_jar: str = None
+    conversion_timeout: float = 120
     output: str = "features/"
     n_trials_extraction: int = 3
     filetype: str = "midi"
+    hum2mid: str = Path("humdrum-tools") / "humextra" / "bin" / "hum2mid"
 
     def __post_init__(self):
         for name, value in asdict(self).items():
@@ -48,21 +49,33 @@ class Main:
                         file.rename(new_name)
 
     @logger.catch
-    def musicxml2midi(self):
+    def convert2midi(self):
         for dataset in self.datasets:
-            if "didone" in dataset:
-                shutil.rmtree(Path(dataset) / "midi")
-            for ext in ["xml", "musicxml", "mxl"]:
+            if "didone" in str(dataset):
+                to_remove = Path(dataset) / "midi"
+                if to_remove.exists():
+                    shutil.rmtree(to_remove)
+
+            for ext in ["xml", "musicxml", "mxl", "krn"]:
                 for file in Path(dataset).glob(f"**/*.{ext}"):
                     logger.info(f"Converting {file} to MIDI")
-                    cmd = [self.mscore_exe, "-fo", file.with_suffix(".mid"), file]
+                    if ext == "krn":
+                        cmd = [
+                            self.hum2mid,
+                            file,
+                            "-CIPT",
+                            "-o",
+                            file.with_suffix(".mid"),
+                        ]
+                    else:
+                        cmd = [self.mscore_exe, "-fo", file.with_suffix(".mid"), file]
 
                     try:
                         subprocess.run(
                             cmd,
                             stderr=subprocess.DEVNULL,
                             stdout=subprocess.DEVNULL,
-                            timeout=self.musescore_timeout,
+                            timeout=self.conversion_timeout,
                         )
                     except subprocess.TimeoutExpired:
                         logger.warning(
@@ -124,7 +137,7 @@ class Main:
                 "java",
                 "-Xmx25g",
                 "-jar",
-                self.jsymbolic_exe,
+                self.jsymbolic_jar,
                 "-csv",
                 dataset.absolute(),
                 csv_name,
@@ -158,7 +171,7 @@ class Main:
         stats_std = np.std(stats, axis=0, ddof=1)
         self._log_info(n_files, *stats_std)
 
-    @logger.catch
+    # @logger.catch
     def extract(self, jsymbolic=False, musif=False):
         midi_files = []
         xml_files = []
@@ -183,4 +196,4 @@ if __name__ == "__main__":
     from fire import Fire
 
     Fire(Main)
-    telegram_notify("Ended!")
+    # telegram_notify("Ended!")
