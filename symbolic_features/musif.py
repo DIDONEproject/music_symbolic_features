@@ -10,7 +10,7 @@ from musif.process.processor import DataProcessor
 from .utils import logger
 
 
-def main(filetype: str, source_dir: str, output_path: str, njobs=-1):
+def main(filetype: str, source_dir: str, output_path: str, njobs=1):
     """
     Options:
         * filetype: 'midi' or 'musicxml'
@@ -18,21 +18,11 @@ def main(filetype: str, source_dir: str, output_path: str, njobs=-1):
         * output_path: relative path to the output file; extension is added or changed
         to 'csv'
     """
-    musescore_dir, musicxml_dir = None, None
-    if filetype == "midi":
-        # midi
-        musescore_dir = source_dir
-    elif filetype == "musicxml":
-        # musicxml
-        musicxml_dir = source_dir
-    else:
-        logger.warning("File type not known: " + filetype)
-        return
 
     config = ExtractConfiguration(
         None,
-        xml_dir=musicxml_dir,
-        musescore_dir=musescore_dir,
+        xml_dir=source_dir,
+        musescore_dir=None,
         cache_dir='musif_cache/',
         basic_modules=["scoring"],
         features=[
@@ -50,7 +40,7 @@ def main(filetype: str, source_dir: str, output_path: str, njobs=-1):
         ],
         parallel=njobs
     )
-    if musicxml_dir is not None:
+    if filetype == 'musicxml':
         # trying all the musicxml extensions
         raw_dfs = []
         for musicxml_ext in [".xml", ".mxl", ".musicxml"]:
@@ -60,7 +50,7 @@ def main(filetype: str, source_dir: str, output_path: str, njobs=-1):
         raw_df = pd.concat(raw_dfs, ignore_index=True)
     else:
         # midi
-        musescore_c.MUSESCORE_FILE_EXTENSION = ".mid"
+        musicxml_c.MUSICXML_FILE_EXTENSION = '.mid'
         raw_df = FeaturesExtractor(config).extract()
 
     processed_df = DataProcessor(raw_df, None).process().data
