@@ -39,14 +39,24 @@ Download the following datasets and set the paths to the root of each one in `sy
 
 ### Preprocessing
 
-**Fix invalid file names**: `pdm fix_names`. This will fix names containing `,` and `;` that cause errors in csv files.
+**Fix invalid file names**: `pdm fix_names`. This will fix names containing `,` and `;`
+that cause errors in csv files.
 
-**Convert any file to MIDI**: `pdm convert2midi`. You will need to run `Xvfb :99 & export DISPLAY=:99` if you are running without display (e.g. in a remote ssh session)
+**Convert any file to MIDI**: `pdm convert2midi`. You will need to run `Xvfb :99 &
+export DISPLAY=:99` if you are running without display (e.g. in a remote ssh session)
+
+**Compress all musicxml (.mxl)**: `pdm musicxml2mxl`. Since different datasets use
+different extensions for MusicXML files, we convert them to only one extension. Note
+that this command will also compress `.xml` files, so if the dataset contains generix
+XML files, those will be compressed as well.
 
 ### Feature extraction
 
-1. `jSymbolic`: `pdm extract --jsymbolic`.
-2. `musif`: `pdm extract --musif`.
+1. `jSymbolic`: `pdm extract --jsymbolic`
+2. `musif`: 
+  * `pdm extract --musif --extension .mid`
+  * `pdm extract --musif --extension .mxl`
+  * `pdm extract --musif --extension .krn`
 
 
 ### Results
