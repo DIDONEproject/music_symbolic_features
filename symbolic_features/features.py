@@ -78,7 +78,7 @@ class Main(AbstractMain):
                 "-jar",
                 self.jsymbolic_jar,
                 "-csv",
-                f'"{dataset.absolute()}"',
+                dataset.absolute(),
                 csv_name,
                 output / "jsymbolic_def",
             ]
@@ -88,7 +88,7 @@ class Main(AbstractMain):
                 "-m",
                 "symbolic_features.musif",
                 self.extension,
-                f'"{dataset}"',
+                dataset,
                 csv_name,
             ]
 
