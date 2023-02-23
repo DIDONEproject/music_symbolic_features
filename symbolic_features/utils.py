@@ -1,10 +1,13 @@
 import json
 import sys
 from pathlib import Path
+from dataclasses import dataclass, asdict
 
 import notifiers
 from loguru import logger
 from notifiers.logging import NotificationHandler
+
+from . import settings as S
 
 logger.remove()
 logger.add(
@@ -28,3 +31,14 @@ def telegram_notify(message: str):
     message = str(Path(__file__).parent.parent) + ":\n\n" + message
     if telegram_ok:
         telegram.notify(message=message, **auth)
+
+
+@dataclass
+class AbstractMain():
+
+    def __post_init__(self):
+        for name, value in asdict(self).items():
+            if value is not None:
+                setattr(S, name.upper(), value)
+            else:
+                setattr(self, name, getattr(S, name.upper(), None))

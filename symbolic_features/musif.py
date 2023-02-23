@@ -1,8 +1,6 @@
 from pathlib import Path
 
-import musif.musescore.constants as musescore_c
 import musif.musicxml.constants as musicxml_c
-import pandas as pd
 from musif.config import ExtractConfiguration
 from musif.extract.extract import FeaturesExtractor
 from musif.process.processor import DataProcessor
@@ -10,10 +8,10 @@ from musif.process.processor import DataProcessor
 from .utils import logger
 
 
-def main(filetype: str, source_dir: str, output_path: str, njobs=1):
+def main(extension: str, source_dir: str, output_path: str, njobs=1, **configs):
     """
     Options:
-        * filetype: 'midi' or 'musicxml'
+        * extension: extension, including the dot, e.g. '.mid', '.krn', '.mxl'
         * source_dir: relative path to the directory; searched recursively
         * output_path: relative path to the output file; extension is added or changed
         to 'csv'
@@ -38,20 +36,11 @@ def main(filetype: str, source_dir: str, output_path: str, njobs=1):
             "dynamics",
             "rhythm",
         ],
-        parallel=njobs
+        parallel=njobs,
+        **configs
     )
-    if filetype == 'musicxml':
-        # trying all the musicxml extensions
-        raw_dfs = []
-        for musicxml_ext in [".xml", ".mxl", ".musicxml"]:
-            musicxml_c.MUSICXML_FILE_EXTENSION = musicxml_ext
-            raw_df = FeaturesExtractor(config).extract()
-            raw_dfs.append(raw_df)
-        raw_df = pd.concat(raw_dfs, ignore_index=True)
-    else:
-        # midi
-        musicxml_c.MUSICXML_FILE_EXTENSION = '.mid'
-        raw_df = FeaturesExtractor(config).extract()
+    musicxml_c.MUSICXML_FILE_EXTENSION = extension
+    raw_df = FeaturesExtractor(config).extract()
 
     processed_df = DataProcessor(raw_df, None).process().data
     output_path = Path(output_path).with_suffix(".csv")

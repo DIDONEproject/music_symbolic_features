@@ -1,7 +1,5 @@
-import shutil
-import subprocess
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 from pathlib import Path
 
 import chardet
@@ -9,79 +7,20 @@ import numpy as np
 import pandas as pd
 from psutil import Popen
 
-from . import settings as S
-from .utils import logger, telegram_notify
+from .utils import AbstractMain, logger, telegram_notify
 
 
 @dataclass
-class Main:
+class Main(AbstractMain):
     """
     Command-line options override the ones in settings.py!
     """
 
     datasets: list = None
-    mscore_exe: str = None
     jsymbolic_jar: str = None
-    conversion_timeout: float = 120
     output: str = "features/"
     n_trials_extraction: int = 3
-    filetype: str = "midi"
-    hum2mid: str = Path("humdrum-tools") / "humextra" / "bin" / "hum2mid"
-
-    def __post_init__(self):
-        for name, value in asdict(self).items():
-            if value is not None:
-                setattr(S, name.upper(), value)
-            else:
-                setattr(self, name, getattr(S, name.upper(), None))
-
-    @logger.catch
-    def fix_invalid_filenames(self):
-        for dataset in self.datasets:
-            dataset = Path(dataset)
-            for ext in ["xml", "musicxml", "mxl"]:
-                for file in dataset.glob(f"**/*.{ext}"):
-                    if any(char in file.name for char in [",", ";"]):
-                        new_name = str(file).replace(",", "_")
-                        new_name = new_name.replace(";", "_")
-                        logger.info(f"Renaming {file} -> {new_name}")
-                        Path(new_name).parent.mkdir(parents=True, exist_ok=True)
-                        file.rename(new_name)
-
-    @logger.catch
-    def convert2midi(self):
-        for dataset in self.datasets:
-            if "didone" in str(dataset):
-                to_remove = Path(dataset) / "midi"
-                if to_remove.exists():
-                    shutil.rmtree(to_remove)
-
-            for ext in ["xml", "musicxml", "mxl", "krn"]:
-                for file in Path(dataset).glob(f"**/*.{ext}"):
-                    logger.info(f"Converting {file} to MIDI")
-                    if ext == "krn":
-                        cmd = [
-                            self.hum2mid,
-                            file,
-                            "-CIPT",
-                            "-o",
-                            file.with_suffix(".mid"),
-                        ]
-                    else:
-                        cmd = [self.mscore_exe, "-fo", file.with_suffix(".mid"), file]
-
-                    try:
-                        subprocess.run(
-                            cmd,
-                            stderr=subprocess.DEVNULL,
-                            stdout=subprocess.DEVNULL,
-                            timeout=self.conversion_timeout,
-                        )
-                    except subprocess.TimeoutExpired:
-                        logger.warning(
-                            f"Continuing because time expired for file {file}! Try running:\n"
-                            + "".join(cmd)
-                        )
+    extension: str = "*.mid"
 
     def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time):
         logger.info(f"Num processed files: {n_midi_files}")
@@ -128,7 +67,7 @@ class Main:
         )
 
     def _get_csv_name(self, feature_set, output):
-        return output / feature_set
+        return output / (feature_set + "-" + self.extension.replace(".", ""))
 
     def _get_cmd(self, feature_set, dataset, output):
         csv_name = self._get_csv_name(feature_set, output)
@@ -139,7 +78,7 @@ class Main:
                 "-jar",
                 self.jsymbolic_jar,
                 "-csv",
-                dataset.absolute(),
+                f'"{dataset.absolute()}"',
                 csv_name,
                 output / "jsymbolic_def",
             ]
@@ -148,8 +87,8 @@ class Main:
                 "python",
                 "-m",
                 "symbolic_features.musif",
-                self.filetype,
-                dataset,
+                self.extension,
+                f'"{dataset}"',
                 csv_name,
             ]
 
@@ -173,22 +112,13 @@ class Main:
 
     # @logger.catch
     def extract(self, jsymbolic=False, musif=False):
-        midi_files = []
-        xml_files = []
+        n_files = 0
         for p in self.datasets:
-            midi_files += list(Path(p).glob("**/*.mid"))
-            xml_files += list(Path(p).glob("**/*.xml"))
-            xml_files += list(Path(p).glob("**/*.mxl"))
-            xml_files += list(Path(p).glob("**/*.musicxml"))
+            n_files += len(list(Path(p).glob(f"**/*{self.extension}")))
 
         if jsymbolic:
-            self._extract_multiple_trials(len(midi_files), "jsymbolic")
+            self._extract_multiple_trials(n_files, "jsymbolic")
         if musif:
-            if self.filetype == "midi":
-                n_files = len(midi_files)
-            else:
-                # xml
-                n_files = len(xml_files)
             self._extract_multiple_trials(n_files, "musif")
 
 
