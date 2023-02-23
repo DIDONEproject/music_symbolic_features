@@ -1,0 +1,3 @@
+[submodule "humdrum-tools"]
+	path = humdrum-tools
+	url = https://github.com/humdrum-tools/humdrum-tools.git
