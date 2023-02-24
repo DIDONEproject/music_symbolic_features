@@ -20,7 +20,7 @@ class Main(AbstractMain):
     jsymbolic_jar: str = None
     output: str = "features/"
     n_trials_extraction: int = 3
-    extension: str = "*.mid"
+    extension: str = ".mid"
 
     def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time):
         logger.info(f"Num processed files: {n_midi_files}")
@@ -126,4 +126,4 @@ if __name__ == "__main__":
     from fire import Fire
 
     Fire(Main)
-    # telegram_notify("Ended!")
+    telegram_notify("Ended!")
