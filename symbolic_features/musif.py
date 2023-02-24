@@ -8,7 +8,7 @@ from musif.process.processor import DataProcessor
 from .utils import logger
 
 
-def main(extension: str, source_dir: str, output_path: str, njobs=1, **configs):
+def main(extension: str, source_dir: str, output_path: str, njobs=-1, **configs):
     """
     Options:
         * extension: extension, including the dot, e.g. '.mid', '.krn', '.mxl'
