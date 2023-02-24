@@ -16,6 +16,10 @@ class Main(AbstractMain):
 
     @logger.catch
     def fix_invalid_filenames(self):
+        """
+        Fix invalid names containing , ; and space. Invalid names are renamed, so they
+        will no longer exist.
+        """
         for dataset in self.datasets:
             dataset = Path(dataset)
             for ext in ["xml", "musicxml", "mxl", "mid", "krn"]:
@@ -30,6 +34,9 @@ class Main(AbstractMain):
 
     @logger.catch
     def convert2midi(self):
+        """
+        Add a midi file for each musicxml or kern file
+        """
         for dataset in self.datasets:
             if "didone" in str(dataset):
                 to_remove = Path(dataset) / "midi"
@@ -38,7 +45,10 @@ class Main(AbstractMain):
 
             for ext in ["xml", "musicxml", "mxl", "krn"]:
                 for file in Path(dataset).glob(f"**/*.{ext}"):
-                    logger.info(f"Converting {file} to MIDI")
+                    if file.with_suffix(".mid").exists():
+                        logger.info(f"{file} already exists as MIDI, skipping it!")
+                        continue
+
                     if ext == "krn":
                         cmd = [
                             self.hum2mid,
@@ -50,6 +60,7 @@ class Main(AbstractMain):
                     else:
                         cmd = [self.mscore_exe, "-fo", file.with_suffix(".mid"), file]
 
+                    logger.info(f"Converting {file} to MIDI")
                     try:
                         subprocess.run(
                             cmd,
@@ -65,6 +76,9 @@ class Main(AbstractMain):
 
     @logger.catch
     def musicxml2mxl(self):
+        """
+        add an mxl file for each *.xml and *.musicxml file
+        """
         for dataset in self.datasets:
             dataset = Path(dataset)
             for ext in ["xml", "musicxml"]:
@@ -83,4 +97,4 @@ if __name__ == "__main__":
     from fire import Fire
 
     Fire(Main)
-    # telegram_notify("Ended!")
+    telegram_notify("Ended!")
