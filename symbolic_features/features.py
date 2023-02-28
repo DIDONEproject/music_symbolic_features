@@ -86,9 +86,12 @@ class Main(AbstractMain):
             return [
                 "python",
                 "-m",
-                "symbolic_features.musif",
+                "musif",
+                "-e",
                 self.extension,
+                "-s",
                 dataset,
+                "-o",
                 csv_name,
             ]
 
