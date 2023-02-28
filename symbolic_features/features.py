@@ -54,11 +54,11 @@ class Main(AbstractMain):
             fname = self._get_csv_name(feature_set, output).with_suffix(".csv")
             enc = chardet.detect(open(fname, "rb").read())["encoding"]
             n_converted = pd.read_csv(fname, encoding=enc).shape[0]
-            n_errors = n_music_scores - n_converted
-            errored[dataset] = n_errors, n_errors / n_music_scores
+            n_errors = n_music_scores[str(dataset)] - n_converted
+            errored[str(dataset)] = n_errors, n_errors / n_music_scores[str(dataset)], ttt
 
         avg_ram = np.mean(ram_stats)
-        avg_time = sum(time_stats) / n_music_scores
+        avg_time = sum(time_stats) / n_music_scores["tot"]
         max_ram = max(ram_stats)
         sum_times = sum(time_stats)
         return (
@@ -103,7 +103,7 @@ class Main(AbstractMain):
             stats.append(stat)
 
         logger.info("_____________")
-        logger.info("Number of errors per dataset:self.n_trials_extraction:")
+        logger.info("Number of errors  and time per dataset:")
         logger.info(errors)
         logger.info(f"Statistics out of {self.n_trials_extraction} trials")
         logger.info("Averages:")
@@ -115,9 +115,11 @@ class Main(AbstractMain):
 
     # @logger.catch
     def extract(self, jsymbolic=False, musif=False):
-        n_files = 0
+        n_files = {}
         for p in self.datasets:
-            n_files += len(list(Path(p).glob(f"**/*{self.extension}")))
+            p = Path(p)
+            n_files[str(p)] = len(list(p.glob(f"**/*{self.extension}")))
+        n_files["tot"] = sum(n_files.values())
 
         if jsymbolic:
             self._extract_multiple_trials(n_files, "jsymbolic")
