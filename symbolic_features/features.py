@@ -5,7 +5,7 @@ from pathlib import Path
 import chardet
 import numpy as np
 import pandas as pd
-from psutil import Popen
+from psutil import NoSuchProcess, Popen
 
 from .utils import AbstractMain, logger, telegram_notify
 
@@ -22,18 +22,22 @@ class Main(AbstractMain):
     n_trials_extraction: int = 3
     extension: str = ".mid"
 
-    def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time):
+    def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time, sum_rtimes,
+                  avg_rtime):
         logger.info(f"Num processed files: {n_midi_files}")
         logger.info(f"Max RAM (MB): {max_ram:.2e}")
         logger.info(f"Avg RAM (MB): {avg_ram:.2e}")
-        logger.info(f"Time (sec): {sum_times:.2e}")
-        logger.info(f"Avg Time (sec): {avg_time:.2e}")
+        logger.info(f"CPU Time (sec): {sum_times:.2e}")
+        logger.info(f"CPU Avg Time (sec): {avg_time:.2e}")
+        logger.info(f"Real Time (sec): {sum_rtimes:.2e}")
+        logger.info(f"Real Avg Time (sec): {avg_rtime:.2e}")
         logger.info("_____________")
-        return max_ram, avg_ram, sum_times, avg_time
+        return max_ram, avg_ram, sum_times, avg_time, sum_rtimes, avg_rtime
 
     def _extract_trial(self, n_music_scores, feature_set):
         ram_stats = []
-        time_stats = []
+        cpu_times = []
+        real_times = []
         errored = {}
         for dataset in self.datasets:
             dataset = Path(dataset)
@@ -44,25 +48,48 @@ class Main(AbstractMain):
                 self._get_cmd(feature_set, dataset, output),
                 stdout=open(feature_set + "_output.txt", "wt"),
             )
+            real_time = time.time()
             while process.poll() is None:
-                ram = process.memory_info().rss
-                times = process.cpu_times()
+                try:
+                    times = process.cpu_times()
+                    ttt = times.user + times.system
+                    ram = process.memory_info().rss
+                except NoSuchProcess:
+                    continue
+
+                for child in process.children():
+                    try:
+                        child_times = child.cpu_times()
+                        ram += child.memory_info().rss
+                    except NoSuchProcess:
+                        continue
+                    ttt += child_times.user + child_times.system
+
                 ram_stats.append(ram / (2**20))
-                ttt = times.user + times.system
                 time.sleep(1)
-            time_stats.append(ttt)
+
+            real_time = time.time() - real_time
+            real_times.append(real_time)
+            cpu_times.append(ttt)
             fname = self._get_csv_name(feature_set, output).with_suffix(".csv")
             enc = chardet.detect(open(fname, "rb").read())["encoding"]
             n_converted = pd.read_csv(fname, encoding=enc).shape[0]
             n_errors = n_music_scores[str(dataset)] - n_converted
-            errored[str(dataset)] = n_errors, n_errors / n_music_scores[str(dataset)], ttt
+            errored[str(dataset)] = (
+                n_errors,
+                n_errors / n_music_scores[str(dataset)],
+                ttt, real_time
+            )
 
         avg_ram = np.mean(ram_stats)
-        avg_time = sum(time_stats) / n_music_scores["tot"]
+        avg_time = sum(cpu_times) / n_music_scores["tot"]
+        avg_rtime = sum(real_times) / n_music_scores["tot"]
         max_ram = max(ram_stats)
-        sum_times = sum(time_stats)
+        sum_times = sum(cpu_times)
+        sum_rtimes = sum(real_times)
         return (
-            self._log_info(n_music_scores, max_ram, avg_ram, sum_times, avg_time),
+            self._log_info(n_music_scores, max_ram, avg_ram, sum_times, avg_time,
+                           sum_rtimes, avg_rtime),
             errored,
         )
 
@@ -113,7 +140,7 @@ class Main(AbstractMain):
         stats_std = np.std(stats, axis=0, ddof=1)
         self._log_info(n_files, *stats_std)
 
-    # @logger.catch
+    @logger.catch
     def extract(self, jsymbolic=False, musif=False):
         n_files = {}
         for p in self.datasets:
