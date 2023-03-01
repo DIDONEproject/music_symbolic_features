@@ -63,24 +63,46 @@ XML files, those will be compressed as well.
 
 #### jSymbolic 2.2
 
-jSymbolic errored on 11 files from the Didone dataset (MIDI converted from MuseScore)
+```
+2023-03-01 08:00:59: Number of errors  and time per dataset:
+2023-03-01 08:00:59: {'datasets/quartets': (0, 0.0, 103.32), 'datasets/didone': (14, 0.008526187576126675, 9360.95), 'datasets/asap-dataset': (0, 0.0, 4181.9), 'datasets/mass-duos-corpus-josquin-larue': (0, 0.0, 624.9799999999999), 'datasets/EWLD': (0, 0.0, 3991.41)}
+2023-03-01 08:00:59: Statistics out of 3 trials
+2023-03-01 08:00:59: Averages:
+2023-03-01 08:00:59: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-01 08:00:59: Max RAM (MB): 1.01e+04
+2023-03-01 08:00:59: Avg RAM (MB): 6.72e+03
+2023-03-01 08:00:59: Time (sec): 1.88e+04
+2023-03-01 08:00:59: Avg Time (sec): 2.24e+00
+2023-03-01 08:00:59: _____________
+2023-03-01 08:00:59: Std (1 ddof):
+2023-03-01 08:00:59: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-01 08:00:59: Max RAM (MB): 1.00e+03
+2023-03-01 08:00:59: Avg RAM (MB): 4.13e+02
+2023-03-01 08:00:59: Time (sec): 8.36e+02
+2023-03-01 08:00:59: Avg Time (sec): 9.99e-02
+2023-03-01 08:00:59: _____________
+```
+
+#### musif
+
+##### MIDI
 
 ```
-2023-02-25 09:52:06: Number of errors per dataset:self.n_trials_extraction:
-2023-02-25 09:52:06: {PosixPath('datasets/quartets'): (8004, 0.9566152742918609), PosixPath('datasets/didone'): (6739, 0.8054260786422852), PosixPath('datasets/asap-dataset'): (6832, 0.8165411736584199), PosixPath('datasets/mass-duos-corpus-josquin-larue'): (8029, 0.9596032030596391), PosixPath('datasets/EWLD'): (3878, 0.46348751045775066)}
-2023-02-25 09:52:06: Statistics out of 3 trials
-2023-02-25 09:52:06: Averages:
-2023-02-25 09:52:06: Num processed files: 8367
-2023-02-25 09:52:06: Max RAM (MB): 1.03e+04
-2023-02-25 09:52:06: Avg RAM (MB): 7.21e+03
-2023-02-25 09:52:06: Time (sec): 2.24e+04
-2023-02-25 09:52:06: Avg Time (sec): 2.68e+00
-2023-02-25 09:52:06: _____________
-2023-02-25 09:52:06: Std (1 ddof):
-2023-02-25 09:52:06: Num processed files: 8367
-2023-02-25 09:52:06: Max RAM (MB): 5.78e+02
-2023-02-25 09:52:06: Avg RAM (MB): 4.31e+02
-2023-02-25 09:52:06: Time (sec): 4.52e+03
-2023-02-25 09:52:06: Avg Time (sec): 5.40e-01
-2023-02-25 09:52:06: _____________
+2023-02-28 20:11:14: Number of errors  and time per dataset:
+2023-02-28 20:11:14: {'datasets/quartets': (0, 0.0, 2.21), 'datasets/didone': (0, 0.0, 4.08), 'datasets/asap-dataset': (0, 0.0, 2.42), 'datasets/mass-duos-corpus-josquin-larue': (0, 0.0, 1.92), 'datasets/EWLD': (0, 0.0, 3.3899999999999997)}
+2023-02-28 20:11:14: Statistics out of 3 trials
+2023-02-28 20:11:14: Averages:
+2023-02-28 20:11:14: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-02-28 20:11:14: Max RAM (MB): 1.66e+02
+2023-02-28 20:11:14: Avg RAM (MB): 1.24e+02
+2023-02-28 20:11:14: Time (sec): 1.66e+01
+2023-02-28 20:11:14: Avg Time (sec): 1.99e-03
+2023-02-28 20:11:14: _____________
+2023-02-28 20:11:14: Std (1 ddof):
+2023-02-28 20:11:14: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-02-28 20:11:14: Max RAM (MB): 1.99e+00
+2023-02-28 20:11:14: Avg RAM (MB): 1.78e+00
+2023-02-28 20:11:14: Time (sec): 4.77e+00
+2023-02-28 20:11:14: Avg Time (sec): 5.70e-04
+2023-02-28 20:11:14: _____________
 ```
