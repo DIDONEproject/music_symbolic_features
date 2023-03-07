@@ -44,8 +44,9 @@ class Main(AbstractMain):
             output = Path(self.output) / dataset.name
             output.mkdir(parents=True, exist_ok=True)
             logger.info(f"Using {feature_set} on {dataset}")
+            cmd = self._get_cmd(feature_set, dataset, output)
             process = Popen(
-                self._get_cmd(feature_set, dataset, output),
+                cmd,
                 stdout=open(feature_set + "_output.txt", "wt"),
             )
             real_time = time.time()
@@ -109,7 +110,7 @@ class Main(AbstractMain):
                 csv_name,
                 output / "jsymbolic_def",
             ]
-        if feature_set == "musif":
+        elif feature_set == "musif":
             return [
                 "python",
                 "-m",
@@ -120,6 +121,15 @@ class Main(AbstractMain):
                 dataset,
                 "-o",
                 csv_name,
+            ]
+        elif feature_set == "music21":
+            return [
+                "python",
+                "-m",
+                "symbolic_features.music21",
+                self.extension,
+                dataset,
+                csv_name
             ]
 
     def _extract_multiple_trials(self, n_files, feature_set):
@@ -140,18 +150,15 @@ class Main(AbstractMain):
         stats_std = np.std(stats, axis=0, ddof=1)
         self._log_info(n_files, *stats_std)
 
-    @logger.catch
-    def extract(self, jsymbolic=False, musif=False):
+    # @logger.catch
+    def extract(self, feature_set):
         n_files = {}
         for p in self.datasets:
             p = Path(p)
             n_files[str(p)] = len(list(p.glob(f"**/*{self.extension}")))
         n_files["tot"] = sum(n_files.values())
 
-        if jsymbolic:
-            self._extract_multiple_trials(n_files, "jsymbolic")
-        if musif:
-            self._extract_multiple_trials(n_files, "musif")
+        self._extract_multiple_trials(n_files, feature_set)
 
 
 if __name__ == "__main__":
