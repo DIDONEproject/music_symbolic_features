@@ -22,8 +22,9 @@ class Main(AbstractMain):
     n_trials_extraction: int = 3
     extension: str = ".mid"
 
-    def _log_info(self, n_midi_files, max_ram, avg_ram, sum_times, avg_time, sum_rtimes,
-                  avg_rtime):
+    def _log_info(
+        self, n_midi_files, max_ram, avg_ram, sum_times, avg_time, sum_rtimes, avg_rtime
+    ):
         logger.info(f"Num processed files: {n_midi_files}")
         logger.info(f"Max RAM (MB): {max_ram:.2e}")
         logger.info(f"Avg RAM (MB): {avg_ram:.2e}")
@@ -76,11 +77,12 @@ class Main(AbstractMain):
             enc = chardet.detect(open(fname, "rb").read())["encoding"]
             n_converted = pd.read_csv(fname, encoding=enc).shape[0]
             n_errors = n_music_scores[str(dataset)] - n_converted
-            errored[str(dataset)] = (
-                n_errors,
-                n_errors / n_music_scores[str(dataset)],
-                ttt, real_time
-            )
+            errored[str(dataset)] = {
+                "n_errors": n_errors,
+                "ratio_errors": n_errors / n_music_scores[str(dataset)],
+                "cpu_time": ttt,
+                "clock_time": real_time,
+            }
 
         avg_ram = np.mean(ram_stats)
         avg_time = sum(cpu_times) / n_music_scores["tot"]
@@ -89,8 +91,15 @@ class Main(AbstractMain):
         sum_times = sum(cpu_times)
         sum_rtimes = sum(real_times)
         return (
-            self._log_info(n_music_scores, max_ram, avg_ram, sum_times, avg_time,
-                           sum_rtimes, avg_rtime),
+            self._log_info(
+                n_music_scores,
+                max_ram,
+                avg_ram,
+                sum_times,
+                avg_time,
+                sum_rtimes,
+                avg_rtime,
+            ),
             errored,
         )
 
@@ -129,7 +138,7 @@ class Main(AbstractMain):
                 "symbolic_features.music21",
                 self.extension,
                 dataset,
-                csv_name
+                csv_name,
             ]
 
     def _extract_multiple_trials(self, n_files, feature_set):
