@@ -25,17 +25,22 @@ def main(dir: str, ext: str, output: str, njobs: int = -1):
     Args:
         dir : directory of the dataset
         ext : extension including '.', e.g. .mid, .krn, .xml; if one of
-            [.xml, .musicxml, .mxl] is used, all the others are checked as well
+            [.xml, .musicxml, .mxl] is used, all the others are checked as
+            well; set it to a tuple or to a list to use multiple
+            extensions
         output : output path of the csv file; extension is added if it's not '.csv'
         njobs : number of processes that will be used; -1 means all virtual cores, 1 means
         no parallel processing
     """
 
     musicxml_exts = [".xml", ".mxl", ".musicxml"]
-    if ext in musicxml_exts:
-        exts = musicxml_exts
+    if isinstance(ext, str):
+        if ext in musicxml_exts:
+            exts = musicxml_exts
+        else:
+            exts = [ext]
     else:
-        exts = [ext]
+        exts = ext
     features = []
     for ext in exts:
         files = list(Path(dir).glob("**/*" + ext))
