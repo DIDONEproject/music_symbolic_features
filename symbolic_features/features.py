@@ -1,13 +1,11 @@
-import time
 from dataclasses import dataclass
 from pathlib import Path
 
 import chardet
 import numpy as np
 import pandas as pd
-from psutil import NoSuchProcess, Popen
 
-from .utils import AbstractMain, logger, telegram_notify
+from .utils import AbstractMain, logger, telegram_notify, benchmark_command
 
 
 @dataclass
@@ -44,35 +42,17 @@ class Main(AbstractMain):
             dataset = Path(dataset)
             output = Path(self.output) / dataset.name
             output.mkdir(parents=True, exist_ok=True)
-            logger.info(f"Using {feature_set} on {dataset}")
+            logger.info(f"Using {feature_set} on {dataset} extension {self.extension}")
             cmd = self._get_cmd(feature_set, dataset, output)
-            process = Popen(
+            ram_sequence, real_time, cpu_time = benchmark_command(
                 cmd,
                 stdout=open(feature_set + "_output.txt", "wt"),
+                stderr=open(feature_set + "_errs.txt", "wt"),
             )
-            real_time = time.time()
-            while process.poll() is None:
-                try:
-                    times = process.cpu_times()
-                    ttt = times.user + times.system
-                    ram = process.memory_info().rss
-                except NoSuchProcess:
-                    continue
-
-                for child in process.children():
-                    try:
-                        child_times = child.cpu_times()
-                        ram += child.memory_info().rss
-                    except NoSuchProcess:
-                        continue
-                    ttt += child_times.user + child_times.system
-
-                ram_stats.append(ram / (2**20))
-                time.sleep(1)
-
-            real_time = time.time() - real_time
+            ram_stats += ram_sequence
+            cpu_times.append(cpu_time)
             real_times.append(real_time)
-            cpu_times.append(ttt)
+
             fname = self._get_csv_name(feature_set, output).with_suffix(".csv")
             enc = chardet.detect(open(fname, "rb").read())["encoding"]
             n_converted = pd.read_csv(fname, encoding=enc).shape[0]
@@ -80,7 +60,7 @@ class Main(AbstractMain):
             errored[str(dataset)] = {
                 "n_errors": n_errors,
                 "ratio_errors": n_errors / n_music_scores[str(dataset)],
-                "cpu_time": ttt,
+                "cpu_time": cpu_time,
                 "clock_time": real_time,
             }
 
@@ -115,9 +95,9 @@ class Main(AbstractMain):
                 "-jar",
                 self.jsymbolic_jar,
                 "-csv",
-                dataset.absolute(),
-                csv_name,
-                output / "jsymbolic_def",
+                str(dataset.absolute()),
+                str(csv_name),
+                str(output / "jsymbolic_def"),
             ]
         elif feature_set == "musif":
             return [
@@ -127,18 +107,18 @@ class Main(AbstractMain):
                 "-e",
                 self.extension,
                 "-s",
-                dataset,
+                str(dataset),
                 "-o",
-                csv_name,
+                str(csv_name),
             ]
         elif feature_set == "music21":
             return [
                 "python",
                 "-m",
                 "symbolic_features.music21",
+                str(dataset),
                 self.extension,
-                dataset,
-                csv_name,
+                str(csv_name),
             ]
 
     def _extract_multiple_trials(self, n_files, feature_set):
