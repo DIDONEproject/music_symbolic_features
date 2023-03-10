@@ -22,7 +22,7 @@ dependencies = [
 [tool.pdm]
 [tool.pdm.scripts]
 fix_names = "python -m symbolic_features.preprocess fix_invalid_filenames"
-musicxml2mxl = "python -m symbolic_features.preprocess musicxml2mxl"
+# musicxml2mxl = "python -m symbolic_features.preprocess musicxml2mxl"
 convert2midi = "python -m symbolic_features.preprocess convert2midi"
 extract = "python -m symbolic_features.features extract" 
 # install_pip = "python -m ensurepip"

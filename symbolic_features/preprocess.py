@@ -74,23 +74,23 @@ class Main(AbstractMain):
                             + "".join(cmd)
                         )
 
-    @logger.catch
-    def musicxml2mxl(self):
-        """
-        add an mxl file for each *.xml and *.musicxml file
-        """
-        for dataset in self.datasets:
-            dataset = Path(dataset)
-            for ext in ["xml", "musicxml"]:
-                for file in dataset.glob(f"**/*.{ext}"):
-                    mxl_path = file.with_suffix(".mxl")
-                    logger.info(f"Compressing {file} to {mxl_path}")
-                    # create a new zipfile object for the output MXL file
-                    with zipfile.ZipFile(
-                        mxl_path, "w", zipfile.ZIP_DEFLATED
-                    ) as mxl_zip:
-                        # add the MusicXML file to the zipfile object
-                        mxl_zip.write(file, file.name)
+    # @logger.catch
+    # def musicxml2mxl(self):
+    #     """
+    #     add an mxl file for each *.xml and *.musicxml file
+    #     """
+    #     for dataset in self.datasets:
+    #         dataset = Path(dataset)
+    #         for ext in ["xml", "musicxml"]:
+    #             for file in dataset.glob(f"**/*.{ext}"):
+    #                 mxl_path = file.with_suffix(".mxl")
+    #                 logger.info(f"Compressing {file} to {mxl_path}")
+    #                 # create a new zipfile object for the output MXL file
+    #                 with zipfile.ZipFile(
+    #                     mxl_path, "w", zipfile.ZIP_DEFLATED
+    #                 ) as mxl_zip:
+    #                     # add the MusicXML file to the zipfile object
+    #                     mxl_zip.write(file, file.name)
 
 
 if __name__ == "__main__":

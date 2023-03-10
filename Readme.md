@@ -45,18 +45,22 @@ that cause errors in csv files.
 **Convert any file to MIDI**: `pdm convert2midi`. You will need to run `Xvfb :99 &
 export DISPLAY=:99` if you are running without display (e.g. in a remote ssh session)
 
-**Compress all musicxml (.mxl)**: `pdm musicxml2mxl`. Since different datasets use
-different extensions for MusicXML files, we convert them to only one extension. Note
-that this command will also compress `.xml` files, so if the dataset contains generix
-XML files, those will be compressed as well.
+<!-- **Compress all musicxml (.mxl)**: `pdm musicxml2mxl`. Since different datasets use -->
+<!-- different extensions for MusicXML files, we convert them to only one extension. Note -->
+<!-- that this command will also compress `.xml` files, so if the dataset contains generix -->
+<!-- XML files, those will be compressed as well. -->
 
 ### Feature extraction
 
-1. `jSymbolic`: `pdm extract --jsymbolic`
+1. `jSymbolic`: `pdm extract --jsymbolic --extension .mid`
 2. `musif`: 
   * `pdm extract --musif --extension .mid`
-  * `pdm extract --musif --extension .mxl`
+  * `pdm extract --musif --extension .xml`
   * `pdm extract --musif --extension .krn`
+3. `music21`: 
+  * `pdm extract --music21 --extension .mid`
+  * `pdm extract --music21 --extension .xml`
+  * `pdm extract --music21 --extension .krn`
 
 
 ### Results
