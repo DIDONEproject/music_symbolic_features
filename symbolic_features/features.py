@@ -14,7 +14,7 @@ class Main(AbstractMain):
     Command-line options override the ones in settings.py!
     """
 
-    datasets: list = None
+    datasets: dict = None
     jsymbolic_jar: str = None
     output: str = "features/"
     n_trials_extraction: int = 3
@@ -38,7 +38,7 @@ class Main(AbstractMain):
         cpu_times = []
         real_times = []
         errored = {}
-        for dataset in self.datasets:
+        for dataset in self.datasets.values():
             dataset = Path(dataset)
             output = Path(self.output) / dataset.name
             output.mkdir(parents=True, exist_ok=True)
@@ -142,7 +142,7 @@ class Main(AbstractMain):
     # @logger.catch
     def extract(self, feature_set):
         n_files = {}
-        for p in self.datasets:
+        for p in self.datasets.values():
             p = Path(p)
             n_files[str(p)] = len(list(p.glob(f"**/*{self.extension}")))
         n_files["tot"] = sum(n_files.values())

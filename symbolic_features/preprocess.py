@@ -9,7 +9,7 @@ from .utils import AbstractMain, logger, telegram_notify
 
 @dataclass
 class Main(AbstractMain):
-    datasets: list = None
+    datasets: dict = None
     conversion_timeout: float = 120
     mscore_exe: str = None
     hum2mid: str = Path("humdrum-tools") / "humextra" / "bin" / "hum2mid"
@@ -20,7 +20,7 @@ class Main(AbstractMain):
         Fix invalid names containing , ; and space. Invalid names are renamed, so they
         will no longer exist.
         """
-        for dataset in self.datasets:
+        for dataset in self.datasets.values():
             dataset = Path(dataset)
             for ext in ["xml", "musicxml", "mxl", "mid", "krn"]:
                 for file in dataset.glob(f"**/*.{ext}"):
@@ -37,7 +37,7 @@ class Main(AbstractMain):
         """
         Add a midi file for each musicxml or kern file
         """
-        for dataset in self.datasets:
+        for dataset in self.datasets.values():
             if "didone" in str(dataset):
                 to_remove = Path(dataset) / "midi"
                 if to_remove.exists():
