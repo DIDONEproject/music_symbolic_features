@@ -183,7 +183,7 @@ XML files, those will be compressed as well.
   * Composer (REGEX)
 
 ### Quartets
-#### XML
+#### KRN
   * Composer (REGEX)
 #### MIDI
   * Composer (REGEX)

@@ -116,3 +116,9 @@ def benchmark_command(*popen_args, hook=None, **popen_kwargs):
     cpu_time = sum(cpu_times.values())
     start_time = time.time() - start_time
     return ram_sequence, start_time, cpu_time
+
+
+def plotly_save(fig, fname):
+    fname = Path(fname)
+    fig.write_html(fname.with_suffix(".html"))
+    fig.write_image(fname)
