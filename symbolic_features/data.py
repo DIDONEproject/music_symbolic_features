@@ -22,9 +22,9 @@ class FeatureSet:
 
 
 feature_sets = [
+    # FeatureSet("musif", "FileName", ["Id", "WindowId"]),
     FeatureSet("music21", "FileName_0", []),
-    FeatureSet("musif", "FileName", ["Id", "WindowId"]),
-    FeatureSet("jsymbolic", "Unnamed: 0", []),
+    # FeatureSet("jsymbolic", "Unnamed: 0", []),
 ]
 
 
@@ -135,7 +135,8 @@ class Task:
     extension: str
 
     def __post_init__(self):
-        assert self.extension in self.dataset.extensions
+        assert self.extension in self.dataset.extensions,\
+                "Extension not supported by this dataset"
         self.name = (
             self.dataset.name + "-" + self.feature_set.name + "-" + self.extension[1:]
         )
@@ -144,6 +145,8 @@ class Task:
         """Load the CSV file and clean it"""
         # load csv
         csv_path = self.get_csv_path()
+        if not csv_path.exists():
+            raise FileNotFoundError(f"Task doesn't have csv file: {self}, {csv_path}")
         self.x = pd.read_csv(csv_path)
 
         # make label and removes rows that are not for this data (mainly asap and JLR)

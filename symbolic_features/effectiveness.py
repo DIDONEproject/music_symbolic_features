@@ -52,6 +52,8 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
         metric=autosklearn.metrics.balanced_accuracy,
         resampling_strategy=splitter,
     )
+    assert task.x.shape[0] > S.SPLITS, "Not enough data in x"
+    assert task.x.shape[0] == task.y.shape[0], "X and y have different shapes"
     classifier.fit(task.x, task.y)
 
     acc = classifier.performance_over_time_["ensemble_optimization_score"].max()
@@ -62,16 +64,58 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     return classifier.performance_over_time_
 
 
+def add_task_result(performances, pot, task):
+    """
+    Add the result of an automl (pot=performance_over_time_) to the dict `performences`
+    """
+    # select columns
+    pot = pot[["Timestamp", "ensemble_optimization_score"]]
+    # time start from 0
+    pot["Timestamp"] = pot["Timestamp"] - pot["Timestamp"].min()
+    # store data
+    dataset_key = task.dataset.friendly_name + "-" + task.extension
+    if dataset_key in performances:
+        performances[dataset_key].append(pot)
+    else:
+        performances[dataset_key] = [pot]
+
+
 @dataclass
 class Main(AbstractMain):
     debug: bool = False
 
     def classification(self):
+        if self.debug:
+            print("press C to continue ")
+            __import__('ipdb').set_trace()
         splitter = StratifiedKFold(S.SPLITS)
 
+        performances = {}
         for task in TASKS:
-            pot = automl(task, splitter, S.AUTOML_TIME)
-            # TODO: collect performenaces over time and plot them dataset by dataset
+            try:
+                pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
+            except Exception as e:
+                logger.warning(f"Exception occured: {e}")
+                continue
+            add_task_result(performances, pot, task)
+
+        # plotting the performances over time
+        for plot_name, dfs in performances.items():
+            # Resample the data to a common frequency (every minute)
+            for i in range(len(dfs)):
+                dfs[i] = (
+                    dfs[i]
+                    .set_index("Timestamp")
+                    .resample("1min")
+                    .asfreq()
+                    .reset_index()
+                )
+
+            fig = px.line()
+
+            for df in dfs:
+                fig.add_scatter(x=df["Timestamp"], y=df["Score"])
+            plotly_save(fig, plot_name + '.svg')
 
 
 if __name__ == "__main__":
