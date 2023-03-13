@@ -18,7 +18,7 @@ class FeatureSet:
         """Remove the illegal columns"""
         if len(self.illegal_cols) > 0:
             df = df.drop(columns=self.illegal_cols)
-        return self
+        return df
 
 
 feature_sets = [
@@ -52,6 +52,7 @@ class Dataset:
 
         idx = df[filename_col].str.fullmatch(self.legal_filenames)
         df = df.loc[idx]
+        y = y.loc[idx]
         return df, y
 
 

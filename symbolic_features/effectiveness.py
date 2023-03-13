@@ -54,8 +54,7 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     )
     classifier.fit(task.x, task.y)
 
-    __import__("ipdb").set_trace()
-    acc = classifier.performance_over_time_["ensemble_test_score"].max()
+    acc = classifier.performance_over_time_["ensemble_optimization_score"].max()
     logger.info(f"Balanced accuracy: {acc:.2e}")
     if output is not None:
         classifier.performance_over_time_.to_csv(output)
@@ -71,7 +70,7 @@ class Main(AbstractMain):
         splitter = StratifiedKFold(S.SPLITS)
 
         for task in TASKS:
-            automl(task, splitter, S.AUTOML_TIME)
+            pot = automl(task, splitter, S.AUTOML_TIME)
             # TODO: collect performenaces over time and plot them dataset by dataset
 
 
