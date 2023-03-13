@@ -31,14 +31,14 @@ feature_sets = [
 @dataclass
 class Dataset:
     name: str
-    make_label: Callable[pd.DataFrame, pd.Serie]
+    make_label: Callable[pd.DataFrame, pd.Series]
     label_content: str
     extensions: List[str]
     remove_col_label: str = None
     legal_filenames: str = r".*"
     friendly_name: str = None
 
-    def __postinit__(self):
+    def __post_init__(self):
         if self.friendly_name is None:
             self.friendly_name = self.name
 
@@ -133,7 +133,7 @@ class Task:
     feature_set: FeatureSet
     extension: str
 
-    def __postinit__(self):
+    def __post_init__(self):
         assert self.extension in self.dataset.extensions
         self.name = (
             self.dataset.name + "-" + self.feature_set.name + "-" + self.extension[1:]

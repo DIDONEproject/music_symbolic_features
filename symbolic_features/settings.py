@@ -1,6 +1,6 @@
 from pathlib import Path
 
-DATASETS = {Path(f).name: f for f in Path('datasets/').iterdir if f.is_dir()}
+DATASETS = {Path(f).name: f for f in Path('datasets/').iterdir() if f.is_dir()}
 OUTPUT = "features/"
 
 # path to the jSymbolic 2.2 jar file
