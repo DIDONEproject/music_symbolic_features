@@ -9,13 +9,14 @@ requires-python = ">=3.10, <3.11"
 license = {text = "MIT"}
 dependencies = [
     "auto-sklearn==0.15.0",
-    "fire==0.5.0",
-    "notifiers==1.3.3",
-    "loguru==0.6.0",
-    "tqdm==4.64.1",
-    "numpy==1.22.3",
-    "scipy==1.7.3",
+    "fire>=0.5.0",
+    "notifiers>=1.3.3",
+    "loguru>=0.6.0",
+    "tqdm>=4.64.1",
+    "scipy==1.10.1",
     "pandas==1.5.3",
+    "numpy==1.24.2",
+    "plotly==5.13.1",
 ]
 [project.optional-dependencies]
 
@@ -25,8 +26,8 @@ fix_names = "python -m symbolic_features.preprocess fix_invalid_filenames"
 # musicxml2mxl = "python -m symbolic_features.preprocess musicxml2mxl"
 convert2midi = "python -m symbolic_features.preprocess convert2midi"
 extract = "python -m symbolic_features.features extract" 
-# install_pip = "python -m ensurepip"
-# updated_pip = "python -m pip install -U pip"
+install_pip = "python -m ensurepip"
+update_pip = "python -m pip install -U pip"
 # install_deps = "python -m pip install kaleido==0.2.1 musif==1.0.1 --ignore-requires-python"
 # post_install = {composite = ["install_pip", "updated_pip", "install_deps"]}
 
