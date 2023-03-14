@@ -30,11 +30,13 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     Apply AutoSklearn to a task and saves csv of the optimization if output is not
     None
     """
+    if task.extension != ".mid":
+        return
     logger.info(f"Starting AutoML on {task.name}")
     if S.DEBUG:
         smac_scenario_args = {"runcount_limit": 2}
         metalearning = 0
-        automl_time = 30
+        automl_time = 60
     else:
         smac_scenario_args = None
         metalearning = 25
@@ -71,13 +73,14 @@ def add_task_result(performances, pot, task):
     # select columns
     pot = pot[["Timestamp", "ensemble_optimization_score"]]
     # time start from 0
-    pot["Timestamp"] = pot["Timestamp"] - pot["Timestamp"].min()
+    pot_copy = pot.copy()  # to avoid pandas warnings...
+    pot_copy["Timestamp"] = pot["Timestamp"] - pot["Timestamp"].min()
     # store data
     dataset_key = task.dataset.friendly_name + "-" + task.extension
     if dataset_key in performances:
-        performances[dataset_key].append(pot)
+        performances[dataset_key].append(pot_copy)
     else:
-        performances[dataset_key] = [pot]
+        performances[dataset_key] = [pot_copy]
 
 
 @dataclass
@@ -87,7 +90,7 @@ class Main(AbstractMain):
     def classification(self):
         if self.debug:
             print("press C to continue ")
-            # __import__('ipdb').set_trace()
+            __import__("ipdb").set_trace()
         splitter = StratifiedKFold(S.SPLITS)
 
         performances = {}
@@ -95,12 +98,16 @@ class Main(AbstractMain):
             try:
                 pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
             except Exception as e:
-                import traceback
-                trace = traceback.extract_tb(e.__traceback__)
-                line = trace[-1]
-                filename, line_num, func_name, code = line
-                logger.error(e)
-                logger.error(f"{filename}:{line_num} - {code.strip()}")
+                logger.exception("Exception occured!")
+                __import__('ipdb').set_trace()
+                # import traceback
+                # trace = traceback.extract_tb(e.__traceback__)
+                # line = trace[-1]
+                # filename, line_num, func_name, code = line
+                # logger.error(e)
+                # logger.error(f"{filename}:{line_num} - {code.strip()}")
+                continue
+            if pot is None:
                 continue
             add_task_result(performances, pot, task)
 
@@ -120,7 +127,7 @@ class Main(AbstractMain):
 
             for df in dfs:
                 fig.add_scatter(x=df["Timestamp"], y=df["Score"])
-            plotly_save(fig, plot_name + '.svg')
+            plotly_save(fig, plot_name + ".svg")
 
 
 if __name__ == "__main__":
