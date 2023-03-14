@@ -26,7 +26,7 @@ except FileNotFoundError:
 else:
     telegram_ok = True
     telegram_handler = NotificationHandler("telegram", defaults=auth)
-    logger.add(telegram_handler, level="ERROR")
+    # logger.add(telegram_handler, level="ERROR")
 
 
 def telegram_notify(message: str):
@@ -41,6 +41,7 @@ class AbstractMain:
     Abstract class intended for Main classes with python-fire.
     It allows to change `settings` variables via command line
     """
+
     def __post_init__(self):
         for name, value in asdict(self).items():
             if value is not None:
@@ -88,7 +89,7 @@ def benchmark_command(*popen_args, hook=None, **popen_kwargs):
     cpu_times = {"main": 0}
     start_time = time.time()
     logger.info("Benchmarching command:")
-    logger.info("     " + ' '.join(popen_args[0]))
+    logger.info("     " + " ".join(popen_args[0]))
     popen = Popen(*popen_args, **popen_kwargs)
     while popen.poll() is None:
         try:
