@@ -87,7 +87,7 @@ class Main(AbstractMain):
     def classification(self):
         if self.debug:
             print("press C to continue ")
-            __import__('ipdb').set_trace()
+            # __import__('ipdb').set_trace()
         splitter = StratifiedKFold(S.SPLITS)
 
         performances = {}
@@ -95,7 +95,12 @@ class Main(AbstractMain):
             try:
                 pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
             except Exception as e:
-                logger.warning(f"Exception occured: {e}")
+                import traceback
+                trace = traceback.extract_tb(e.__traceback__)
+                line = trace[-1]
+                filename, line_num, func_name, code = line
+                logger.error(e)
+                logger.error(f"{filename}:{line_num} - {code.strip()}")
                 continue
             add_task_result(performances, pot, task)
 

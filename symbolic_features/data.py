@@ -1,7 +1,7 @@
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, List
+from typing import Callable, List, Union
 
 import pandas as pd
 
@@ -11,7 +11,7 @@ from . import settings as S
 @dataclass
 class FeatureSet:
     name: str
-    filename_col: str
+    label_col_selector: Union[List[str], str]
     illegal_cols: List[str]
 
     def parse(self, df: pd.DataFrame):
@@ -34,7 +34,6 @@ class Dataset:
     make_label: Callable[pd.DataFrame, pd.Series]
     label_content: str
     extensions: List[str]
-    remove_col_label: str = None
     legal_filenames: str = r".*"
     friendly_name: str = None
 
@@ -42,31 +41,31 @@ class Dataset:
         if self.friendly_name is None:
             self.friendly_name = self.name
 
-    def parse(self, df: pd.DataFrame, filename_col: str):
+    def parse(self, df: pd.DataFrame, label_col_selector: str, remove_col_label=True):
         """Parse a dataframe: remove unwanted rows, create label, and removes label col.
         Returns X an y"""
 
-        df, y = self.make_label(df, filename_col)
-        if self.remove_col_label is not None:
-            df = df.drop(columns=self.remove_col_label)
+        df, y = self.make_label(df, label_col_selector)
 
-        idx = df[filename_col].str.fullmatch(self.legal_filenames)
+        idx = df[label_col_selector].str.fullmatch(self.legal_filenames)
+        if remove_col_label is not None:
+            df = df.drop(columns=label_col_selector)
         df = df.loc[idx]
         y = y.loc[idx]
         return df, y
 
 
-def asap_label(df: pd.DataFrame, filename_col: str):
-    y = df[filename_col].str.extract(r".*asap-dataset/(\w+)/.*", expand=False)
+def asap_label(df: pd.DataFrame, label_col_selector: str):
+    y = df[label_col_selector].str.extract(r".*asap-dataset/(\w+)/.*", expand=False)
     return df, y
 
 
-def didone_label(df: pd.DataFrame, filename_col: str):
-    y = df[filename_col].str.extract(r".*/xml/(Did\w+)-.*", expand=False)
+def didone_label(df: pd.DataFrame, label_col_selector: str):
+    y = df[label_col_selector].str.extract(r".*/xml/(Did\w+)-.*", expand=False)
     return df, y
 
 
-def ewld_label(df: pd.DataFrame, filename_col: str):
+def ewld_label(df: pd.DataFrame, label_col_selector: str):
     conn = sqlite3.connect(S.DATASETS["EWLD"] / "EWLD.db")
 
     # thanks ChatGPT
@@ -82,19 +81,19 @@ def ewld_label(df: pd.DataFrame, filename_col: str):
     df = pd.read_sql_query(query, conn)
 
     # select the rows in the DataFrame that match the database rows
-    matching_rows = df[df[filename_col].isin(df["path_leadsheet"])]
+    matching_rows = df[df[label_col_selector].isin(df["path_leadsheet"])]
     return matching_rows, df["genre"]
 
 
-def jlr_label(df: pd.DataFrame, filename_col: str):
-    y = df[filename_col].str.extract(
+def jlr_label(df: pd.DataFrame, label_col_selector: str):
+    y = df[label_col_selector].str.extract(
         r".*mass-duos-corpus-josquin-larue/(\w+)/.*", expand=False
     )
     return df, y
 
 
-def quartets_label(df: pd.DataFrame, filename_col: str):
-    y = df[filename_col].str.extract(r".*quartets/(\w+)/.*", expand=False)
+def quartets_label(df: pd.DataFrame, label_col_selector: str):
+    y = df[label_col_selector].str.extract(r".*quartets/(\w+)/.*", expand=False)
     return df, y
 
 
@@ -135,10 +134,15 @@ class Task:
     extension: str
 
     def __post_init__(self):
-        assert self.extension in self.dataset.extensions,\
-                "Extension not supported by this dataset"
+        assert (
+            self.extension in self.dataset.extensions
+        ), "Extension not supported by this dataset"
         self.name = (
-            self.dataset.name + "-" + self.feature_set.name + "-" + self.extension[1:]
+            self.dataset.friendly_name
+            + "-"
+            + self.feature_set.name
+            + "-"
+            + self.extension[1:]
         )
 
     def load_csv(self):
@@ -150,7 +154,7 @@ class Task:
         self.x = pd.read_csv(csv_path)
 
         # make label and removes rows that are not for this data (mainly asap and JLR)
-        self.x, self.y = self.dataset.parse(self.x, self.feature_set.filename_col)
+        self.x, self.y = self.dataset.parse(self.x, self.feature_set.label_col_selector)
 
         # remove columns that are not features (only musif)
         self.x = self.feature_set.parse(self.x)
