@@ -118,15 +118,16 @@ class Main(AbstractMain):
                 dfs[i] = (
                     dfs[i]
                     .set_index("Timestamp")
-                    .resample("1min")
-                    .asfreq()
+                    .resample("10ms", closed="right")
+                    .max()
+                    .ffill()
                     .reset_index()
                 )
 
             fig = px.line()
 
             for df in dfs:
-                fig.add_scatter(x=df["Timestamp"], y=df["Score"])
+                fig.add_scatter(x=df["Timestamp"], y=df["ensemble_optimization_score"])
             plotly_save(fig, plot_name + ".svg")
 
 
