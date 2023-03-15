@@ -43,7 +43,7 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
 
     task.load_csv()
     logger.info(f"Shape of the X dataframe: {task.x.shape}")
-    logger.info(f"Shape of the y dataframe: {task.y.shape}")
+    logger.info(f"Number of labels in y: {task.y.unique().shape}")
 
     classifier = AutoSklearnClassifier(
         seed=1993,
