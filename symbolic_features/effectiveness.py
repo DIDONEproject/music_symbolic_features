@@ -42,6 +42,8 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
         metalearning = 25
 
     task.load_csv()
+    logger.info(f"Shape of the X dataframe: {task.x.shape}")
+    logger.info(f"Shape of the y dataframe: {task.y.shape}")
 
     classifier = AutoSklearnClassifier(
         seed=1993,
