@@ -118,7 +118,7 @@ class Main(AbstractMain):
                 dfs[i] = (
                     dfs[i]
                     .set_index("Timestamp")
-                    .resample("10ms", closed="right")
+                    .resample("100ms", closed="right")
                     .max()
                     .ffill()
                     .reset_index()
