@@ -111,7 +111,7 @@ def ewld_label(df: pd.DataFrame, label_col_selector: str):
 
 def jlr_label(df: pd.DataFrame, label_col_selector: str):
     y = df[label_col_selector].str.extract(
-        r".*mass-duos-corpus-josquin-larue/(\w+)/.*", expand=False
+        r".*mass-duos-corpus-josquin-larue/([\s\w\(\)]+)/.*", expand=False
     )
     assert not y.isna().any(), "JLR: NaN in y!"
     return df, y
