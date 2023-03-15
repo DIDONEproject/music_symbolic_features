@@ -22,7 +22,7 @@ class FeatureSet:
 
 
 feature_sets = [
-    # FeatureSet("musif", "FileName", ["Id", "WindowId"]),
+    FeatureSet("musif", "FileName", ["Id", "WindowId"]),
     FeatureSet("music21", "FileName_0", []),
     # FeatureSet("jsymbolic", "Unnamed: 0", []),
 ]
@@ -84,7 +84,7 @@ def ewld_label(df: pd.DataFrame, label_col_selector: str):
 
     # removing path to the EWLD dataset
     df[label_col_selector] = df[label_col_selector].str.replace(
-        str(S.DATASETS["EWLD"]) + "/", ""
+        rf".*{S.DATASETS['EWLD']}/", "", regex=True
     )
     # removing extension
     df[label_col_selector] = df[label_col_selector].str[:-4]
@@ -124,23 +124,23 @@ def quartets_label(df: pd.DataFrame, label_col_selector: str):
 
 
 datasets = [
-    # Dataset(
-    #     "asap-dataset",
-    #     asap_label,
-    #     "Composer",
-    #     [".mid", ".xml"],
-    #     legal_filenames=r".+xml_score\.(?:xml|mid)",
-    # ),
-    # Dataset(
-    #     "asap-dataset",
-    #     asap_label,
-    #     "Composer",
-    #     [".mid"],
-    #     legal_filenames=r".*/[A-Z]+\w*.mid",
-    #     friendly_name="asap-performance",
-    # ),
-    # Dataset("didone", didone_label, "Aria Title", [".mid", ".xml"]),
-    # Dataset("EWLD", ewld_label, "Genre", [".mid", ".xml"]),
+    Dataset(
+        "asap-dataset",
+        asap_label,
+        "Composer",
+        [".mid", ".xml"],
+        legal_filenames=r".+xml_score\.(?:xml|mid)",
+    ),
+    Dataset(
+        "asap-dataset",
+        asap_label,
+        "Composer",
+        [".mid"],
+        legal_filenames=r".*/[A-Z]+\w*.mid",
+        friendly_name="asap-performance",
+    ),
+    Dataset("didone", didone_label, "Aria Title", [".mid", ".xml"]),
+    Dataset("EWLD", ewld_label, "Genre", [".mid", ".xml"]),
     Dataset(
         "mass-duos-corpus-josquin-larue",
         jlr_label,
@@ -184,6 +184,9 @@ class Task:
 
         # remove columns that are not features (only musif)
         self.x = self.feature_set.parse(self.x)
+
+        # keep only numeric data
+        self.x = self.x.select_dtypes([int, float])
 
     def get_csv_path(self):
         csv_name = self.feature_set.name + "-" + self.extension[1:] + ".csv"
