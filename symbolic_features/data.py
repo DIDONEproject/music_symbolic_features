@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable, List, Union
 
+import numpy as np
 import pandas as pd
 
 from . import settings as S
@@ -36,6 +37,7 @@ class Dataset:
     extensions: List[str]
     legal_filenames: str = r".*"
     friendly_name: str = None
+    nsplits: int = S.SPLITS
 
     def __post_init__(self):
         if self.friendly_name is None:
@@ -43,15 +45,26 @@ class Dataset:
 
     def parse(self, df: pd.DataFrame, label_col_selector: str, remove_col_label=True):
         """Parse a dataframe: remove unwanted rows, create label, and removes label col.
+        If nsplits is not None (default) only classes with cardinality > 2*nsplits are
+        retained.
         Returns X an y"""
 
         df, y = self.make_label(df, label_col_selector)
 
+        # removing invalid rows
         idx = df[label_col_selector].str.fullmatch(self.legal_filenames).to_numpy()
         if remove_col_label is not None:
             df = df.drop(columns=label_col_selector)
         df = df.loc[idx]
         y = y.loc[idx]
+
+        # removing classes with little cardinality
+        if self.nsplits is not None:
+            y_vals, y_freq = np.unique(y, return_counts=True)
+            y_vals = y_vals[y_freq > self.nsplits]
+            idx = y.isin(y_vals).to_numpy()
+            y = y.loc[idx]
+            df = df.loc[idx]
         return df, y
 
 
