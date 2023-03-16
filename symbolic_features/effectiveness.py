@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+import ipdb
 import autosklearn.metrics
 import plotly.express as px
 from autosklearn.classification import AutoSklearnClassifier
@@ -66,7 +67,7 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
         return
     logger.info(f"Starting AutoML on {task.name}")
     if S.DEBUG:
-        smac_scenario_args = None  # {"runcount_limit": 2}
+        smac_scenario_args = None # {"runcount_limit": 2}
         metalearning = 25
         automl_time = 300
     else:
@@ -133,18 +134,7 @@ class Main(AbstractMain):
 
         performances = {}
         for task in TASKS:
-            try:
-                pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
-            except Exception as e:
-                logger.exception("Exception occured!")
-                __import__("ipdb").set_trace()
-                # import traceback
-                # trace = traceback.extract_tb(e.__traceback__)
-                # line = trace[-1]
-                # filename, line_num, func_name, code = line
-                # logger.error(e)
-                # logger.error(f"{filename}:{line_num} - {code.strip()}")
-                continue
+            pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
             if pot is None:
                 continue
             add_task_result(performances, pot, task)

@@ -123,3 +123,17 @@ def plotly_save(fig, fname):
     fname = Path(fname)
     fig.write_html(fname.with_suffix(".html"))
     fig.write_image(fname)
+
+
+def pdb_on_exception(debugger="pdb", limit=100):
+    """Install handler attach post-mortem pdb console on an exception."""
+    import traceback
+
+    def pdb_excepthook(exc_type, exc_val, exc_tb):
+        traceback.print_tb(exc_tb, limit=limit)
+        __import__(str(debugger).strip().lower()).post_mortem(exc_tb)
+
+    sys.excepthook = pdb_excepthook
+
+
+pdb_on_exception("ipdb")
