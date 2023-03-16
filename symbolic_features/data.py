@@ -105,19 +105,19 @@ def ewld_label(df: pd.DataFrame, label_col_selector: str):
     db_df["path_leadsheet"] = db_df["path_leadsheet"].str[:-4]
 
     # replacing strange characters
-    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(',', '_')
-    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(';', '_')
-    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(' ', '_')
+    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(",", "_")
+    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(";", "_")
+    db_df["path_leadsheet"] = db_df["path_leadsheet"].str.replace(" ", "_")
 
     # remove duplicates
-    db_df = db_df.groupby('path_leadsheet').first().reset_index()
+    db_df = db_df.groupby("path_leadsheet").first().reset_index()
 
     # select the rows in the DataFrame that match the database rows
-    idx = df[label_col_selector].isin(db_df['path_leadsheet'])
+    idx = df[label_col_selector].isin(db_df["path_leadsheet"])
     df = df[idx]
 
     y = db_df["genre"]
-    idx = db_df['path_leadsheet'].isin(df[label_col_selector])
+    idx = db_df["path_leadsheet"].isin(df[label_col_selector])
     y = y[idx]
     assert not y.isna().any(), "EWLD: NaN in y!"
     return df, y
