@@ -25,7 +25,7 @@ class FeatureSet:
 
 feature_sets = [
     FeatureSet("musif", "FileName", ["Id", "WindowId"]),
-    FeatureSet("music21", "FileName_0", []),
+    # FeatureSet("music21", "FileName_0", []),
     # FeatureSet("jsymbolic", "Unnamed: 0", []),
 ]
 
@@ -76,7 +76,9 @@ def asap_label(df: pd.DataFrame, label_col_selector: str):
 
 
 def didone_label(df: pd.DataFrame, label_col_selector: str):
-    y = df[label_col_selector].str.extract(r".*/xml/(\w+)-.*", expand=False)
+    y = df[label_col_selector].str.extract(r".*/xml/[\w -]+-1(\d{2})\d-[\w\[\]-]+", expand=False)
+    y = y.replace('97', '79')
+    y = y.fillna('nd')
     assert not y.isna().any(), "Didone: NaN in y!"
     return df, y
 
