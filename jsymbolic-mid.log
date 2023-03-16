@@ -1,0 +1,94 @@
+2023-03-15 16:19:57: Trial number 1
+2023-03-15 16:19:57: Using jsymbolic on datasets/quartets extension .mid
+2023-03-15 16:19:57: Benchmarching command:
+2023-03-15 16:19:57:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/quartets features/quartets/jsymbolic-mid features/quartets/jsymbolic_def
+2023-03-15 16:21:29: Using jsymbolic on datasets/didone extension .mid
+2023-03-15 16:21:29: Benchmarching command:
+2023-03-15 16:21:29:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/didone features/didone/jsymbolic-mid features/didone/jsymbolic_def
+2023-03-15 18:36:48: Using jsymbolic on datasets/asap-dataset extension .mid
+2023-03-15 18:36:48: Benchmarching command:
+2023-03-15 18:36:48:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/asap-dataset features/asap-dataset/jsymbolic-mid features/asap-dataset/jsymbolic_def
+2023-03-15 19:40:26: Using jsymbolic on datasets/mass-duos-corpus-josquin-larue extension .mid
+2023-03-15 19:40:26: Benchmarching command:
+2023-03-15 19:40:26:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/mass-duos-corpus-josquin-larue features/mass-duos-corpus-josquin-larue/jsymbolic-mid features/mass-duos-corpus-josquin-larue/jsymbolic_def
+2023-03-15 19:50:23: Using jsymbolic on datasets/EWLD extension .mid
+2023-03-15 19:50:23: Benchmarching command:
+2023-03-15 19:50:23:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/EWLD features/EWLD/jsymbolic-mid features/EWLD/jsymbolic_def
+2023-03-15 20:55:26: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-15 20:55:26: Max RAM (MB): 1.17e+04
+2023-03-15 20:55:26: Avg RAM (MB): 6.69e+03
+2023-03-15 20:55:26: CPU Time (sec): 1.84e+04
+2023-03-15 20:55:26: CPU Avg Time (sec): 2.20e+00
+2023-03-15 20:55:26: Real Time (sec): 1.65e+04
+2023-03-15 20:55:26: Real Avg Time (sec): 1.97e+00
+2023-03-15 20:55:26: _____________
+2023-03-15 20:55:26: Trial number 2
+2023-03-15 20:55:26: Using jsymbolic on datasets/quartets extension .mid
+2023-03-15 20:55:26: Benchmarching command:
+2023-03-15 20:55:26:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/quartets features/quartets/jsymbolic-mid features/quartets/jsymbolic_def
+2023-03-15 20:56:57: Using jsymbolic on datasets/didone extension .mid
+2023-03-15 20:56:57: Benchmarching command:
+2023-03-15 20:56:57:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/didone features/didone/jsymbolic-mid features/didone/jsymbolic_def
+2023-03-15 23:10:55: Using jsymbolic on datasets/asap-dataset extension .mid
+2023-03-15 23:10:55: Benchmarching command:
+2023-03-15 23:10:55:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/asap-dataset features/asap-dataset/jsymbolic-mid features/asap-dataset/jsymbolic_def
+2023-03-16 00:14:49: Using jsymbolic on datasets/mass-duos-corpus-josquin-larue extension .mid
+2023-03-16 00:14:49: Benchmarching command:
+2023-03-16 00:14:49:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/mass-duos-corpus-josquin-larue features/mass-duos-corpus-josquin-larue/jsymbolic-mid features/mass-duos-corpus-josquin-larue/jsymbolic_def
+2023-03-16 00:24:44: Using jsymbolic on datasets/EWLD extension .mid
+2023-03-16 00:24:44: Benchmarching command:
+2023-03-16 00:24:44:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/EWLD features/EWLD/jsymbolic-mid features/EWLD/jsymbolic_def
+2023-03-16 01:29:27: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-16 01:29:27: Max RAM (MB): 1.18e+04
+2023-03-16 01:29:27: Avg RAM (MB): 7.29e+03
+2023-03-16 01:29:27: CPU Time (sec): 1.83e+04
+2023-03-16 01:29:27: CPU Avg Time (sec): 2.19e+00
+2023-03-16 01:29:27: Real Time (sec): 1.64e+04
+2023-03-16 01:29:27: Real Avg Time (sec): 1.96e+00
+2023-03-16 01:29:27: _____________
+2023-03-16 01:29:27: Trial number 3
+2023-03-16 01:29:27: Using jsymbolic on datasets/quartets extension .mid
+2023-03-16 01:29:27: Benchmarching command:
+2023-03-16 01:29:27:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/quartets features/quartets/jsymbolic-mid features/quartets/jsymbolic_def
+2023-03-16 01:30:58: Using jsymbolic on datasets/didone extension .mid
+2023-03-16 01:30:58: Benchmarching command:
+2023-03-16 01:30:58:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/didone features/didone/jsymbolic-mid features/didone/jsymbolic_def
+2023-03-16 03:45:33: Using jsymbolic on datasets/asap-dataset extension .mid
+2023-03-16 03:45:33: Benchmarching command:
+2023-03-16 03:45:33:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/asap-dataset features/asap-dataset/jsymbolic-mid features/asap-dataset/jsymbolic_def
+2023-03-16 04:49:47: Using jsymbolic on datasets/mass-duos-corpus-josquin-larue extension .mid
+2023-03-16 04:49:47: Benchmarching command:
+2023-03-16 04:49:47:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/mass-duos-corpus-josquin-larue features/mass-duos-corpus-josquin-larue/jsymbolic-mid features/mass-duos-corpus-josquin-larue/jsymbolic_def
+2023-03-16 04:59:44: Using jsymbolic on datasets/EWLD extension .mid
+2023-03-16 04:59:44: Benchmarching command:
+2023-03-16 04:59:44:      java -Xmx25g -jar ./tools/jSymbolic_2_2_user/jSymbolic2.jar -csv /home/federico/symbolic_features/datasets/EWLD features/EWLD/jsymbolic-mid features/EWLD/jsymbolic_def
+2023-03-16 06:04:40: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-16 06:04:40: Max RAM (MB): 8.82e+03
+2023-03-16 06:04:40: Avg RAM (MB): 6.39e+03
+2023-03-16 06:04:40: CPU Time (sec): 1.83e+04
+2023-03-16 06:04:40: CPU Avg Time (sec): 2.19e+00
+2023-03-16 06:04:40: Real Time (sec): 1.65e+04
+2023-03-16 06:04:40: Real Avg Time (sec): 1.97e+00
+2023-03-16 06:04:40: _____________
+2023-03-16 06:04:40: _____________
+2023-03-16 06:04:40: Number of errors  and time per dataset:
+2023-03-16 06:04:40: {'datasets/quartets': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 104.03, 'clock_time': 90.56032013893127}, 'datasets/didone': {'n_errors': 14, 'ratio_errors': 0.008526187576126675, 'cpu_time': 9332.76, 'clock_time': 8073.576003789902}, 'datasets/asap-dataset': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 4227.240000000001, 'clock_time': 3852.3732986450195}, 'datasets/mass-duos-corpus-josquin-larue': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 634.01, 'clock_time': 596.193466424942}, 'datasets/EWLD': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 4036.95, 'clock_time': 3886.589849948883}}
+2023-03-16 06:04:40: Statistics out of 3 trials
+2023-03-16 06:04:40: Averages:
+2023-03-16 06:04:40: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-16 06:04:40: Max RAM (MB): 1.08e+04
+2023-03-16 06:04:40: Avg RAM (MB): 6.79e+03
+2023-03-16 06:04:40: CPU Time (sec): 1.83e+04
+2023-03-16 06:04:40: CPU Avg Time (sec): 2.19e+00
+2023-03-16 06:04:40: Real Time (sec): 1.65e+04
+2023-03-16 06:04:40: Real Avg Time (sec): 1.97e+00
+2023-03-16 06:04:40: _____________
+2023-03-16 06:04:40: Std (1 ddof):
+2023-03-16 06:04:40: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
+2023-03-16 06:04:40: Max RAM (MB): 1.70e+03
+2023-03-16 06:04:40: Avg RAM (MB): 4.61e+02
+2023-03-16 06:04:40: CPU Time (sec): 3.25e+01
+2023-03-16 06:04:40: CPU Avg Time (sec): 3.89e-03
+2023-03-16 06:04:40: Real Time (sec): 4.61e+01
+2023-03-16 06:04:40: Real Avg Time (sec): 5.51e-03
+2023-03-16 06:04:40: _____________
