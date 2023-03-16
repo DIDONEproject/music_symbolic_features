@@ -5,6 +5,7 @@ from typing import Callable, List, Union
 
 import numpy as np
 import pandas as pd
+import chardet
 
 from . import settings as S
 
@@ -190,7 +191,11 @@ class Task:
         csv_path = self.get_csv_path()
         if not csv_path.exists():
             raise FileNotFoundError(f"Task doesn't have csv file: {self}, {csv_path}")
-        self.x = pd.read_csv(csv_path)
+        try:
+            self.x = pd.read_csv(csv_path)
+        except UnicodeDecodeError:
+            enc = chardet.detect(open(csv_path, "rb").read())["encoding"]
+            self.x = pd.read_csv(csv_path, encoding=enc)
 
         # make label and removes rows that are not for this data (mainly asap and JLR)
         self.x, self.y = self.dataset.parse(self.x, self.feature_set.label_col_selector)
