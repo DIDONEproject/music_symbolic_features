@@ -77,7 +77,7 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     logger.info(f"Shape of the X dataframe: {task.x.shape}")
     logger.info(f"Number of labels in y: {task.y.unique().shape}")
 
-    assert task.x.shape[0] > S.SPLITS, "Not enough data in x"
+    assert task.x.shape[0] > 2 * S.SPLITS, "Not enough data in x"
     assert task.x.shape[0] == task.y.shape[0], "X and y have different shapes"
     random_guess = random_guessing(task, splitter)
     logger.info(f"Random Guessing: {random_guess}")
@@ -115,9 +115,10 @@ def add_task_result(performances, pot, task):
     # store data
     dataset_key = task.dataset.friendly_name + "-" + task.extension
     if dataset_key in performances:
-        performances[dataset_key][task.name] = pot_copy
+        performances[dataset_key][task.feature_set.name] = pot_copy
     else:
-        performances[dataset_key][task.name] = [pot_copy]
+        performances[dataset_key] = {}
+        performances[dataset_key][task.feature_set.name] = pot_copy
 
 
 @dataclass
