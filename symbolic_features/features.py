@@ -42,6 +42,9 @@ class Main(AbstractMain):
             dataset = Path(dataset)
             output = Path(self.output) / dataset.name
             output.mkdir(parents=True, exist_ok=True)
+            if n_music_scores[str(dataset)] == 0:
+                # skip datasets that have no files with this extension
+                continue
             logger.info(f"Using {feature_set} on {dataset} extension {self.extension}")
             cmd = self._get_cmd(feature_set, dataset, output)
             ram_sequence, real_time, cpu_time = benchmark_command(
@@ -144,7 +147,13 @@ class Main(AbstractMain):
         n_files = {}
         for p in self.datasets.values():
             p = Path(p)
-            n_files[str(p)] = len(list(p.glob(f"**/*{self.extension}")))
+            if self.extension in ['.xml', '.musicxml', '.mxl']:
+                extensions = ['.xml', '.musicxml', '.mxl']
+            else:
+                extensions = self.extension
+            n_files[str(p)] = 0
+            for ext in extensions:
+                n_files[str(p)] += len(list(p.glob(f"**/*{self.extension}")))
         n_files["tot"] = sum(n_files.values())
 
         self._extract_multiple_trials(n_files, feature_set)
