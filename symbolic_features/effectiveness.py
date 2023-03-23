@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 
-import ipdb
 import autosklearn.metrics
 import plotly.express as px
 from autosklearn.classification import AutoSklearnClassifier
@@ -13,33 +12,40 @@ from .utils import AbstractMain, logger, plotly_save
 
 
 def random_guessing(task, splitter):
-    # Define a dictionary with the different strategies to try
-    strategies = {
-        "most_frequent": DummyClassifier(strategy="most_frequent"),
-        "stratified": DummyClassifier(strategy="stratified"),
-        "uniform": DummyClassifier(strategy="uniform"),
-    }
+    """
+    Run each of the dummy strategies a given number of times and return the
+    maximum value.
+    """
+    # Initialize a dictionary to store the results for each strategy
+    results = {}
 
     if splitter is None:
         splitter = 5
 
-    # Initialize a dictionary to store the results for each strategy
-    results = {}
+    for _ in range(S.DUMMY_TRIALS):
+        # Define a dictionary with the different strategies to try
+        strategies = {
+            "most_frequent": DummyClassifier(strategy="most_frequent"),
+            "stratified": DummyClassifier(strategy="stratified",
+                                          random_state=113),
+            "uniform": DummyClassifier(strategy="uniform",
+                                       random_state=120),
+        }
 
-    # Loop through each strategy
-    for strategy_name, strategy in strategies.items():
-        # Use cross_validate to get the scores for the strategy
-        scores = cross_validate(
-            estimator=strategy,
-            X=task.x,
-            y=task.y,
-            cv=splitter,
-            scoring=["balanced_accuracy"],
-            return_train_score=False,
-        )
+        # Loop through each strategy
+        for strategy_name, strategy in strategies.items():
+            # Use cross_validate to get the scores for the strategy
+            scores = cross_validate(
+                estimator=strategy,
+                X=task.x,
+                y=task.y,
+                cv=splitter,
+                scoring=["balanced_accuracy"],
+                return_train_score=False,
+            )
 
-        # Add the mean score for the strategy to the results dictionary
-        results[strategy_name] = scores["test_balanced_accuracy"].mean()
+            # Add the mean score for the strategy to the results dictionary
+            results[strategy_name] = scores["test_balanced_accuracy"].mean()
     return max(results.values())
 
 
@@ -162,7 +168,7 @@ class Main(AbstractMain):
                 title=plot_name,
                 xaxis_title="Time",
                 yaxis_title=f"Avg {S.SPLITS}-fold Balanced Accuracy",
-                xaxis_tickformat="%H:%M",
+                xaxis_tickformat="%Hh %Mm",
             )
             plotly_save(fig, plot_name + ".svg")
 
