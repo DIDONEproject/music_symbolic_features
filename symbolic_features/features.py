@@ -5,7 +5,7 @@ import chardet
 import numpy as np
 import pandas as pd
 
-from .utils import AbstractMain, logger, telegram_notify, benchmark_command
+from .utils import AbstractMain, benchmark_command, logger, telegram_notify
 
 
 @dataclass
@@ -145,17 +145,17 @@ class Main(AbstractMain):
     # @logger.catch
     def extract(self, feature_set):
         n_files = {}
+        extensions = (
+            [".xml", ".musicxml", ".mxl"]
+            if self.extension in [".xml", ".musicxml", ".mxl"]
+            else [self.extension]
+        )
         for p in self.datasets.values():
             p = Path(p)
-            if self.extension in ['.xml', '.musicxml', '.mxl']:
-                extensions = ['.xml', '.musicxml', '.mxl']
-            else:
-                extensions = self.extension
-            n_files[str(p)] = 0
-            for ext in extensions:
-                n_files[str(p)] += len(list(p.glob(f"**/*{self.extension}")))
+            n_files[str(p)] = sum(
+                1 for ext in extensions for f in p.glob(f"**/*{ext}") if f.is_file()
+            )
         n_files["tot"] = sum(n_files.values())
-
         self._extract_multiple_trials(n_files, feature_set)
 
 
