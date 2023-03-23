@@ -210,10 +210,8 @@ class Task:
             + self.extension[1:]
         )
 
-    def load_csv(self, intersect: List["Task"] = None):
-        """Load the CSV file and clean it. Optionally select only the rows
-        that also are in the tasks in intersect that have the same dataset
-        and extension as this object."""
+    def load_csv(self):
+        """Load the CSV file and clean it."""
         if not self.__loaded:
             # load csv
             csv_path = self.get_csv_path()
@@ -235,6 +233,13 @@ class Task:
             )
 
             # remove columns that are not features (only musif)
+            self.__loaded = True
+
+    def intersect(self, intersect: List["Task"]):
+        """Select only the rows that also are in the tasks in intersect that
+        have the same dataset and extension as this object."""
+        if not self.__loaded:
+            self.load_csv()
             self.x = self.feature_set.parse(self.x)
 
             # keep only numeric data
@@ -253,8 +258,12 @@ class Task:
                     intersect_rows.append(
                         task.filenames_
                     )
-            intersect_rows = set(intersect_rows[0]).intersection(*intersect_rows)
-            self.x = self.x[self.filenames_.isin(intersect_rows)]
+            intersect_rows = set(intersect_rows[0]).intersection(
+                *intersect_rows
+            )
+            idx = self.filenames_.index.isin(intersect_rows)
+            self.x = self.x.loc[idx]
+            self.y = self.y.loc[idx]
 
     def get_csv_path(self):
         csv_name = self.feature_set.name + "-" + self.extension[1:] + ".csv"
@@ -278,6 +287,6 @@ for t in TASKS:
 # 2. use the other csv files to create the intersection
 for t in TASKS:
     try:
-        t.load_csv(intersect=TASKS)
+        t.intersect(TASKS)
     except FileNotFoundError:
         continue
