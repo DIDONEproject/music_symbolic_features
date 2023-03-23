@@ -1,20 +1,24 @@
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, List, Union
+from typing import Callable, List, Tuple, Union
 
+import chardet
 import numpy as np
 import pandas as pd
-import chardet
 
 from . import settings as S
+
+__all_exts__ = (".mid", ".xml", ".musicxml", ".mxl", ".krn")
 
 
 @dataclass
 class FeatureSet:
     name: str
-    label_col_selector: Union[List[str], str]
+    filename_col: str  # the column used for the filename
+    label_col_selector: Union[List[str], str]  # the column used for extracting labels
     illegal_cols: List[str]
+    accepted_exts: Tuple[str]
 
     def parse(self, df: pd.DataFrame):
         """Remove the illegal columns"""
@@ -22,11 +26,14 @@ class FeatureSet:
             df = df.drop(columns=self.illegal_cols)
         return df
 
+    def accepts(self, ext: str):
+        return ext in self.accepted_exts
+
 
 feature_sets = [
-    FeatureSet("musif", "FileName", ["Id", "WindowId"]),
-    # FeatureSet("music21", "FileName_0", []),
-    # FeatureSet("jsymbolic", "Unnamed: 0", []),
+    FeatureSet("musif", "FileName", "FileName", ["Id", "WindowId"], __all_exts__),
+    FeatureSet("music21", "FileName_0", "FileName_0", [], __all_exts__),
+    FeatureSet("jsymbolic", "Unnamed: 0", "Unnamed: 0", [], [".mid"]),
 ]
 
 
@@ -44,7 +51,13 @@ class Dataset:
         if self.friendly_name is None:
             self.friendly_name = self.name
 
-    def parse(self, df: pd.DataFrame, label_col_selector: str, remove_col_label=True):
+    def parse(
+        self,
+        df: pd.DataFrame,
+        filename_col: str,
+        label_col_selector: str,
+        remove_col_label=True,
+    ):
         """Parse a dataframe: remove unwanted rows, create label, and removes label col.
         If nsplits is not None (default) only classes with cardinality > 2*nsplits are
         retained.
@@ -54,11 +67,8 @@ class Dataset:
 
         # removing invalid rows
         idx = df[label_col_selector].str.fullmatch(self.legal_filenames).to_numpy()
-        if remove_col_label is not None:
-            df = df.drop(columns=label_col_selector)
         df = df.loc[idx]
         y = y.loc[idx]
-
         # removing classes with little cardinality
         if self.nsplits is not None:
             y_vals, y_freq = np.unique(y, return_counts=True)
@@ -66,7 +76,15 @@ class Dataset:
             idx = y.isin(y_vals).to_numpy()
             y = y.loc[idx]
             df = df.loc[idx]
-        return df, y
+
+        filenames = df[filename_col]
+        if remove_col_label is not None:
+            df = df.drop(columns=label_col_selector)
+        dataset_path = str(S.DATASETS[self.name])
+        filenames = filenames.str.replace(
+            f".*{dataset_path}/?", "", regex=True
+        )
+        return df, y, filenames
 
 
 def asap_label(df: pd.DataFrame, label_col_selector: str):
@@ -76,9 +94,11 @@ def asap_label(df: pd.DataFrame, label_col_selector: str):
 
 
 def didone_label(df: pd.DataFrame, label_col_selector: str):
-    y = df[label_col_selector].str.extract(r".*/xml/[\w -]+-1(\d{2})\d-[\w\[\]-]+", expand=False)
-    y = y.replace('97', '79')
-    y = y.fillna('nd')
+    y = df[label_col_selector].str.extract(
+        r".*/xml/[\w -]+-1(\d{2})\d-[\w\[\]-]+", expand=False
+    )
+    y = y.replace("97", "79")
+    y = y.fillna("nd")
     assert not y.isna().any(), "Didone: NaN in y!"
     return df, y
 
@@ -144,8 +164,10 @@ datasets = [
         "asap-dataset",
         asap_label,
         "Composer",
-        [".mid", ".xml"],
+        [".mid"],
+        # [".mid", ".xml"],
         legal_filenames=r".+xml_score\.(?:xml|mid)",
+        friendly_name="asap-scores",
     ),
     Dataset(
         "asap-dataset",
@@ -174,6 +196,7 @@ class Task:
     dataset: Dataset
     feature_set: FeatureSet
     extension: str
+    __loaded = False
 
     def __post_init__(self):
         assert (
@@ -187,30 +210,74 @@ class Task:
             + self.extension[1:]
         )
 
-    def load_csv(self):
-        """Load the CSV file and clean it"""
-        # load csv
-        csv_path = self.get_csv_path()
-        if not csv_path.exists():
-            raise FileNotFoundError(f"Task doesn't have csv file: {self}, {csv_path}")
-        try:
-            self.x = pd.read_csv(csv_path)
-        except UnicodeDecodeError:
-            enc = chardet.detect(open(csv_path, "rb").read())["encoding"]
-            self.x = pd.read_csv(csv_path, encoding=enc)
+    def load_csv(self, intersect: List["Task"] = None):
+        """Load the CSV file and clean it. Optionally select only the rows
+        that also are in the tasks in intersect that have the same dataset
+        and extension as this object."""
+        if not self.__loaded:
+            # load csv
+            csv_path = self.get_csv_path()
+            if not csv_path.exists():
+                raise FileNotFoundError(
+                    f"Task doesn't have csv file: {self}, {csv_path}"
+                )
+            try:
+                self.x = pd.read_csv(csv_path)
+            except UnicodeDecodeError:
+                enc = chardet.detect(open(csv_path, "rb").read())["encoding"]
+                self.x = pd.read_csv(csv_path, encoding=enc)
 
-        # make label and removes rows that are not for this data (mainly asap and JLR)
-        self.x, self.y = self.dataset.parse(self.x, self.feature_set.label_col_selector)
+            # make label and removes rows that are not for this data (mainly asap and JLR)
+            self.x, self.y, self.filenames_ = self.dataset.parse(
+                self.x,
+                self.feature_set.filename_col,
+                self.feature_set.label_col_selector,
+            )
 
-        # remove columns that are not features (only musif)
-        self.x = self.feature_set.parse(self.x)
+            # remove columns that are not features (only musif)
+            self.x = self.feature_set.parse(self.x)
 
-        # keep only numeric data
-        self.x = self.x.select_dtypes([int, float])
+            # keep only numeric data
+            self.x = self.x.select_dtypes([int, float])
+            self.__loaded = True
+
+        if intersect is not None:
+            intersect_rows = []
+            for task in intersect:
+                if not hasattr(task, "x"):
+                    continue
+                if (
+                    task.dataset == self.dataset
+                    and task.extension == self.extension
+                ):
+                    intersect_rows.append(
+                        task.filenames_
+                    )
+            intersect_rows = set(intersect_rows[0]).intersection(*intersect_rows)
+            self.x = self.x[self.filenames_.isin(intersect_rows)]
 
     def get_csv_path(self):
         csv_name = self.feature_set.name + "-" + self.extension[1:] + ".csv"
         return Path(S.OUTPUT) / self.dataset.name / csv_name
 
 
-TASKS = [Task(d, f, e) for d in datasets for e in d.extensions for f in feature_sets]
+TASKS = [
+    Task(d, f, e)
+    for d in datasets
+    for e in d.extensions
+    for f in feature_sets
+    if f.accepts(e)
+]
+# forcing the intersection of files:
+# 1. load all csv files
+for t in TASKS:
+    try:
+        t.load_csv()
+    except FileNotFoundError:
+        continue
+# 2. use the other csv files to create the intersection
+for t in TASKS:
+    try:
+        t.load_csv(intersect=TASKS)
+    except FileNotFoundError:
+        continue
