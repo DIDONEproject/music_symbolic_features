@@ -2,7 +2,7 @@
 
 ### Dependencies
 
-* Python 3.9 (e.g. via conda or pyenv)
+* Python 3.10 (e.g. via conda or pyenv)
 * `pdm`, you barely have three options:
   - `pipx install pdm` (need pipx, recommended)
   - `pip install pdm` (environment specific)
@@ -52,6 +52,9 @@ export DISPLAY=:99` if you are running without display (e.g. in a remote ssh ses
 
 ### Feature extraction
 
+Reproduce experiments: `./extract_all.sh`
+
+Detailed commands:
 1. `jSymbolic`: `pdm extract --jsymbolic --extension .mid`
 2. `musif`: 
   * `pdm extract --musif --extension .mid`
@@ -158,36 +161,6 @@ export DISPLAY=:99` if you are running without display (e.g. in a remote ssh ses
 2023-03-02 17:09:13: _____________
 ```
 
-## Possible tasks
+### Classification accuracy
 
-### ASAP
-#### XML
-  * Composer (REGEX)
-#### MIDI
-  * Composer (REGEX)
-#### MIDI performances
-  * Composer (REGEX)
-
-### Didone
-#### XML
-  * Aria title (REGEX)
-#### MIDI
-  * Aria title (REGEX)
-
-### EWLD
-#### XML
-  * Genre (sql)
-#### MIDI
-  * Genre (sql)
-
-### JLR
-#### XML
-  * Composer (REGEX)
-#### MIDI
-  * Composer (REGEX)
-
-### Quartets
-#### KRN
-  * Composer (REGEX)
-#### MIDI
-  * Composer (REGEX)
+Reproduce experiments: `pdm classification`
