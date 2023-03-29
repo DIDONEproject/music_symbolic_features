@@ -6,6 +6,7 @@ from typing import Callable, List, Tuple, Union
 import chardet
 import numpy as np
 import pandas as pd
+from rich.progress import track
 
 from . import settings as S
 
@@ -81,9 +82,7 @@ class Dataset:
         if remove_col_label is not None:
             df = df.drop(columns=label_col_selector)
         dataset_path = str(S.DATASETS[self.name])
-        filenames = filenames.str.replace(
-            f".*{dataset_path}/?", "", regex=True
-        )
+        filenames = filenames.str.replace(f".*{dataset_path}/?", "", regex=True)
         return df, y, filenames
 
 
@@ -231,39 +230,28 @@ class Task:
                 self.feature_set.filename_col,
                 self.feature_set.label_col_selector,
             )
+            self.x = self.feature_set.parse(self.x)
+
+            # keep only numeric data
+            self.x = self.x.select_dtypes([int, float])
 
             # remove columns that are not features (only musif)
             self.__loaded = True
 
     def intersect(self, intersect: List["Task"]):
-        """Select only the rows that also are in the tasks in intersect that
-        have the same dataset and extension as this object."""
-        if not self.__loaded:
-            self.load_csv()
-            self.x = self.feature_set.parse(self.x)
-
-            # keep only numeric data
-            self.x = self.x.select_dtypes([int, float])
-            self.__loaded = True
-
-        if intersect is not None:
-            intersect_rows = []
-            for task in intersect:
-                if not hasattr(task, "x"):
-                    continue
-                if (
-                    task.dataset == self.dataset
-                    and task.extension == self.extension
-                ):
-                    intersect_rows.append(
-                        task.filenames_
-                    )
-            intersect_rows = set(intersect_rows[0]).intersection(
-                *intersect_rows
-            )
-            idx = self.filenames_.index.isin(intersect_rows)
-            self.x = self.x.loc[idx]
-            self.y = self.y.loc[idx]
+        intersect_rows = []
+        for task in intersect:
+            if not hasattr(task, "x"):
+                continue
+            if (
+                task.dataset.friendly_name == self.dataset.friendly_name
+                and task.extension == self.extension
+            ):
+                intersect_rows.append(task.filenames_)
+        intersect_rows = set(intersect_rows[0]).intersection(*intersect_rows)
+        idx = self.filenames_.isin(intersect_rows)
+        self.x = self.x.loc[idx.values]
+        self.y = self.y.loc[idx.values]
 
     def get_csv_path(self):
         csv_name = self.feature_set.name + "-" + self.extension[1:] + ".csv"
@@ -279,14 +267,11 @@ TASKS = [
 ]
 # forcing the intersection of files:
 # 1. load all csv files
-for t in TASKS:
+for t in track(TASKS, description="Loading CSV files..."):
     try:
         t.load_csv()
     except FileNotFoundError:
         continue
 # 2. use the other csv files to create the intersection
 for t in TASKS:
-    try:
-        t.intersect(TASKS)
-    except FileNotFoundError:
-        continue
+    t.intersect(TASKS)
