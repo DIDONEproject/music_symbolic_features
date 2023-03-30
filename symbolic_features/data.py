@@ -1,39 +1,180 @@
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, List, Tuple, Union
+from typing import Callable, List, Optional, Tuple, Union
 
 import chardet
+import music21
 import numpy as np
 import pandas as pd
 from rich.progress import track
+from sklearn.decomposition import PCA
 
 from . import settings as S
+from .utils import logger
 
 __all_exts__ = (".mid", ".xml", ".musicxml", ".mxl", ".krn")
 
 
+def filter_music21_features(
+    df: pd.DataFrame, feature_type: str = "both"
+) -> pd.DataFrame:
+    """
+    Filters the given DataFrame to remove columns that correspond to the specified
+    feature type.
+
+    Parameters:
+    df (pd.DataFrame): The DataFrame to filter.
+    feature_type (str): The type of feature to filter. Can be "both", "native", or
+    "jSymbolic". Defaults to "both".
+
+    Returns:
+    pd.DataFrame: The filtered DataFrame.
+
+    Raises:
+    TypeError: If the input DataFrame is not a pandas DataFrame.
+    ValueError: If the feature_type parameter is not one of "both", "pitch", or "rhythm".
+    """
+    feature_ids = get_music21_features_ids(feature_type)
+    filtered_cols = [
+        col
+        for col in df.columns
+        if not any(col.startswith(feature_id) for feature_id in feature_ids)
+    ]
+    return df[filtered_cols]
+
+
+def get_music21_features_ids(feature_type="both"):
+    """
+    Returns the list of features extracted by music21's module (IDs). It iterates all
+    the classes found in the music21.features.jSymbolic.featureExtractors or
+    music21.features.native.featureExtractors object (a list of classes) and returns a
+    list containing the static `id` field of each class.
+
+    Args:
+    - feature_type (str): A string representing the type of features to extract. Possible
+    values are 'jSymbolic', 'native', or 'both'. Default is 'both'.
+
+    Returns:
+    - features (list): A list of strings representing the IDs of the features extracted
+    by music21's module.
+    """
+    features = []
+    if feature_type == "jSymbolic":
+        feature_classes = music21.features.jSymbolic.featureExtractors
+    elif feature_type == "native":
+        feature_classes = music21.features.native.featureExtractors
+    else:
+        feature_classes = (
+            music21.features.jSymbolic.featureExtractors
+            + music21.features.native.featureExtractors
+        )
+    for feature_class in feature_classes:
+        features.append(feature_class.id)
+    return features
+
+
 @dataclass
 class FeatureSet:
+    """
+    A class representing a set of features for a dataset.
+
+    Attributes:
+    -----------
+    name : str
+        The name of the feature set.
+    filename_col : str
+        The column used for the filename.
+    label_col_selector : Union[List[str], str]
+        The column used for extracting labels.
+    illegal_cols : List[str]
+        A list of columns to be removed from the dataset.
+    accepted_exts : Tuple[str]
+        A tuple of accepted file extensions.
+    music21_filter : Optional[str]
+        A string with possible values `both`, `native` and `jSymbolic`. Defaults to
+        None, so no filtering is applied.
+
+    Methods:
+    --------
+    parse(df: pd.DataFrame) -> pd.DataFrame:
+        Removes the illegal columns from the given dataframe.
+
+    accepts(ext: str) -> bool:
+        Returns True if the given file extension is accepted, False otherwise.
+    """
+
     name: str
-    filename_col: str  # the column used for the filename
-    label_col_selector: Union[List[str], str]  # the column used for extracting labels
+    filename_col: str
+    label_col_selector: Union[List[str], str]
     illegal_cols: List[str]
     accepted_exts: Tuple[str]
+    music21_filter: Optional[str] = None
 
-    def parse(self, df: pd.DataFrame):
-        """Remove the illegal columns"""
+    def parse(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Removes the illegal columns from the given dataframe.
+
+        Parameters:
+        -----------
+        df : pd.DataFrame
+            The dataframe to be parsed.
+
+        Returns:
+        --------
+        pd.DataFrame
+            The parsed dataframe.
+        """
         if len(self.illegal_cols) > 0:
             df = df.drop(columns=self.illegal_cols)
+        if self.music21_filter is not None:
+            df = filter_music21_features(df, self.music21_filter)
         return df
 
-    def accepts(self, ext: str):
+    def accepts(self, ext: str) -> bool:
+        """
+        Returns True if the given file extension is accepted, False otherwise.
+
+        Parameters:
+        -----------
+        ext : str
+            The file extension to be checked.
+
+        Returns:
+        --------
+        bool
+            True if the file extension is accepted, False otherwise.
+        """
         return ext in self.accepted_exts
 
 
 feature_sets = [
     FeatureSet("musif", "FileName", "FileName", ["Id", "WindowId"], __all_exts__),
+    FeatureSet(
+        "musif_native",
+        "FileName",
+        "FileName",
+        ["Id", "WindowId"],
+        __all_exts__,
+        music21_filter="all",
+    ),
     FeatureSet("music21", "FileName_0", "FileName_0", [], __all_exts__),
+    FeatureSet(
+        "music21_native",
+        "FileName_0",
+        "FileName_0",
+        [],
+        __all_exts__,
+        music21_filter="native",
+    ),
+    # FeatureSet(
+    #     "music21_jSymbolic",
+    #     "FileName_0",
+    #     "FileName_0",
+    #     [],
+    #     __all_exts__,
+    #     music21_filter="jSymbolic",
+    # ),
     FeatureSet("jsymbolic", "Unnamed: 0", "Unnamed: 0", [], [".mid"]),
 ]
 
@@ -41,7 +182,7 @@ feature_sets = [
 @dataclass
 class Dataset:
     name: str
-    make_label: Callable[pd.DataFrame, pd.Series]
+    make_label: Callable[[pd.DataFrame, str], pd.Series]
     label_content: str
     extensions: List[str]
     legal_filenames: str = r".*"
@@ -57,13 +198,29 @@ class Dataset:
         df: pd.DataFrame,
         filename_col: str,
         label_col_selector: str,
-        remove_col_label=True,
-    ):
-        """Parse a dataframe: remove unwanted rows, create label, and removes label col.
-        If nsplits is not None (default) only classes with cardinality > 2*nsplits are
-        retained.
-        Returns X an y"""
+        remove_col_label: bool = True,
+    ) -> Tuple[pd.DataFrame, pd.Series, pd.Series]:
+        """
+        Parses a dataframe by removing unwanted rows, creating label, and removing label
+        column. If nsplits is not None (default) only classes with cardinality >
+        2*nsplits are retained.
 
+        Parameters:
+        -----------
+        df : pd.DataFrame
+            The input dataframe to be parsed.
+        filename_col : str
+            The name of the column containing the filenames.
+        label_col_selector : str
+            The name of the column containing the labels.
+        remove_col_label : bool, optional
+            Whether to remove the label column or not. Default is True.
+
+        Returns:
+        --------
+        Tuple[pd.DataFrame, pd.Series, pd.Series]
+            Returns a tuple containing the parsed dataframe, the labels, and the filenames.
+        """
         df, y = self.make_label(df, label_col_selector)
 
         # removing invalid rows
@@ -191,10 +348,36 @@ datasets = [
 
 @dataclass
 class Task:
+    """
+    A class representing a task to be performed on a dataset.
+
+    Attributes:
+    dataset (Dataset): The dataset to perform the task on.
+    feature_set (FeatureSet): The feature set to use for the task.
+    extension (str): The file extension of the dataset.
+    __loaded (bool): A private attribute to keep track of whether the dataset has been
+        loaded.
+    name (str): The name of the task.
+    x (pd.DataFrame): The feature matrix of the dataset.
+    y (pd.Series): The label vector of the dataset.
+    filenames_ (pd.Series): The filenames of the dataset.
+
+    Methods:
+    __post_init__: A method to initialize the object after it has been created.
+    load_csv: A method to load the CSV file and clean it.
+    intersect: A method to intersect the filenames of the current Task object with the
+        filenames of the Task objects in the input list.
+    get_csv_path: A method to get the path of the CSV file.
+    """
+
     dataset: Dataset
     feature_set: FeatureSet
     extension: str
     __loaded = False
+    name: str
+    x: pd.DataFrame
+    y: pd.Series
+    filenames_: pd.Series
 
     def __post_init__(self):
         assert (
@@ -209,7 +392,18 @@ class Task:
         )
 
     def load_csv(self):
-        """Load the CSV file and clean it."""
+        """
+        A method to load the CSV file and clean it.
+
+        Parameters:
+        None
+
+        Returns:
+        None
+
+        Raises:
+        FileNotFoundError: If the task doesn't have a CSV file.
+        """
         if not self.__loaded:
             # load csv
             csv_path = self.get_csv_path()
@@ -234,10 +428,28 @@ class Task:
             # keep only numeric data
             self.x = self.x.select_dtypes([int, float])
 
+            # take only the first 10 Principal Components
+            if S.KEEP_FIRST_10_PC:
+                pca = PCA(n_components=10)
+                self.x = pca.fit_transform(self.x)
+
             # remove columns that are not features (only musif)
             self.__loaded = True
 
     def intersect(self, intersect: List["Task"]):
+        """
+        A method to intersect the filenames of the current Task object with the
+        filenames of the Task objects in the input list.
+
+        Parameters:
+        intersect (List["Task"]): A list of Task objects to intersect filenames with.
+
+        Returns:
+        None
+
+        Raises:
+        N/A
+        """
         intersect_rows = []
         for task in intersect:
             if not hasattr(task, "x"):
@@ -257,7 +469,87 @@ class Task:
         return Path(S.OUTPUT) / self.dataset.name / csv_name
 
 
+@dataclass
+class ConcatTask(Task):
+    """
+    A class to represent a concatenation task.
+
+    Attributes
+    ----------
+    tasks : List[Task]
+        A list of tasks to be concatenated.
+
+    Methods
+    -------
+    load_csv()
+        Load the csv files of the tasks and concatenate them across columns.
+    """
+
+    tasks: List[Task]
+
+    def __post_init__(self):
+        assert len(self.tasks) >= 2, "ConcatTask must have at least 2 tasks"
+        extensions = [task.extension for task in self.tasks]
+        assert all(ext == extensions[0] for ext in extensions), "Extensions must match"
+        friendly_names = [task.dataset.friendly_name for task in self.tasks]
+        assert all(
+            name == friendly_names[0] for name in friendly_names
+        ), "Datasets must match"
+
+        self.dataset = self.tasks[0].dataset
+        self.extension = extensions[0]
+        feature_set_names = [task.feature_set.name for task in self.tasks]
+        self.name = (
+            friendly_names[0]
+            + "-"
+            + "-".join(feature_set_names)
+            + "-"
+            + extensions[0][1:]
+        )
+
+    def load_csv(self):
+        """
+        Load the csv files of the tasks and concatenate them across columns, using
+        the columns with names `feature_set.filename_col` as index of the dataframes.
+        """
+        self.tasks[0].load_csv()
+        self.y = self.tasks[0].y
+        self.filenames_ = self.tasks[0].filenames_
+        self.x = self.tasks[0].x
+        for task in self.tasks[1:]:
+            task.load_csv()
+            assert (self.y == task.y).all(), "Labels must match"
+            assert (self.filenames_ == task.filenames_).all(), "Filenames_ must match"
+            self.x = pd.concat([self.x, task.x], axis=1, join="inner")
+
+    def get_csv_path(self):
+        raise NotImplementedError("ConcatTask doesn't have a single CSV file")
+
+
+concat_tasks = [
+    ("musif_native", "jSymbolic"),
+    ("musif_native", "music21_native"),
+    # ("musif_native", "music21"),
+    ("music21_native", "jSymbolic"),
+    ("musif_native", "music21_native", "jSymbolic"),
+]
+
+
 def load_tasks():
+    """
+    Loads tasks from datasets and feature sets, and creates an intersection of files.
+
+    Returns:
+    --------
+    tasks : list
+        A list of Task objects.
+
+    Raises:
+    -------
+    FileNotFoundError:
+        If a csv file is not found while loading.
+
+    """
     tasks = [
         Task(d, f, e)
         for d in datasets
@@ -265,6 +557,15 @@ def load_tasks():
         for f in feature_sets
         if f.accepts(e)
     ]
+
+    # Adding concat tasks
+    for c in concat_tasks:
+        to_concat = []
+        for t in tasks:
+            if t.feature_set.name in c:
+                to_concat.append(t)
+        tasks.append(ConcatTask(to_concat))
+
     # forcing the intersection of files:
     # 1. load all csv files
     for t in track(tasks, description="Loading CSV files..."):
@@ -276,4 +577,5 @@ def load_tasks():
     for t in tasks:
         t.intersect(tasks)
 
+    logger.info(len(tasks), "tasks loaded")
     return tasks
