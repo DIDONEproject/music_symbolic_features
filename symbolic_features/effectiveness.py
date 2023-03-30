@@ -1,13 +1,16 @@
 from dataclasses import dataclass
 
 import autosklearn.metrics
+import numpy as np
 import plotly.express as px
 from autosklearn.classification import AutoSklearnClassifier
+from joblib import Parallel, delayed
+from rich.progress import track
 from sklearn.dummy import DummyClassifier
 from sklearn.model_selection import StratifiedKFold, cross_validate
 
 from . import settings as S
-from .data import TASKS, Task
+from .data import Task, load_tasks
 from .utils import AbstractMain, logger, plotly_save
 
 
@@ -16,37 +19,37 @@ def random_guessing(task, splitter):
     Run each of the dummy strategies a given number of times and return the
     maximum value.
     """
-    # Initialize a dictionary to store the results for each strategy
-    results = {}
+    strategies = ["most_frequent", "stratified", "uniform"]
 
     if splitter is None:
         splitter = 5
 
-    for _ in range(S.DUMMY_TRIALS):
-        # Define a dictionary with the different strategies to try
-        strategies = {
-            "most_frequent": DummyClassifier(strategy="most_frequent"),
-            "stratified": DummyClassifier(strategy="stratified",
-                                          random_state=113),
-            "uniform": DummyClassifier(strategy="uniform",
-                                       random_state=120),
-        }
+    def compute_scores(idx, strategy_name, task, splitter):
+        strategy = DummyClassifier(strategy=strategy_name, random_state=idx)
+        scores = cross_validate(
+            estimator=strategy,
+            X=task.x,
+            y=task.y,
+            cv=splitter,
+            scoring=["balanced_accuracy"],
+            return_train_score=False,
+        )
+        return strategy_name, scores["test_balanced_accuracy"].mean()
 
-        # Loop through each strategy
-        for strategy_name, strategy in strategies.items():
-            # Use cross_validate to get the scores for the strategy
-            scores = cross_validate(
-                estimator=strategy,
-                X=task.x,
-                y=task.y,
-                cv=splitter,
-                scoring=["balanced_accuracy"],
-                return_train_score=False,
+    scores = Parallel(n_jobs=-1)(
+        delayed(compute_scores)(idx, strategy_name, task, splitter)
+        for strategy_name, idx in track(
+            zip(
+                strategies * S.DUMMY_TRIALS,
+                range(len(strategies * S.DUMMY_TRIALS)),
+                description="Dummy strategies",
             )
+        )
+    )
 
-            # Add the mean score for the strategy to the results dictionary
-            results[strategy_name] = scores["test_balanced_accuracy"].mean()
-    return max(results.values())
+    scores = [np.mean([v for k_, v in scores if k_ == k]) for k in strategies]
+
+    return max(scores)
 
 
 def plot_time_performance(performance_data, fname=None):
@@ -69,11 +72,9 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     Apply AutoSklearn to a task and saves csv of the optimization if output is not
     None
     """
-    if task.extension != ".mid":
-        return
     logger.info(f"Starting AutoML on {task.name}")
     if S.DEBUG:
-        smac_scenario_args = None # {"runcount_limit": 2}
+        smac_scenario_args = None  # {"runcount_limit": 2}
         metalearning = 25
         automl_time = 300
     else:
@@ -120,7 +121,7 @@ def add_task_result(performances, pot, task):
     pot_copy = pot.copy()  # to avoid pandas warnings...
     pot_copy["Timestamp"] = pot["Timestamp"] - pot["Timestamp"].min()
     # store data
-    dataset_key = task.dataset.friendly_name + "-" + task.extension
+    dataset_key = task.dataset.friendly_name + "-" + task.extension[1:]  # no dot
     if dataset_key in performances:
         performances[dataset_key][task.feature_set.name] = pot_copy
     else:
@@ -136,10 +137,10 @@ class Main(AbstractMain):
         if self.debug:
             print("press C to continue ")
             __import__("ipdb").set_trace()
-        splitter = StratifiedKFold(S.SPLITS)
+        splitter = StratifiedKFold(S.SPLITS, random_state=42, shuffle=True)
 
         performances = {}
-        for task in TASKS:
+        for task in load_tasks():
             pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
             if pot is None:
                 continue

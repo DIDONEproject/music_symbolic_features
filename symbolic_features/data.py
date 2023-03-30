@@ -257,20 +257,23 @@ class Task:
         return Path(S.OUTPUT) / self.dataset.name / csv_name
 
 
-TASKS = [
-    Task(d, f, e)
-    for d in datasets
-    for e in d.extensions
-    for f in feature_sets
-    if f.accepts(e)
-]
-# forcing the intersection of files:
-# 1. load all csv files
-for t in track(TASKS, description="Loading CSV files..."):
-    try:
-        t.load_csv()
-    except FileNotFoundError:
-        continue
-# 2. use the other csv files to create the intersection
-for t in TASKS:
-    t.intersect(TASKS)
+def load_tasks():
+    tasks = [
+        Task(d, f, e)
+        for d in datasets
+        for e in d.extensions
+        for f in feature_sets
+        if f.accepts(e)
+    ]
+    # forcing the intersection of files:
+    # 1. load all csv files
+    for t in track(tasks, description="Loading CSV files..."):
+        try:
+            t.load_csv()
+        except FileNotFoundError:
+            continue
+    # 2. use the other csv files to create the intersection
+    for t in tasks:
+        t.intersect(tasks)
+
+    return tasks
