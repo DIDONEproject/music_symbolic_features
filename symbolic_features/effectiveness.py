@@ -42,8 +42,8 @@ def random_guessing(task, splitter):
             zip(
                 strategies * S.DUMMY_TRIALS,
                 range(len(strategies * S.DUMMY_TRIALS)),
-                description="Dummy strategies",
-            )
+            ),
+            description="Dummy strategies",
         )
     )
 
