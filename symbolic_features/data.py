@@ -164,7 +164,7 @@ datasets = [
         asap_label,
         "Composer",
         [".mid", ".xml"],
-        legal_filenames=r".+xml_score\.(?:xml|mid)",
+        legal_filenames=r".+xml_score\.(?:musicxml|mid)",
         friendly_name="asap-scores",
     ),
     Dataset(
