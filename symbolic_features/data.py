@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from rich.progress import track
 from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
 
 from . import settings as S
 from .utils import logger
@@ -110,6 +111,11 @@ class FeatureSet:
     illegal_cols: List[str]
     accepted_exts: Tuple[str]
     music21_filter: Optional[str] = None
+    csvname: Optional[str] = None
+
+    def __post_init__(self):
+        if self.csvname is None:
+            self.csvname = self.name
 
     def parse(self, df: pd.DataFrame) -> pd.DataFrame:
         """
@@ -157,6 +163,7 @@ feature_sets = [
         ["Id", "WindowId"],
         __all_exts__,
         music21_filter="all",
+        csvname="musif",
     ),
     FeatureSet("music21", "FileName_0", "FileName_0", [], __all_exts__),
     FeatureSet(
@@ -166,6 +173,7 @@ feature_sets = [
         [],
         __all_exts__,
         music21_filter="native",
+        csvname="music21",
     ),
     # FeatureSet(
     #     "music21_jSymbolic",
@@ -297,6 +305,7 @@ def ewld_label(df: pd.DataFrame, label_col_selector: str):
     y = db_df["genre"]
     idx = db_df["path_leadsheet"].isin(df[label_col_selector])
     y = y[idx]
+    y.index = df.index
     assert not y.isna().any(), "EWLD: NaN in y!"
     return df, y
 
@@ -357,7 +366,11 @@ class Task:
     extension (str): The file extension of the dataset.
     __loaded (bool): A private attribute to keep track of whether the dataset has been
         loaded.
+
+    Attributes (after __post_init__):
     name (str): The name of the task.
+
+    Attributes (after load_csv):
     x (pd.DataFrame): The feature matrix of the dataset.
     y (pd.Series): The label vector of the dataset.
     filenames_ (pd.Series): The filenames of the dataset.
@@ -373,11 +386,7 @@ class Task:
     dataset: Dataset
     feature_set: FeatureSet
     extension: str
-    __loaded = False
-    name: str
-    x: pd.DataFrame
-    y: pd.Series
-    filenames_: pd.Series
+    __loaded: bool = False
 
     def __post_init__(self):
         assert (
@@ -430,8 +439,15 @@ class Task:
 
             # take only the first 10 Principal Components
             if S.KEEP_FIRST_10_PC:
-                pca = PCA(n_components=10)
-                self.x = pca.fit_transform(self.x)
+                index = self.x.index
+                N = 10
+                scaler = StandardScaler()
+                pca = PCA(n_components=N)
+                self.x = pd.DataFrame(
+                    pca.fit_transform(scaler.fit_transform(self.x)),
+                    index=index,
+                    columns=[f"PC{i}" for i in range(N)],
+                )
 
             # remove columns that are not features (only musif)
             self.__loaded = True
@@ -450,8 +466,10 @@ class Task:
         Raises:
         N/A
         """
+        assert self.__loaded, f"Task {self.name} must be loaded before intersecting"
         intersect_rows = []
         for task in intersect:
+            assert task.__loaded, f"Task {task.name} must be loaded before intersecting"
             if not hasattr(task, "x"):
                 continue
             if (
@@ -465,11 +483,10 @@ class Task:
         self.y = self.y.loc[idx.values]
 
     def get_csv_path(self):
-        csv_name = self.feature_set.name + "-" + self.extension[1:] + ".csv"
+        csv_name = self.feature_set.csvname + "-" + self.extension[1:] + ".csv"
         return Path(S.OUTPUT) / self.dataset.name / csv_name
 
 
-@dataclass
 class ConcatTask(Task):
     """
     A class to represent a concatenation task.
@@ -485,9 +502,10 @@ class ConcatTask(Task):
         Load the csv files of the tasks and concatenate them across columns.
     """
 
-    tasks: List[Task]
+    def __init__(self, tasks: List[Task]):
+        self.tasks = tasks
+        self.__loaded = False
 
-    def __post_init__(self):
         assert len(self.tasks) >= 2, "ConcatTask must have at least 2 tasks"
         extensions = [task.extension for task in self.tasks]
         assert all(ext == extensions[0] for ext in extensions), "Extensions must match"
@@ -495,9 +513,12 @@ class ConcatTask(Task):
         assert all(
             name == friendly_names[0] for name in friendly_names
         ), "Datasets must match"
+        super().__init__(
+            self.tasks[0].dataset, self.tasks[0].feature_set, extensions[0]
+        )
 
-        self.dataset = self.tasks[0].dataset
-        self.extension = extensions[0]
+        # self.dataset = self.tasks[0].dataset
+        # self.extension = extensions[0]
         feature_set_names = [task.feature_set.name for task in self.tasks]
         self.name = (
             friendly_names[0]
@@ -512,15 +533,19 @@ class ConcatTask(Task):
         Load the csv files of the tasks and concatenate them across columns, using
         the columns with names `feature_set.filename_col` as index of the dataframes.
         """
-        self.tasks[0].load_csv()
-        self.y = self.tasks[0].y
-        self.filenames_ = self.tasks[0].filenames_
-        self.x = self.tasks[0].x
-        for task in self.tasks[1:]:
-            task.load_csv()
-            assert (self.y == task.y).all(), "Labels must match"
-            assert (self.filenames_ == task.filenames_).all(), "Filenames_ must match"
-            self.x = pd.concat([self.x, task.x], axis=1, join="inner")
+        if not self.__loaded:
+            self.tasks[0].load_csv()
+            self.filenames_ = self.tasks[0].filenames_.sort_values()
+            self.y = self.tasks[0].y[self.filenames_.index]
+            self.x = self.tasks[0].x.loc[self.filenames_.index]
+            for task in self.tasks[1:]:
+                task.load_csv()
+                # forcing the order of the files to be the same
+                y = task.y[task.filenames_.sort_values().index]
+                x = task.x.loc[task.filenames_.sort_values().index]
+                assert np.all(y.values == self.y.values), "Labels must match"
+                self.x = pd.concat([self.x, x], axis=1, join="inner")
+            self.__loaded = True
 
     def get_csv_path(self):
         raise NotImplementedError("ConcatTask doesn't have a single CSV file")
@@ -533,6 +558,16 @@ concat_tasks = [
     ("music21_native", "jSymbolic"),
     ("musif_native", "music21_native", "jSymbolic"),
 ]
+
+
+def load_task_csvs(tasks):
+    # 1. load all csv files
+    for t in track(tasks, "Loading CSV files"):
+        try:
+            t.load_csv()
+        except FileNotFoundError:
+            print(t.name, "not found")
+            continue
 
 
 def load_tasks():
@@ -558,24 +593,33 @@ def load_tasks():
         if f.accepts(e)
     ]
 
-    # Adding concat tasks
-    for c in concat_tasks:
-        to_concat = []
-        for t in tasks:
-            if t.feature_set.name in c:
-                to_concat.append(t)
-        tasks.append(ConcatTask(to_concat))
-
-    # forcing the intersection of files:
     # 1. load all csv files
-    for t in track(tasks, description="Loading CSV files..."):
-        try:
-            t.load_csv()
-        except FileNotFoundError:
-            continue
+    load_task_csvs(tasks)
+
     # 2. use the other csv files to create the intersection
     for t in tasks:
         t.intersect(tasks)
 
-    logger.info(len(tasks), "tasks loaded")
+    # 3. adding concat tasks
+    concat_tasks = []
+    for d in datasets:
+        for ext in d.extensions:
+            for c in concat_tasks:
+                to_concat = []
+                for t in tasks:
+                    if (
+                        t.feature_set.name in c
+                        and t.extension == ext
+                        and t.dataset.friendly_name == d.friendly_name
+                        and type(t) == Task
+                    ):
+                        to_concat.append(t)
+                if len(to_concat) > 1:
+                    concat_tasks.append(ConcatTask(to_concat))
+
+    # 4. load concat tasks
+    load_task_csvs(concat_tasks)
+    tasks += concat_tasks
+
+    logger.info(f"{len(tasks)} tasks loaded")
     return tasks

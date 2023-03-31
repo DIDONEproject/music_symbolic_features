@@ -4,3 +4,4 @@ datasets/
 telegram.json
 .pdm.toml
 musicxml2midi.sh
+symbolic_features/__pycache__
