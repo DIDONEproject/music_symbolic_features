@@ -562,7 +562,7 @@ concat_tasks = [
 
 def load_task_csvs(tasks):
     # 1. load all csv files
-    for t in track(tasks, "Loading CSV files"):
+    for t in track(tasks, description="Loading CSV files"):
         try:
             t.load_csv()
         except FileNotFoundError:

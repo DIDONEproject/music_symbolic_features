@@ -1,3 +1,4 @@
+import datetime
 from dataclasses import dataclass
 
 import autosklearn.metrics
@@ -142,8 +143,10 @@ class Main(AbstractMain):
         performances = {}
         for task in load_tasks():
             pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
+            # pot = __import__('pandas').read_csv(task.name + ".csv")
             if pot is None:
                 continue
+            # pot['Timestamp'] = __import__('pandas').to_datetime(pot['Timestamp'])
             add_task_result(performances, pot, task)
 
         # plotting the performances over time
@@ -159,18 +162,30 @@ class Main(AbstractMain):
                     .reset_index()
                 )
 
+            for k in dfs:
+                dfs[k]["Timestamp"] = (
+                    dfs[k]["Timestamp"]
+                    .dt.total_seconds()
+                    .astype(int)
+                    .apply(lambda x: str(datetime.timedelta(seconds=x)))
+                )
+
             fig = px.line()
 
             for name, df in dfs.items():
                 fig.add_scatter(
-                    x=df["Timestamp"], y=df["ensemble_optimization_score"], name=name
+                    x=df["Timestamp"],
+                    y=1 - df["ensemble_optimization_score"],
+                    name=name,
                 )
             fig.update_layout(
                 title=plot_name,
                 xaxis_title="Time",
-                yaxis_title=f"Avg {S.SPLITS}-fold Balanced Accuracy",
-                xaxis_tickformat="%Hh %Mm",
+                yaxis_title=f"Avg {S.SPLITS}-fold Mean Per Class Error",
+                xaxis_tickformat="H:M",
+                yaxis_type="log",
             )
+            fig.show()
             plotly_save(fig, plot_name + ".svg")
 
 
