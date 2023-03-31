@@ -481,6 +481,7 @@ class Task:
         idx = self.filenames_.isin(intersect_rows)
         self.x = self.x.loc[idx.values]
         self.y = self.y.loc[idx.values]
+        self.filenames_ = self.filenames_.loc[idx.values]
 
     def get_csv_path(self):
         csv_name = self.feature_set.csvname + "-" + self.extension[1:] + ".csv"
@@ -601,7 +602,7 @@ def load_tasks():
         t.intersect(tasks)
 
     # 3. adding concat tasks
-    concat_tasks = []
+    concat_tasks_ = []
     for d in datasets:
         for ext in d.extensions:
             for c in concat_tasks:
@@ -615,11 +616,12 @@ def load_tasks():
                     ):
                         to_concat.append(t)
                 if len(to_concat) > 1:
-                    concat_tasks.append(ConcatTask(to_concat))
+                    concat_tasks_.append(ConcatTask(to_concat))
+    logger.info(f"{len(concat_tasks_)} concat tasks created")
 
     # 4. load concat tasks
-    load_task_csvs(concat_tasks)
-    tasks += concat_tasks
+    load_task_csvs(concat_tasks_)
+    tasks += concat_tasks_
 
     logger.info(f"{len(tasks)} tasks loaded")
     return tasks

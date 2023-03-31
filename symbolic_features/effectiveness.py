@@ -73,6 +73,8 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
     Apply AutoSklearn to a task and saves csv of the optimization if output is not
     None
     """
+    logger.info("------------------------------")
+    logger.info("------------------------------")
     logger.info(f"Starting AutoML on {task.name}")
     if S.DEBUG:
         smac_scenario_args = None  # {"runcount_limit": 2}
@@ -185,7 +187,6 @@ class Main(AbstractMain):
                 xaxis_tickformat="H:M",
                 yaxis_type="log",
             )
-            fig.show()
             plotly_save(fig, plot_name + ".svg")
 
 
