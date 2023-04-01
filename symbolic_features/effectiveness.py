@@ -135,6 +135,7 @@ def add_task_result(performances, pot, task):
 @dataclass
 class Main(AbstractMain):
     debug: bool = False
+    keep_first_10_pc: bool = False
 
     def classification(self):
         if self.debug:

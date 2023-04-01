@@ -163,4 +163,8 @@ Detailed commands:
 
 ### Classification accuracy
 
-Reproduce experiments: `pdm classification`
+Reproduce experiments:
+* `pdm classification`: run all experiments with original features
+* `pdm classification --use_first_10_pc`: run all experiments with first 10 Principal
+  Components from each task (where a task is a combination of dataset, feature set, and
+  extension)
