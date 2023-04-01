@@ -298,6 +298,10 @@ def ewld_label(df: pd.DataFrame, label_col_selector: str):
     # remove duplicates
     db_df = db_df.groupby("path_leadsheet").first().reset_index()
 
+    # dort the dataframe by the label column and db_df by the path_leadsheet column
+    df = df.sort_values(by=label_col_selector)
+    db_df = db_df.sort_values(by="path_leadsheet")
+
     # select the rows in the DataFrame that match the database rows
     idx = df[label_col_selector].isin(db_df["path_leadsheet"])
     df = df[idx]
