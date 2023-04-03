@@ -9,6 +9,6 @@ JSYMBOLIC_JAR = "./tools/jSymbolic_2_2_user/jSymbolic2.jar"
 MSCORE_EXE = "/home/federico/bin/MuseScore-3.6.2.548021370-x86_64.AppImage"
 
 SPLITS = 10
-AUTOML_TIME = 3600
+AUTOML_TIME = 1800
 DUMMY_TRIALS = 1000
 KEEP_FIRST_10_PC = False
