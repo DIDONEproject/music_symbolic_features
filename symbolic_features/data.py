@@ -1,3 +1,5 @@
+import os
+import pickle
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
@@ -557,11 +559,11 @@ class ConcatTask(Task):
 
 
 concat_tasks = [
-    ("musif_native", "jSymbolic"),
+    ("musif_native", "jsymbolic"),
     ("musif_native", "music21_native"),
     # ("musif_native", "music21"),
-    ("music21_native", "jSymbolic"),
-    ("musif_native", "music21_native", "jSymbolic"),
+    ("music21_native", "jsymbolic"),
+    ("musif_native", "music21_native", "jsymbolic"),
 ]
 
 
@@ -584,12 +586,23 @@ def load_tasks():
     tasks : list
         A list of Task objects.
 
+    FileExistsError:
+        If the cache file is not found.
+
     Raises:
     -------
     FileNotFoundError:
         If a csv file is not found while loading.
 
     """
+
+    # check if the cache file exists
+    if os.path.isfile("tasks.pkl"):
+        logger.info("Loading tasks from file")
+        with open("tasks.pkl", "rb") as f:
+            return pickle.load(f)
+
+    # create tasks
     tasks = [
         Task(d, f, e)
         for d in datasets
@@ -628,4 +641,9 @@ def load_tasks():
     tasks += concat_tasks_
 
     logger.info(f"{len(tasks)} tasks loaded")
+
+    if not os.path.isfile("tasks.pkl"):
+        logger.info("Saving tasks to file")
+        with open("tasks.pkl", "wb") as f:
+            pickle.dump(tasks, f)
     return tasks

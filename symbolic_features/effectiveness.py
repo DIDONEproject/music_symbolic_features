@@ -137,19 +137,38 @@ class Main(AbstractMain):
     debug: bool = False
     keep_first_10_pc: bool = False
 
-    def classification(self):
+    def classification(
+        self, featureset: str = None, dataset: str = None, extension: str = None
+    ):
         if self.debug:
             print("press C to continue ")
             __import__("ipdb").set_trace()
         splitter = StratifiedKFold(S.SPLITS, random_state=42, shuffle=True)
 
+        for task in load_tasks():
+            # skipping tasks not matching the filters
+            if featureset is not None and featureset not in task.name:
+                continue
+            if dataset is not None and dataset not in task.name:
+                continue
+            if extension is not None and extension not in task.name:
+                continue
+            automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
+
+    def plot_performances(self):
+        import pandas as pd
+
         performances = {}
         for task in load_tasks():
-            pot = automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
-            # pot = __import__('pandas').read_csv(task.name + ".csv")
-            if pot is None:
-                continue
-            # pot['Timestamp'] = __import__('pandas').to_datetime(pot['Timestamp'])
+            try:
+                pot = pd.read_csv(task.name + ".csv")
+            except FileNotFoundError:
+                logger.warning(f"File {task.name}.csv not found")
+
+            try:
+                pot["Timestamp"] = pd.to_datetime(pot["Timestamp"])
+            except Exception as e:
+                logger.warning(f"Error converting Timestamp to datetime: {e}")
             add_task_result(performances, pot, task)
 
         # plotting the performances over time

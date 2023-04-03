@@ -168,3 +168,4 @@ Reproduce experiments:
 * `pdm classification --use_first_10_pc`: run all experiments with first 10 Principal
   Components from each task (where a task is a combination of dataset, feature set, and
   extension)
+* `pdm run python -m symbolic_features.effectiveness plot_performances`
