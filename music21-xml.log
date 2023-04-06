@@ -1,0 +1,64 @@
+2023-04-05 19:42:06: Trial number 1
+2023-04-05 19:42:06: Using music21 on datasets/didone extension .xml
+2023-04-05 19:42:06: Benchmarching command:
+2023-04-05 19:42:06:      python -m symbolic_features.music21 datasets/didone .xml features/didone/music21-xml
+2023-04-05 20:56:22: Using music21 on datasets/asap-dataset extension .xml
+2023-04-05 20:56:22: Benchmarching command:
+2023-04-05 20:56:22:      python -m symbolic_features.music21 datasets/asap-dataset .xml features/asap-dataset/music21-xml
+2023-04-05 21:07:21: Using music21 on datasets/mass-duos-corpus-josquin-larue extension .xml
+2023-04-05 21:07:21: Benchmarching command:
+2023-04-05 21:07:21:      python -m symbolic_features.music21 datasets/mass-duos-corpus-josquin-larue .xml features/mass-duos-corpus-josquin-larue/music21-xml
+2023-04-05 21:07:54: Using music21 on datasets/EWLD extension .xml
+2023-04-05 21:07:54: Benchmarching command:
+2023-04-05 21:07:54:      python -m symbolic_features.music21 datasets/EWLD .xml features/EWLD/music21-xml
+2023-04-05 21:34:30: Num processed files: {'datasets/quartets': 0, 'datasets/didone': 1642, 'datasets/asap-dataset': 235, 'datasets/mass-duos-corpus-josquin-larue': 115, 'datasets/EWLD': 5364, 'tot': 7356}
+2023-04-05 21:34:30: Max RAM (MB): 5.68e+03
+2023-04-05 21:34:30: Avg RAM (MB): 4.30e+03
+2023-04-05 21:34:30: CPU Time (sec): 7.92e+04
+2023-04-05 21:34:30: CPU Avg Time (sec): 1.08e+01
+2023-04-05 21:34:30: Real Time (sec): 6.71e+03
+2023-04-05 21:34:30: Real Avg Time (sec): 9.13e-01
+2023-04-05 21:34:30: _____________
+2023-04-05 21:34:30: Trial number 2
+2023-04-05 21:34:30: Using music21 on datasets/didone extension .xml
+2023-04-05 21:34:30: Benchmarching command:
+2023-04-05 21:34:30:      python -m symbolic_features.music21 datasets/didone .xml features/didone/music21-xml
+2023-04-05 22:48:51: Using music21 on datasets/asap-dataset extension .xml
+2023-04-05 22:48:51: Benchmarching command:
+2023-04-05 22:48:51:      python -m symbolic_features.music21 datasets/asap-dataset .xml features/asap-dataset/music21-xml
+2023-04-05 22:59:49: Using music21 on datasets/mass-duos-corpus-josquin-larue extension .xml
+2023-04-05 22:59:49: Benchmarching command:
+2023-04-05 22:59:49:      python -m symbolic_features.music21 datasets/mass-duos-corpus-josquin-larue .xml features/mass-duos-corpus-josquin-larue/music21-xml
+2023-04-05 23:00:23: Using music21 on datasets/EWLD extension .xml
+2023-04-05 23:00:23: Benchmarching command:
+2023-04-05 23:00:23:      python -m symbolic_features.music21 datasets/EWLD .xml features/EWLD/music21-xml
+2023-04-05 23:27:01: Num processed files: {'datasets/quartets': 0, 'datasets/didone': 1642, 'datasets/asap-dataset': 235, 'datasets/mass-duos-corpus-josquin-larue': 115, 'datasets/EWLD': 5364, 'tot': 7356}
+2023-04-05 23:27:01: Max RAM (MB): 5.55e+03
+2023-04-05 23:27:01: Avg RAM (MB): 4.33e+03
+2023-04-05 23:27:01: CPU Time (sec): 7.93e+04
+2023-04-05 23:27:01: CPU Avg Time (sec): 1.08e+01
+2023-04-05 23:27:01: Real Time (sec): 6.72e+03
+2023-04-05 23:27:01: Real Avg Time (sec): 9.14e-01
+2023-04-05 23:27:01: _____________
+2023-04-05 23:27:01: _____________
+2023-04-05 23:27:01: Number of errors  and time per dataset:
+2023-04-05 23:27:01: {'datasets/didone': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 52855.579999999994, 'clock_time': 4457.193019151688}, 'datasets/asap-dataset': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 7350.680000000001, 'clock_time': 657.3260247707367}, 'datasets/mass-duos-corpus-josquin-larue': {'n_errors': 0, 'ratio_errors': 0.0, 'cpu_time': 361.44, 'clock_time': 33.34474849700928}, 'datasets/EWLD': {'n_errors': -6, 'ratio_errors': -0.0011185682326621924, 'cpu_time': 18710.95, 'clock_time': 1572.753264427185}}
+2023-04-05 23:27:01: Statistics out of 2 trials
+2023-04-05 23:27:01: Averages:
+2023-04-05 23:27:01: Num processed files: {'datasets/quartets': 0, 'datasets/didone': 1642, 'datasets/asap-dataset': 235, 'datasets/mass-duos-corpus-josquin-larue': 115, 'datasets/EWLD': 5364, 'tot': 7356}
+2023-04-05 23:27:01: Max RAM (MB): 5.61e+03
+2023-04-05 23:27:01: Avg RAM (MB): 4.32e+03
+2023-04-05 23:27:01: CPU Time (sec): 7.92e+04
+2023-04-05 23:27:01: CPU Avg Time (sec): 1.08e+01
+2023-04-05 23:27:01: Real Time (sec): 6.72e+03
+2023-04-05 23:27:01: Real Avg Time (sec): 9.13e-01
+2023-04-05 23:27:01: _____________
+2023-04-05 23:27:01: Std (1 ddof):
+2023-04-05 23:27:01: Num processed files: {'datasets/quartets': 0, 'datasets/didone': 1642, 'datasets/asap-dataset': 235, 'datasets/mass-duos-corpus-josquin-larue': 115, 'datasets/EWLD': 5364, 'tot': 7356}
+2023-04-05 23:27:01: Max RAM (MB): 8.97e+01
+2023-04-05 23:27:01: Avg RAM (MB): 1.74e+01
+2023-04-05 23:27:01: CPU Time (sec): 6.04e+01
+2023-04-05 23:27:01: CPU Avg Time (sec): 8.21e-03
+2023-04-05 23:27:01: Real Time (sec): 4.80e+00
+2023-04-05 23:27:01: Real Avg Time (sec): 6.53e-04
+2023-04-05 23:27:01: _____________

@@ -5,3 +5,15 @@ telegram.json
 .pdm.toml
 musicxml2midi.sh
 symbolic_features/__pycache__
+eduardo.zip
+errors.log
+errors.short.log
+jsymbolic_errs.txt
+jsymbolic_output.txt
+music21_errs.txt
+music21_output.txt
+musif-krn.log
+musif.log
+musif_errs.txt
+musif_output.txt
+output.log
