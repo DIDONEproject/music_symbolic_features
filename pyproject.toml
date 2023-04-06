@@ -27,6 +27,8 @@ fix_names = "python -m symbolic_features.preprocess fix_invalid_filenames"
 convert2midi = "python -m symbolic_features.preprocess convert2midi"
 extract = "python -m symbolic_features.features extract" 
 classification = "python -m symbolic_features.effectiveness classification"
+plot = "python -m symbolic_features.effectiveness plot_performances"
+validation = {composite = ["classification --use_first_10_pc", "classification", "plot"]}
 install_pip = "python -m ensurepip"
 update_pip = "python -m pip install -U pip"
 # install_deps = "python -m pip install kaleido==0.2.1 musif==1.0.1 --ignore-requires-python"

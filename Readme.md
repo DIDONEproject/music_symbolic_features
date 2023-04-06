@@ -65,107 +65,15 @@ Detailed commands:
   * `pdm extract --music21 --extension .xml`
   * `pdm extract --music21 --extension .krn`
 
-
-### Results
-
-#### jSymbolic 2.2
-
-```
-2023-03-01 08:00:59: Number of errors  and time per dataset:
-2023-03-01 08:00:59: {'datasets/quartets': (0, 0.0, 103.32), 'datasets/didone': (14, 0.008526187576126675, 9360.95), 'datasets/asap-dataset': (0, 0.0, 4181.9), 'datasets/mass-duos-corpus-josquin-larue': (0, 0.0, 624.9799999999999), 'datasets/EWLD': (0, 0.0, 3991.41)}
-2023-03-01 08:00:59: Statistics out of 3 trials
-2023-03-01 08:00:59: Averages:
-2023-03-01 08:00:59: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-01 08:00:59: Max RAM (MB): 1.01e+04
-2023-03-01 08:00:59: Avg RAM (MB): 6.72e+03
-2023-03-01 08:00:59: Time (sec): 1.88e+04
-2023-03-01 08:00:59: Avg Time (sec): 2.24e+00
-2023-03-01 08:00:59: _____________
-2023-03-01 08:00:59: Std (1 ddof):
-2023-03-01 08:00:59: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-01 08:00:59: Max RAM (MB): 1.00e+03
-2023-03-01 08:00:59: Avg RAM (MB): 4.13e+02
-2023-03-01 08:00:59: Time (sec): 8.36e+02
-2023-03-01 08:00:59: Avg Time (sec): 9.99e-02
-2023-03-01 08:00:59: _____________
-```
-
-#### musif
-
-##### MIDI
-
-```
-``2023-03-02 14:31:17: Trial number 1
-2023-03-02 14:31:17: Using musif on datasets/quartets
-2023-03-02 14:34:18: Using musif on datasets/didone
-2023-03-02 15:18:39: Using musif on datasets/asap-dataset
-2023-03-02 15:21:44: Using musif on datasets/mass-duos-corpus-josquin-larue
-2023-03-02 15:22:12: Using musif on datasets/EWLD
-2023-03-02 15:23:54: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-02 15:23:54: Max RAM (MB): 7.78e+03
-2023-03-02 15:23:54: Avg RAM (MB): 5.05e+03
-2023-03-02 15:23:54: CPU Time (sec): 3.19e+03
-2023-03-02 15:23:54: CPU Avg Time (sec): 3.81e-01
-2023-03-02 15:23:54: Real Time (sec): 3.15e+03
-2023-03-02 15:23:54: Real Avg Time (sec): 3.77e-01
-2023-03-02 15:23:54: _____________
-2023-03-02 15:23:54: Trial number 2
-2023-03-02 15:23:54: Using musif on datasets/quartets
-2023-03-02 15:26:57: Using musif on datasets/didone
-2023-03-02 16:11:25: Using musif on datasets/asap-dataset
-2023-03-02 16:14:29: Using musif on datasets/mass-duos-corpus-josquin-larue
-2023-03-02 16:14:57: Using musif on datasets/EWLD
-2023-03-02 16:16:38: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-02 16:16:38: Max RAM (MB): 7.80e+03
-2023-03-02 16:16:38: Avg RAM (MB): 5.04e+03
-2023-03-02 16:16:38: CPU Time (sec): 3.60e+04
-2023-03-02 16:16:38: CPU Avg Time (sec): 4.31e+00
-2023-03-02 16:16:38: Real Time (sec): 3.16e+03
-2023-03-02 16:16:38: Real Avg Time (sec): 3.77e-01
-2023-03-02 16:16:38: _____________
-2023-03-02 16:16:38: Trial number 3
-2023-03-02 16:16:38: Using musif on datasets/quartets
-2023-03-02 16:19:39: Using musif on datasets/didone
-2023-03-02 17:03:59: Using musif on datasets/asap-dataset
-2023-03-02 17:07:03: Using musif on datasets/mass-duos-corpus-josquin-larue
-2023-03-02 17:07:31: Using musif on datasets/EWLD
-2023-03-02 17:09:13: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-02 17:09:13: Max RAM (MB): 7.79e+03
-2023-03-02 17:09:13: Avg RAM (MB): 5.02e+03
-2023-03-02 17:09:13: CPU Time (sec): 3.60e+04
-2023-03-02 17:09:13: CPU Avg Time (sec): 4.30e+00
-2023-03-02 17:09:13: Real Time (sec): 3.15e+03
-2023-03-02 17:09:13: Real Avg Time (sec): 3.76e-01
-2023-03-02 17:09:13: _____________
-2023-03-02 17:09:13: _____________
-2023-03-02 17:09:13: Number of errors  and time per dataset:
-2023-03-02 17:09:13: {'datasets/quartets': (0, 0.0, 1997.4, 178.2685890197754), 'datasets/didone': (1642, 1.0, 30749.149999999998, 2657.704596042633), 'datasets/asap-dataset': (1535, 1.0, 2039.28, 184.32103371620178), 'datasets/mass-duos-corpus-josquin-larue': (159, 0.47041420118343197, 270.88, 27.327765941619873), 'datasets/EWLD': (4489, 1.0, 899.24, 101.17113065719604)}
-2023-03-02 17:09:13: Statistics out of 3 trials
-2023-03-02 17:09:13: Averages:
-2023-03-02 17:09:13: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-02 17:09:13: Max RAM (MB): 7.79e+03
-2023-03-02 17:09:13: Avg RAM (MB): 5.04e+03
-2023-03-02 17:09:13: CPU Time (sec): 2.51e+04
-2023-03-02 17:09:13: CPU Avg Time (sec): 3.00e+00
-2023-03-02 17:09:13: Real Time (sec): 3.15e+03
-2023-03-02 17:09:13: Real Avg Time (sec): 3.77e-01
-2023-03-02 17:09:13: _____________
-2023-03-02 17:09:13: Std (1 ddof):
-2023-03-02 17:09:13: Num processed files: {'datasets/quartets': 363, 'datasets/didone': 1642, 'datasets/asap-dataset': 1535, 'datasets/mass-duos-corpus-josquin-larue': 338, 'datasets/EWLD': 4489, 'tot': 8367}
-2023-03-02 17:09:13: Max RAM (MB): 1.25e+01
-2023-03-02 17:09:13: Avg RAM (MB): 1.18e+01
-2023-03-02 17:09:13: CPU Time (sec): 1.89e+04
-2023-03-02 17:09:13: CPU Avg Time (sec): 2.26e+00
-2023-03-02 17:09:13: Real Time (sec): 4.35e+00
-2023-03-02 17:09:13: Real Avg Time (sec): 5.19e-04
-2023-03-02 17:09:13: _____________
-```
-
 ### Classification accuracy
 
-Reproduce experiments:
+Reproduce experiments: `pdm validation`
+
+Detailed commands
 * `pdm classification`: run all experiments with original features
 * `pdm classification --use_first_10_pc`: run all experiments with first 10 Principal
   Components from each task (where a task is a combination of dataset, feature set, and
   extension)
-* `pdm run python -m symbolic_features.effectiveness plot_performances`
+* `pdm plot`: plot the AutoML optimization score across time
+* `pdm classification --featureset='music21' --dataset='EWLD' --extension='mid'`: run an
+  experiment on a single task
