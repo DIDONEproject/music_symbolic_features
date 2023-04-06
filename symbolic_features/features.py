@@ -17,7 +17,7 @@ class Main(AbstractMain):
     datasets: dict = None
     jsymbolic_jar: str = None
     output: str = "features/"
-    n_trials_extraction: int = 3
+    n_trials_extraction: int = 2
     extension: str = ".mid"
 
     def _log_info(
