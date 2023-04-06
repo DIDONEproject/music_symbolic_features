@@ -600,7 +600,9 @@ def load_tasks():
     if os.path.isfile("tasks.pkl"):
         logger.info("Loading tasks from file")
         with open("tasks.pkl", "rb") as f:
-            return pickle.load(f)
+            tasks = pickle.load(f)
+        logger.info(f"{len(tasks)} tasks loaded")
+        return tasks
 
     # create tasks
     tasks = [
