@@ -1,0 +1,515 @@
+2023-04-06 11:41:09: Loading tasks from file
+2023-04-06 11:41:09: 84 tasks loaded
+2023-04-06 11:41:09: ------------------------------
+2023-04-06 11:41:09: ------------------------------
+2023-04-06 11:41:09: Starting AutoML on asap-scores-musif-mid
+2023-04-06 11:41:09: Shape of the X dataframe: (211, 10)
+2023-04-06 11:41:09: Number of labels in y: (7,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 382.9 it/s  
+2023-04-06 11:41:17: Random Guessing: 0.1428571428571428
+[WARNING] [2023-04-06 11:41:34,338:Client-AutoML(1993):2de7f2b0-d45f-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.337980)
+[WARNING] [2023-04-06 11:41:34,338:Client-AutoML(1993):2de7f2b0-d45f-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 12:11:32: Balanced accuracy: 7.43e-01
+2023-04-06 12:11:33: ------------------------------
+2023-04-06 12:11:33: ------------------------------
+2023-04-06 12:11:33: Starting AutoML on asap-scores-musif_native-mid
+2023-04-06 12:11:33: Shape of the X dataframe: (211, 10)
+2023-04-06 12:11:33: Number of labels in y: (7,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 388.8 it/s  
+2023-04-06 12:11:41: Random Guessing: 0.1428571428571428
+[WARNING] [2023-04-06 12:11:46,966:Client-AutoML(1993):6d1dfe5c-d463-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.325602)
+[WARNING] [2023-04-06 12:11:46,966:Client-AutoML(1993):6d1dfe5c-d463-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 12:41:41: Balanced accuracy: 6.44e-01
+2023-04-06 12:41:41: ------------------------------
+2023-04-06 12:41:41: ------------------------------
+2023-04-06 12:41:41: Starting AutoML on asap-scores-music21-mid
+2023-04-06 12:41:41: Shape of the X dataframe: (211, 10)
+2023-04-06 12:41:41: Number of labels in y: (7,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 373.7 it/s  
+2023-04-06 12:41:50: Random Guessing: 0.14576156462585033
+[WARNING] [2023-04-06 12:42:09,058:Client-AutoML(1993):a30767eb-d467-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.301387)
+[WARNING] [2023-04-06 12:42:09,058:Client-AutoML(1993):a30767eb-d467-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 13:12:04: Balanced accuracy: 7.81e-01
+2023-04-06 13:12:04: ------------------------------
+2023-04-06 13:12:04: ------------------------------
+2023-04-06 13:12:04: Starting AutoML on asap-scores-music21_native-mid
+2023-04-06 13:12:04: Shape of the X dataframe: (211, 10)
+2023-04-06 13:12:04: Number of labels in y: (7,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 369.7 it/s  
+2023-04-06 13:12:13: Random Guessing: 0.14576156462585033
+[WARNING] [2023-04-06 13:12:18,431:Client-AutoML(1993):e1e2691c-d46b-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.266079)
+[WARNING] [2023-04-06 13:12:18,431:Client-AutoML(1993):e1e2691c-d46b-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 13:42:14: Balanced accuracy: 7.51e-01
+2023-04-06 13:42:14: ------------------------------
+2023-04-06 13:42:14: ------------------------------
+2023-04-06 13:42:14: Starting AutoML on asap-scores-jsymbolic-mid
+2023-04-06 13:42:14: Shape of the X dataframe: (211, 10)
+2023-04-06 13:42:14: Number of labels in y: (7,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.8 it/s  
+2023-04-06 13:42:23: Random Guessing: 0.14576156462585033
+[WARNING] [2023-04-06 13:42:31,832:Client-AutoML(1993):18829fd0-d470-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.295763)
+[WARNING] [2023-04-06 13:42:31,832:Client-AutoML(1993):18829fd0-d470-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 14:12:32: Balanced accuracy: 7.80e-01
+2023-04-06 14:12:32: ------------------------------
+2023-04-06 14:12:32: ------------------------------
+2023-04-06 14:12:32: Starting AutoML on asap-scores-musif-xml
+2023-04-06 14:12:32: Shape of the X dataframe: (201, 10)
+2023-04-06 14:12:32: Number of labels in y: (6,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 380.3 it/s  
+2023-04-06 14:12:40: Random Guessing: 0.17071273809523807
+[WARNING] [2023-04-06 14:12:54,861:Client-AutoML(1993):53eda583-d474-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.303215)
+[WARNING] [2023-04-06 14:12:54,861:Client-AutoML(1993):53eda583-d474-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 14:42:53: Balanced accuracy: 7.73e-01
+2023-04-06 14:42:53: ------------------------------
+2023-04-06 14:42:53: ------------------------------
+2023-04-06 14:42:53: Starting AutoML on asap-scores-musif_native-xml
+2023-04-06 14:42:53: Shape of the X dataframe: (201, 10)
+2023-04-06 14:42:53: Number of labels in y: (6,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 382.2 it/s  
+2023-04-06 14:43:01: Random Guessing: 0.17071273809523807
+[WARNING] [2023-04-06 14:43:16,652:Client-AutoML(1993):914c25b1-d478-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.245942)
+[WARNING] [2023-04-06 14:43:16,652:Client-AutoML(1993):914c25b1-d478-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 15:13:11: Balanced accuracy: 6.69e-01
+2023-04-06 15:13:12: ------------------------------
+2023-04-06 15:13:12: ------------------------------
+2023-04-06 15:13:12: Starting AutoML on asap-scores-music21-xml
+2023-04-06 15:13:12: Shape of the X dataframe: (201, 10)
+2023-04-06 15:13:12: Number of labels in y: (6,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 369.2 it/s  
+2023-04-06 15:13:20: Random Guessing: 0.16968448412698411
+[WARNING] [2023-04-06 15:13:24,092:Client-AutoML(1993):cd6a009d-d47c-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.260087)
+[WARNING] [2023-04-06 15:13:24,092:Client-AutoML(1993):cd6a009d-d47c-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 15:43:21: Balanced accuracy: 7.59e-01
+2023-04-06 15:43:21: ------------------------------
+2023-04-06 15:43:21: ------------------------------
+2023-04-06 15:43:21: Starting AutoML on asap-scores-music21_native-xml
+2023-04-06 15:43:21: Shape of the X dataframe: (201, 10)
+2023-04-06 15:43:21: Number of labels in y: (6,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 377.1 it/s  
+2023-04-06 15:43:30: Random Guessing: 0.16968448412698411
+[WARNING] [2023-04-06 15:43:51,404:Client-AutoML(1993):03f3fc2d-d481-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.286780)
+[WARNING] [2023-04-06 15:43:51,404:Client-AutoML(1993):03f3fc2d-d481-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 16:13:48: Balanced accuracy: 7.45e-01
+2023-04-06 16:13:49: ------------------------------
+2023-04-06 16:13:49: ------------------------------
+2023-04-06 16:13:49: Starting AutoML on asap-performance-musif-mid
+2023-04-06 16:13:49: Shape of the X dataframe: (1027, 10)
+2023-04-06 16:13:49: Number of labels in y: (10,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 283.7 it/s  
+2023-04-06 16:14:00: Random Guessing: 0.10030268278920763
+[WARNING] [2023-04-06 16:14:03,652:Client-AutoML(1993):46c7a6d2-d485-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.257556)
+[WARNING] [2023-04-06 16:14:03,652:Client-AutoML(1993):46c7a6d2-d485-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 16:44:02: Balanced accuracy: 9.60e-01
+2023-04-06 16:44:02: ------------------------------
+2023-04-06 16:44:02: ------------------------------
+2023-04-06 16:44:02: Starting AutoML on asap-performance-musif_native-mid
+2023-04-06 16:44:02: Shape of the X dataframe: (1027, 10)
+2023-04-06 16:44:02: Number of labels in y: (10,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 301.1 it/s  
+2023-04-06 16:44:13: Random Guessing: 0.10030268278920763
+[WARNING] [2023-04-06 16:44:14,844:Client-AutoML(1993):7f6c08d8-d489-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.253381)
+[WARNING] [2023-04-06 16:44:14,844:Client-AutoML(1993):7f6c08d8-d489-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 17:14:13: Balanced accuracy: 7.15e-01
+2023-04-06 17:14:13: ------------------------------
+2023-04-06 17:14:13: ------------------------------
+2023-04-06 17:14:13: Starting AutoML on asap-performance-music21-mid
+2023-04-06 17:14:13: Shape of the X dataframe: (1027, 10)
+2023-04-06 17:14:13: Number of labels in y: (10,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 284.8 it/s  
+2023-04-06 17:14:24: Random Guessing: 0.10000000000000002
+[WARNING] [2023-04-06 17:14:25,868:Client-AutoML(1993):b710b377-d48d-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.260458)
+[WARNING] [2023-04-06 17:14:25,868:Client-AutoML(1993):b710b377-d48d-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 17:44:22: Balanced accuracy: 9.78e-01
+2023-04-06 17:44:22: ------------------------------
+2023-04-06 17:44:22: ------------------------------
+2023-04-06 17:44:22: Starting AutoML on asap-performance-music21_native-mid
+2023-04-06 17:44:22: Shape of the X dataframe: (1027, 10)
+2023-04-06 17:44:22: Number of labels in y: (10,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.7 it/s  
+2023-04-06 17:44:33: Random Guessing: 0.10000000000000002
+[WARNING] [2023-04-06 17:44:39,182:Client-AutoML(1993):ed5e1e83-d491-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.254608)
+[WARNING] [2023-04-06 17:44:39,182:Client-AutoML(1993):ed5e1e83-d491-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 18:14:35: Balanced accuracy: 9.76e-01
+2023-04-06 18:14:35: ------------------------------
+2023-04-06 18:14:35: ------------------------------
+2023-04-06 18:14:35: Starting AutoML on asap-performance-jsymbolic-mid
+2023-04-06 18:14:35: Shape of the X dataframe: (1027, 10)
+2023-04-06 18:14:35: Number of labels in y: (10,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 279.9 it/s  
+2023-04-06 18:14:46: Random Guessing: 0.10000000000000002
+[WARNING] [2023-04-06 18:14:48,511:Client-AutoML(1993):25dded39-d496-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.219266)
+[WARNING] [2023-04-06 18:14:48,511:Client-AutoML(1993):25dded39-d496-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 18:44:51: Balanced accuracy: 9.16e-01
+2023-04-06 18:44:51: ------------------------------
+2023-04-06 18:44:51: ------------------------------
+2023-04-06 18:44:51: Starting AutoML on didone-musif-mid
+2023-04-06 18:44:51: Shape of the X dataframe: (1622, 10)
+2023-04-06 18:44:51: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 248.2 it/s  
+2023-04-06 18:45:03: Random Guessing: 0.12543133994225802
+[WARNING] [2023-04-06 18:45:06,837:Client-AutoML(1993):6130e470-d49a-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.257261)
+[WARNING] [2023-04-06 18:45:06,837:Client-AutoML(1993):6130e470-d49a-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 19:15:06: Balanced accuracy: 3.59e-01
+2023-04-06 19:15:06: ------------------------------
+2023-04-06 19:15:06: ------------------------------
+2023-04-06 19:15:06: Starting AutoML on didone-musif_native-mid
+2023-04-06 19:15:06: Shape of the X dataframe: (1622, 10)
+2023-04-06 19:15:06: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 238.3 it/s  
+2023-04-06 19:15:19: Random Guessing: 0.12543133994225802
+[WARNING] [2023-04-06 19:15:21,309:Client-AutoML(1993):9b9bee62-d49e-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.254215)
+[WARNING] [2023-04-06 19:15:21,309:Client-AutoML(1993):9b9bee62-d49e-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 19:45:17: Balanced accuracy: 3.62e-01
+2023-04-06 19:45:17: ------------------------------
+2023-04-06 19:45:17: ------------------------------
+2023-04-06 19:45:17: Starting AutoML on didone-music21-mid
+2023-04-06 19:45:17: Shape of the X dataframe: (1622, 10)
+2023-04-06 19:45:17: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 234.1 it/s  
+2023-04-06 19:45:30: Random Guessing: 0.12543658244625727
+[WARNING] [2023-04-06 19:45:32,319:Client-AutoML(1993):d2f5eea0-d4a2-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.244020)
+[WARNING] [2023-04-06 19:45:32,319:Client-AutoML(1993):d2f5eea0-d4a2-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 20:15:32: Balanced accuracy: 4.03e-01
+2023-04-06 20:15:33: ------------------------------
+2023-04-06 20:15:33: ------------------------------
+2023-04-06 20:15:33: Starting AutoML on didone-music21_native-mid
+2023-04-06 20:15:33: Shape of the X dataframe: (1622, 10)
+2023-04-06 20:15:33: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 239.8 it/s  
+2023-04-06 20:15:46: Random Guessing: 0.12543658244625727
+[WARNING] [2023-04-06 20:15:47,529:Client-AutoML(1993):0cf49627-d4a7-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.244976)
+[WARNING] [2023-04-06 20:15:47,529:Client-AutoML(1993):0cf49627-d4a7-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 20:45:48: Balanced accuracy: 3.80e-01
+2023-04-06 20:45:48: ------------------------------
+2023-04-06 20:45:48: ------------------------------
+2023-04-06 20:45:48: Starting AutoML on didone-jsymbolic-mid
+2023-04-06 20:45:48: Shape of the X dataframe: (1622, 10)
+2023-04-06 20:45:48: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.1 it/s  
+2023-04-06 20:46:01: Random Guessing: 0.12543658244625727
+[WARNING] [2023-04-06 20:46:03,161:Client-AutoML(1993):4727e0ef-d4ab-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.242953)
+[WARNING] [2023-04-06 20:46:03,161:Client-AutoML(1993):4727e0ef-d4ab-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 21:16:00: Balanced accuracy: 4.43e-01
+2023-04-06 21:16:00: ------------------------------
+2023-04-06 21:16:00: ------------------------------
+2023-04-06 21:16:00: Starting AutoML on didone-musif-xml
+2023-04-06 21:16:00: Shape of the X dataframe: (1636, 10)
+2023-04-06 21:16:00: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 241.8 it/s  
+2023-04-06 21:16:13: Random Guessing: 0.12561257363796077
+[WARNING] [2023-04-06 21:16:15,019:Client-AutoML(1993):7ef19b41-d4af-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.098352)
+[WARNING] [2023-04-06 21:16:15,019:Client-AutoML(1993):7ef19b41-d4af-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 21:46:13: Balanced accuracy: 3.98e-01
+2023-04-06 21:46:13: ------------------------------
+2023-04-06 21:46:13: ------------------------------
+2023-04-06 21:46:13: Starting AutoML on didone-musif_native-xml
+2023-04-06 21:46:13: Shape of the X dataframe: (1636, 10)
+2023-04-06 21:46:13: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 235.3 it/s  
+2023-04-06 21:46:26: Random Guessing: 0.12561257363796077
+[WARNING] [2023-04-06 21:46:28,371:Client-AutoML(1993):b7bb753d-d4b3-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.189029)
+[WARNING] [2023-04-06 21:46:28,371:Client-AutoML(1993):b7bb753d-d4b3-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 22:16:25: Balanced accuracy: 3.99e-01
+2023-04-06 22:16:25: ------------------------------
+2023-04-06 22:16:25: ------------------------------
+2023-04-06 22:16:25: Starting AutoML on didone-music21-xml
+2023-04-06 22:16:25: Shape of the X dataframe: (1636, 10)
+2023-04-06 22:16:25: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 237.0 it/s  
+2023-04-06 22:16:38: Random Guessing: 0.1254581452150997
+[WARNING] [2023-04-06 22:16:41,009:Client-AutoML(1993):efdb0c67-d4b7-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.221847)
+[WARNING] [2023-04-06 22:16:41,010:Client-AutoML(1993):efdb0c67-d4b7-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 22:46:38: Balanced accuracy: 3.84e-01
+2023-04-06 22:46:39: ------------------------------
+2023-04-06 22:46:39: ------------------------------
+2023-04-06 22:46:39: Starting AutoML on didone-music21_native-xml
+2023-04-06 22:46:39: Shape of the X dataframe: (1636, 10)
+2023-04-06 22:46:39: Number of labels in y: (8,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.5 it/s  
+2023-04-06 22:46:52: Random Guessing: 0.1254581452150997
+[WARNING] [2023-04-06 22:46:55,128:Client-AutoML(1993):28e38567-d4bc-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.236447)
+[WARNING] [2023-04-06 22:46:55,128:Client-AutoML(1993):28e38567-d4bc-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 23:16:52: Balanced accuracy: 3.74e-01
+2023-04-06 23:16:53: ------------------------------
+2023-04-06 23:16:53: ------------------------------
+2023-04-06 23:16:53: Starting AutoML on EWLD-musif-mid
+2023-04-06 23:16:53: Shape of the X dataframe: (2645, 10)
+2023-04-06 23:16:53: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 185.2 it/s  
+2023-04-06 23:17:09: Random Guessing: 0.09122029102117565
+[WARNING] [2023-04-06 23:17:11,065:Client-AutoML(1993):642face5-d4c0-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.219954)
+[WARNING] [2023-04-06 23:17:11,065:Client-AutoML(1993):642face5-d4c0-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-06 23:47:11: Balanced accuracy: 2.01e-01
+2023-04-06 23:47:11: ------------------------------
+2023-04-06 23:47:11: ------------------------------
+2023-04-06 23:47:11: Starting AutoML on EWLD-musif_native-mid
+2023-04-06 23:47:11: Shape of the X dataframe: (2645, 10)
+2023-04-06 23:47:11: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 187.5 it/s  
+2023-04-06 23:47:27: Random Guessing: 0.09122029102117565
+[WARNING] [2023-04-06 23:47:30,036:Client-AutoML(1993):9fd748b3-d4c4-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.224384)
+[WARNING] [2023-04-06 23:47:30,036:Client-AutoML(1993):9fd748b3-d4c4-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 00:17:29: Balanced accuracy: 1.57e-01
+2023-04-07 00:17:29: ------------------------------
+2023-04-07 00:17:29: ------------------------------
+2023-04-07 00:17:29: Starting AutoML on EWLD-music21-mid
+2023-04-07 00:17:29: Shape of the X dataframe: (2645, 10)
+2023-04-07 00:17:29: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 185.6 it/s  
+2023-04-07 00:17:46: Random Guessing: 0.09122029102117565
+[WARNING] [2023-04-07 00:17:48,121:Client-AutoML(1993):dbd5150f-d4c8-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.219642)
+[WARNING] [2023-04-07 00:17:48,121:Client-AutoML(1993):dbd5150f-d4c8-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 00:47:44: Balanced accuracy: 2.12e-01
+2023-04-07 00:47:44: ------------------------------
+2023-04-07 00:47:44: ------------------------------
+2023-04-07 00:47:44: Starting AutoML on EWLD-music21_native-mid
+2023-04-07 00:47:44: Shape of the X dataframe: (2645, 10)
+2023-04-07 00:47:44: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4 it/s  
+2023-04-07 00:48:01: Random Guessing: 0.09122029102117565
+[WARNING] [2023-04-07 00:48:03,015:Client-AutoML(1993):156d89b2-d4cd-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.211171)
+[WARNING] [2023-04-07 00:48:03,016:Client-AutoML(1993):156d89b2-d4cd-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 01:17:58: Balanced accuracy: 2.04e-01
+2023-04-07 01:17:59: ------------------------------
+2023-04-07 01:17:59: ------------------------------
+2023-04-07 01:17:59: Starting AutoML on EWLD-jsymbolic-mid
+2023-04-07 01:17:59: Shape of the X dataframe: (2645, 10)
+2023-04-07 01:17:59: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.2 it/s  
+2023-04-07 01:18:15: Random Guessing: 0.09122029102117565
+[WARNING] [2023-04-07 01:18:17,337:Client-AutoML(1993):4f235d73-d4d1-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.214448)
+[WARNING] [2023-04-07 01:18:17,337:Client-AutoML(1993):4f235d73-d4d1-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 01:48:16: Balanced accuracy: 2.57e-01
+2023-04-07 01:48:16: ------------------------------
+2023-04-07 01:48:16: ------------------------------
+2023-04-07 01:48:16: Starting AutoML on EWLD-musif-xml
+2023-04-07 01:48:16: Shape of the X dataframe: (3197, 10)
+2023-04-07 01:48:16: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 161.7 it/s  
+2023-04-07 01:48:35: Random Guessing: 0.09094994455092983
+[WARNING] [2023-04-07 01:48:38,516:Client-AutoML(1993):8bdc3784-d4d5-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.220368)
+[WARNING] [2023-04-07 01:48:38,516:Client-AutoML(1993):8bdc3784-d4d5-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 02:18:41: Balanced accuracy: 2.16e-01
+2023-04-07 02:18:41: ------------------------------
+2023-04-07 02:18:41: ------------------------------
+2023-04-07 02:18:41: Starting AutoML on EWLD-musif_native-xml
+2023-04-07 02:18:41: Shape of the X dataframe: (3197, 10)
+2023-04-07 02:18:41: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.5 it/s  
+2023-04-07 02:18:59: Random Guessing: 0.09094994455092983
+[WARNING] [2023-04-07 02:19:01,295:Client-AutoML(1993):cb29fedb-d4d9-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.199255)
+[WARNING] [2023-04-07 02:19:01,295:Client-AutoML(1993):cb29fedb-d4d9-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 02:48:58: Balanced accuracy: 1.85e-01
+2023-04-07 02:48:59: ------------------------------
+2023-04-07 02:48:59: ------------------------------
+2023-04-07 02:48:59: Starting AutoML on EWLD-music21-xml
+2023-04-07 02:48:59: Shape of the X dataframe: (3197, 10)
+2023-04-07 02:48:59: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 164.9 it/s  
+2023-04-07 02:49:17: Random Guessing: 0.09094994455092983
+[WARNING] [2023-04-07 02:49:19,014:Client-AutoML(1993):06a0235e-d4de-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.213912)
+[WARNING] [2023-04-07 02:49:19,014:Client-AutoML(1993):06a0235e-d4de-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 03:19:17: Balanced accuracy: 2.15e-01
+2023-04-07 03:19:17: ------------------------------
+2023-04-07 03:19:17: ------------------------------
+2023-04-07 03:19:17: Starting AutoML on EWLD-music21_native-xml
+2023-04-07 03:19:17: Shape of the X dataframe: (3197, 10)
+2023-04-07 03:19:17: Number of labels in y: (11,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.5 it/s  
+2023-04-07 03:19:36: Random Guessing: 0.09094994455092983
+[WARNING] [2023-04-07 03:19:38,196:Client-AutoML(1993):42b5c679-d4e2-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.211687)
+[WARNING] [2023-04-07 03:19:38,196:Client-AutoML(1993):42b5c679-d4e2-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 03:49:39: Balanced accuracy: 2.01e-01
+2023-04-07 03:49:39: ------------------------------
+2023-04-07 03:49:39: ------------------------------
+2023-04-07 03:49:39: Starting AutoML on JLR-musif-mid
+2023-04-07 03:49:39: Shape of the X dataframe: (109, 10)
+2023-04-07 03:49:39: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 381.8 it/s  
+2023-04-07 03:49:48: Random Guessing: 0.33374166666666666
+[WARNING] [2023-04-07 03:49:49,734:Client-AutoML(1993):7a71648f-d4e6-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.229234)
+[WARNING] [2023-04-07 03:49:49,734:Client-AutoML(1993):7a71648f-d4e6-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 04:19:47: Balanced accuracy: 7.00e-01
+2023-04-07 04:19:47: ------------------------------
+2023-04-07 04:19:47: ------------------------------
+2023-04-07 04:19:47: Starting AutoML on JLR-musif_native-mid
+2023-04-07 04:19:47: Shape of the X dataframe: (109, 10)
+2023-04-07 04:19:47: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 381.1 it/s  
+2023-04-07 04:19:55: Random Guessing: 0.33374166666666666
+[WARNING] [2023-04-07 04:19:57,412:Client-AutoML(1993):afe3d780-d4ea-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.230278)
+[WARNING] [2023-04-07 04:19:57,412:Client-AutoML(1993):afe3d780-d4ea-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 04:49:55: Balanced accuracy: 6.42e-01
+2023-04-07 04:49:56: ------------------------------
+2023-04-07 04:49:56: ------------------------------
+2023-04-07 04:49:56: Starting AutoML on JLR-music21-mid
+2023-04-07 04:49:56: Shape of the X dataframe: (109, 10)
+2023-04-07 04:49:56: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 400.1 it/s  
+2023-04-07 04:50:04: Random Guessing: 0.34417499999999995
+[WARNING] [2023-04-07 04:50:05,552:Client-AutoML(1993):e5ea16e3-d4ee-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.253714)
+[WARNING] [2023-04-07 04:50:05,552:Client-AutoML(1993):e5ea16e3-d4ee-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 05:20:03: Balanced accuracy: 7.79e-01
+2023-04-07 05:20:04: ------------------------------
+2023-04-07 05:20:04: ------------------------------
+2023-04-07 05:20:04: Starting AutoML on JLR-music21_native-mid
+2023-04-07 05:20:04: Shape of the X dataframe: (109, 10)
+2023-04-07 05:20:04: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 382.6 it/s  
+2023-04-07 05:20:12: Random Guessing: 0.34417499999999995
+[WARNING] [2023-04-07 05:20:14,064:Client-AutoML(1993):1babc770-d4f3-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.239794)
+[WARNING] [2023-04-07 05:20:14,064:Client-AutoML(1993):1babc770-d4f3-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 05:50:10: Balanced accuracy: 7.51e-01
+2023-04-07 05:50:10: ------------------------------
+2023-04-07 05:50:10: ------------------------------
+2023-04-07 05:50:10: Starting AutoML on JLR-jsymbolic-mid
+2023-04-07 05:50:10: Shape of the X dataframe: (109, 10)
+2023-04-07 05:50:10: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 380.0 it/s  
+2023-04-07 05:50:19: Random Guessing: 0.34417499999999995
+[WARNING] [2023-04-07 05:50:20,788:Client-AutoML(1993):50880730-d4f7-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.247010)
+[WARNING] [2023-04-07 05:50:20,788:Client-AutoML(1993):50880730-d4f7-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 06:20:24: Balanced accuracy: 7.22e-01
+2023-04-07 06:20:25: ------------------------------
+2023-04-07 06:20:25: ------------------------------
+2023-04-07 06:20:25: Starting AutoML on JLR-musif-xml
+2023-04-07 06:20:25: Shape of the X dataframe: (109, 10)
+2023-04-07 06:20:25: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 387.9 it/s  
+2023-04-07 06:20:33: Random Guessing: 0.33374166666666666
+[WARNING] [2023-04-07 06:20:35,104:Client-AutoML(1993):89feece7-d4fb-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.241544)
+[WARNING] [2023-04-07 06:20:35,104:Client-AutoML(1993):89feece7-d4fb-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 06:50:34: Balanced accuracy: 7.93e-01
+2023-04-07 06:50:35: ------------------------------
+2023-04-07 06:50:35: ------------------------------
+2023-04-07 06:50:35: Starting AutoML on JLR-musif_native-xml
+2023-04-07 06:50:35: Shape of the X dataframe: (109, 10)
+2023-04-07 06:50:35: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 382.3 it/s  
+2023-04-07 06:50:43: Random Guessing: 0.33374166666666666
+[WARNING] [2023-04-07 06:50:44,920:Client-AutoML(1993):c0b3adb4-d4ff-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.244362)
+[WARNING] [2023-04-07 06:50:44,920:Client-AutoML(1993):c0b3adb4-d4ff-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 07:20:44: Balanced accuracy: 6.63e-01
+2023-04-07 07:20:44: ------------------------------
+2023-04-07 07:20:44: ------------------------------
+2023-04-07 07:20:44: Starting AutoML on JLR-music21-xml
+2023-04-07 07:20:44: Shape of the X dataframe: (109, 10)
+2023-04-07 07:20:44: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 385.1 it/s  
+2023-04-07 07:20:52: Random Guessing: 0.34417499999999995
+[WARNING] [2023-04-07 07:20:54,179:Client-AutoML(1993):f740579a-d503-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.257674)
+[WARNING] [2023-04-07 07:20:54,179:Client-AutoML(1993):f740579a-d503-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 07:50:49: Balanced accuracy: 7.68e-01
+2023-04-07 07:50:50: ------------------------------
+2023-04-07 07:50:50: ------------------------------
+2023-04-07 07:50:50: Starting AutoML on JLR-music21_native-xml
+2023-04-07 07:50:50: Shape of the X dataframe: (109, 10)
+2023-04-07 07:50:50: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.4 it/s  
+2023-04-07 07:50:58: Random Guessing: 0.34417499999999995
+[WARNING] [2023-04-07 07:51:00,127:Client-AutoML(1993):2b8ac1c5-d508-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.233490)
+[WARNING] [2023-04-07 07:51:00,127:Client-AutoML(1993):2b8ac1c5-d508-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 08:20:55: Balanced accuracy: 7.56e-01
+2023-04-07 08:20:55: ------------------------------
+2023-04-07 08:20:55: ------------------------------
+2023-04-07 08:20:55: Starting AutoML on quartets-musif-mid
+2023-04-07 08:20:55: Shape of the X dataframe: (363, 10)
+2023-04-07 08:20:55: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 358.0 it/s  
+2023-04-07 08:21:04: Random Guessing: 0.34014384920634916
+[WARNING] [2023-04-07 08:21:06,845:Client-AutoML(1993):60235230-d50c-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.220747)
+[WARNING] [2023-04-07 08:21:06,845:Client-AutoML(1993):60235230-d50c-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 08:51:01: Balanced accuracy: 6.78e-01
+2023-04-07 08:51:02: ------------------------------
+2023-04-07 08:51:02: ------------------------------
+2023-04-07 08:51:02: Starting AutoML on quartets-musif_native-mid
+2023-04-07 08:51:02: Shape of the X dataframe: (363, 10)
+2023-04-07 08:51:02: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 361.1 it/s  
+2023-04-07 08:51:11: Random Guessing: 0.34014384920634916
+[WARNING] [2023-04-07 08:51:17,535:Client-AutoML(1993):94c40ce7-d510-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.208636)
+[WARNING] [2023-04-07 08:51:17,535:Client-AutoML(1993):94c40ce7-d510-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 09:21:21: Balanced accuracy: 6.68e-01
+2023-04-07 09:21:21: ------------------------------
+2023-04-07 09:21:21: ------------------------------
+2023-04-07 09:21:21: Starting AutoML on quartets-music21-mid
+2023-04-07 09:21:21: Shape of the X dataframe: (363, 10)
+2023-04-07 09:21:21: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 360.4 it/s  
+2023-04-07 09:21:30: Random Guessing: 0.3336902116402117
+[WARNING] [2023-04-07 09:21:32,103:Client-AutoML(1993):d1400386-d514-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.189920)
+[WARNING] [2023-04-07 09:21:32,103:Client-AutoML(1993):d1400386-d514-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 09:51:30: Balanced accuracy: 7.25e-01
+2023-04-07 09:51:31: ------------------------------
+2023-04-07 09:51:31: ------------------------------
+2023-04-07 09:51:31: Starting AutoML on quartets-music21_native-mid
+2023-04-07 09:51:31: Shape of the X dataframe: (363, 10)
+2023-04-07 09:51:31: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 351.9 it/s  
+2023-04-07 09:51:40: Random Guessing: 0.3336902116402117
+[WARNING] [2023-04-07 09:51:41,478:Client-AutoML(1993):07da6204-d519-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.202163)
+[WARNING] [2023-04-07 09:51:41,478:Client-AutoML(1993):07da6204-d519-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 10:21:41: Balanced accuracy: 7.11e-01
+2023-04-07 10:21:41: ------------------------------
+2023-04-07 10:21:41: ------------------------------
+2023-04-07 10:21:41: Starting AutoML on quartets-jsymbolic-mid
+2023-04-07 10:21:41: Shape of the X dataframe: (363, 10)
+2023-04-07 10:21:41: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 362.3 it/s  
+2023-04-07 10:21:50: Random Guessing: 0.3336902116402117
+[WARNING] [2023-04-07 10:21:51,754:Client-AutoML(1993):3ee2e0d0-d51d-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.214147)
+[WARNING] [2023-04-07 10:21:51,754:Client-AutoML(1993):3ee2e0d0-d51d-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 10:51:51: Balanced accuracy: 8.10e-01
+2023-04-07 10:51:51: ------------------------------
+2023-04-07 10:51:51: ------------------------------
+2023-04-07 10:51:51: Starting AutoML on quartets-musif-krn
+2023-04-07 10:51:51: Shape of the X dataframe: (363, 10)
+2023-04-07 10:51:51: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 362.5 it/s  
+2023-04-07 10:52:00: Random Guessing: 0.34014384920634916
+[WARNING] [2023-04-07 10:52:02,093:Client-AutoML(1993):75e30c10-d521-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.219852)
+[WARNING] [2023-04-07 10:52:02,093:Client-AutoML(1993):75e30c10-d521-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 11:22:03: Balanced accuracy: 7.13e-01
+2023-04-07 11:22:03: ------------------------------
+2023-04-07 11:22:03: ------------------------------
+2023-04-07 11:22:03: Starting AutoML on quartets-musif_native-krn
+2023-04-07 11:22:03: Shape of the X dataframe: (363, 10)
+2023-04-07 11:22:03: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 361.4 it/s  
+2023-04-07 11:22:12: Random Guessing: 0.34014384920634916
+[WARNING] [2023-04-07 11:22:14,274:Client-AutoML(1993):adbd125b-d525-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.614033)
+[WARNING] [2023-04-07 11:22:14,274:Client-AutoML(1993):adbd125b-d525-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 11:52:14: Balanced accuracy: 7.11e-01
+2023-04-07 11:52:14: ------------------------------
+2023-04-07 11:52:14: ------------------------------
+2023-04-07 11:52:14: Starting AutoML on quartets-music21-krn
+2023-04-07 11:52:14: Shape of the X dataframe: (363, 10)
+2023-04-07 11:52:14: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 356.1 it/s  
+2023-04-07 11:52:23: Random Guessing: 0.3336902116402117
+[WARNING] [2023-04-07 11:52:25,351:Client-AutoML(1993):e5778684-d529-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.221035)
+[WARNING] [2023-04-07 11:52:25,351:Client-AutoML(1993):e5778684-d529-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 12:22:20: Balanced accuracy: 7.67e-01
+2023-04-07 12:22:21: ------------------------------
+2023-04-07 12:22:21: ------------------------------
+2023-04-07 12:22:21: Starting AutoML on quartets-music21_native-krn
+2023-04-07 12:22:21: Shape of the X dataframe: (363, 10)
+2023-04-07 12:22:21: Number of labels in y: (3,)
+Dummy strategies ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 359.4 it/s  
+2023-04-07 12:22:30: Random Guessing: 0.3336902116402117
+[WARNING] [2023-04-07 12:22:31,594:Client-AutoML(1993):1a133633-d52e-11ed-af8a-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.176745)
+[WARNING] [2023-04-07 12:22:31,594:Client-AutoML(1993):1a133633-d52e-11ed-af8a-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 12:52:30: Balanced accuracy: 7.63e-01
+2023-04-07 12:52:30: ------------------------------
+2023-04-07 12:52:30: ------------------------------
+2023-04-07 12:52:30: Starting AutoML on asap-scores-musif_native-jsymbolic-mid
+2023-04-07 12:52:30: Shape of the X dataframe: (22, 20)
+2023-04-07 12:52:30: Number of labels in y: (7,)
+AssertionError: X and y have different shapes
+
+> [1;32m/home/federico/symbolic_features/symbolic_features/effectiveness.py[0m(92)[0;36mautoml[1;34m()[0m
+[1;32m     91 [1;33m    [1;32massert[0m [0mtask[0m[1;33m.[0m[0mx[0m[1;33m.[0m[0mshape[0m[1;33m[[0m[1;36m0[0m[1;33m][0m [1;33m>[0m [1;36m2[0m [1;33m*[0m [0mS[0m[1;33m.[0m[0mSPLITS[0m[1;33m,[0m [1;34m"Not enough data in x"[0m[1;33m[0m[1;33m[0m[0m
+[0m[1;32m---> 92 [1;33m    [1;32massert[0m [0mtask[0m[1;33m.[0m[0mx[0m[1;33m.[0m[0mshape[0m[1;33m[[0m[1;36m0[0m[1;33m][0m [1;33m==[0m [0mtask[0m[1;33m.[0m[0my[0m[1;33m.[0m[0mshape[0m[1;33m[[0m[1;36m0[0m[1;33m][0m[1;33m,[0m [1;34m"X and y have different shapes"[0m[1;33m[0m[1;33m[0m[0m
+[0m[1;32m     93 [1;33m    [0mrandom_guess[0m [1;33m=[0m [0mrandom_guessing[0m[1;33m([0m[0mtask[0m[1;33m,[0m [0msplitter[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m
+ipdb> 
