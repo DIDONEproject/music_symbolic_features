@@ -543,13 +543,16 @@ class ConcatTask(Task):
         if not self.__loaded:
             self.tasks[0].load_csv()
             self.filenames_ = self.tasks[0].filenames_.sort_values()
-            self.y = self.tasks[0].y[self.filenames_.index]
-            self.x = self.tasks[0].x.loc[self.filenames_.index]
-            for task in self.tasks[1:]:
+            self.y = self.tasks[0].y[self.filenames_.index].reset_index(drop=True)
+            self.x = self.tasks[0].x.loc[self.filenames_.index].reset_index(drop=True)
+            for i, task in enumerate(self.tasks[1:]):
                 task.load_csv()
                 # forcing the order of the files to be the same
-                y = task.y[task.filenames_.sort_values().index]
-                x = task.x.loc[task.filenames_.sort_values().index]
+                y = task.y[task.filenames_.sort_values().index].reset_index(drop=True)
+                x = task.x.loc[task.filenames_.sort_values().index].reset_index(
+                    drop=True
+                )
+                x.rename(columns=lambda x: str(i) + "_" + x, inplace=True)
                 assert np.all(y.values == self.y.values), "Labels must match"
                 self.x = pd.concat([self.x, x], axis=1, join="inner")
             self.__loaded = True
