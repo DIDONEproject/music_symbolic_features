@@ -1,3 +1,4 @@
+import os
 import datetime
 from dataclasses import dataclass
 
@@ -152,6 +153,9 @@ class Main(AbstractMain):
             if dataset is not None and dataset not in task.name:
                 continue
             if extension is not None and extension not in task.name:
+                continue
+            if os.path.exists(task.name + ".csv"):
+                logger.info(f"Skipping {task.name}, already done")
                 continue
             automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
 

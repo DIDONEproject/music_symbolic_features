@@ -454,6 +454,8 @@ class Task:
                     index=index,
                     columns=[f"PC{i}" for i in range(N)],
                 )
+            else:
+                self.name += "-no-pc"
 
             # remove columns that are not features (only musif)
             self.__loaded = True
@@ -555,6 +557,8 @@ class ConcatTask(Task):
                 x.rename(columns=lambda x: str(i) + "_" + x, inplace=True)
                 assert np.all(y.values == self.y.values), "Labels must match"
                 self.x = pd.concat([self.x, x], axis=1, join="inner")
+            if not S.KEEP_FIRST_10_PC:
+                self.name += "-no-pc"
             self.__loaded = True
 
     def get_csv_path(self):
@@ -598,11 +602,15 @@ def load_tasks():
         If a csv file is not found while loading.
 
     """
+    fname = "tasks"
+    if not S.KEEP_FIRST_10_PC:
+        fname += "-no-pc"
+    fname += ".pkl"
 
     # check if the cache file exists
-    if os.path.isfile("tasks.pkl"):
+    if os.path.isfile(fname):
         logger.info("Loading tasks from file")
-        with open("tasks.pkl", "rb") as f:
+        with open(fname, "rb") as f:
             tasks = pickle.load(f)
         logger.info(f"{len(tasks)} tasks loaded")
         return tasks
@@ -647,8 +655,8 @@ def load_tasks():
 
     logger.info(f"{len(tasks)} tasks loaded")
 
-    if not os.path.isfile("tasks.pkl"):
+    if not os.path.isfile(fname):
         logger.info("Saving tasks to file")
-        with open("tasks.pkl", "wb") as f:
+        with open(fname, "wb") as f:
             pickle.dump(tasks, f)
     return tasks

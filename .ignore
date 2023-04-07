@@ -5,3 +5,5 @@ telegram.json
 .pdm.toml
 humdrum-tools
 musicxml2midi.sh
+*.csv
+*.log
