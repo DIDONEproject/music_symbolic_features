@@ -1,0 +1,1153 @@
+[?25h2023-04-07 15:27:12: [1m34 concat tasks created[0m
+[?25h2023-04-07 15:27:12: [1m84 tasks loaded[0m
+2023-04-07 15:27:12: [1mSaving tasks to file[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-musif-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-musif_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-music21-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-scores-music21_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-performance-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-performance-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-performance-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-performance-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping asap-performance-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-musif-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-musif_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-music21-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping didone-music21_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-musif-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-musif_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-music21-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping EWLD-music21_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-musif-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-musif_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-music21-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping JLR-music21_native-xml, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-musif-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-musif_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-music21-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-music21_native-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-jsymbolic-mid, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-musif-krn, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-musif_native-krn, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-music21-krn, already done[0m
+2023-04-07 15:27:12: [1mSkipping quartets-music21_native-krn, already done[0m
+2023-04-07 15:27:12: [1m------------------------------[0m
+2023-04-07 15:27:12: [1m------------------------------[0m
+2023-04-07 15:27:12: [1mStarting AutoML on asap-scores-musif_native-jsymbolic-mid[0m
+2023-04-07 15:27:12: [1mShape of the X dataframe: (211, 20)[0m
+2023-04-07 15:27:12: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-07 15:27:21: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-07 15:27:49,068:Client-AutoML(1993):ecef98ec-d547-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.322537)
+[WARNING] [2023-04-07 15:27:49,068:Client-AutoML(1993):ecef98ec-d547-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 15:57:44: [1mBalanced accuracy: 8.19e-01[0m
+2023-04-07 15:57:44: [1m------------------------------[0m
+2023-04-07 15:57:44: [1m------------------------------[0m
+2023-04-07 15:57:44: [1mStarting AutoML on asap-scores-musif_native-music21_native-mid[0m
+2023-04-07 15:57:44: [1mShape of the X dataframe: (211, 20)[0m
+2023-04-07 15:57:44: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-07 15:57:53: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-07 15:59:19,592:Client-AutoML(1993):313e6788-d54c-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.295743)
+[WARNING] [2023-04-07 15:59:19,593:Client-AutoML(1993):313e6788-d54c-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 16:29:14: [1mBalanced accuracy: 7.91e-01[0m
+2023-04-07 16:29:14: [1m------------------------------[0m
+2023-04-07 16:29:14: [1m------------------------------[0m
+2023-04-07 16:29:14: [1mStarting AutoML on asap-scores-music21_native-jsymbolic-mid[0m
+2023-04-07 16:29:14: [1mShape of the X dataframe: (211, 20)[0m
+2023-04-07 16:29:14: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-07 16:29:23: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-07 16:29:24,683:Client-AutoML(1993):977ddde9-d550-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.278939)
+[WARNING] [2023-04-07 16:29:24,683:Client-AutoML(1993):977ddde9-d550-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 16:59:22: [1mBalanced accuracy: 8.19e-01[0m
+2023-04-07 16:59:22: [1m------------------------------[0m
+2023-04-07 16:59:22: [1m------------------------------[0m
+2023-04-07 16:59:22: [1mStarting AutoML on asap-scores-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-07 16:59:22: [1mShape of the X dataframe: (211, 30)[0m
+2023-04-07 16:59:22: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-07 16:59:31: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-07 16:59:32,898:Client-AutoML(1993):cd324327-d554-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.298133)
+[WARNING] [2023-04-07 16:59:32,898:Client-AutoML(1993):cd324327-d554-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-07 16:59:38,619:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-07 17:29:28: [1mBalanced accuracy: 8.57e-01[0m
+2023-04-07 17:29:28: [1m------------------------------[0m
+2023-04-07 17:29:28: [1m------------------------------[0m
+2023-04-07 17:29:28: [1mStarting AutoML on asap-scores-musif_native-music21_native-xml[0m
+2023-04-07 17:29:28: [1mShape of the X dataframe: (201, 20)[0m
+2023-04-07 17:29:28: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-07 17:29:37: [1mRandom Guessing: 0.17071273809523807[0m
+[WARNING] [2023-04-07 17:29:49,583:Client-AutoML(1993):01bac4e3-d559-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.294639)
+[WARNING] [2023-04-07 17:29:49,583:Client-AutoML(1993):01bac4e3-d559-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 17:59:44: [1mBalanced accuracy: 7.85e-01[0m
+2023-04-07 17:59:45: [1mSkipping asap-scores-musif_native-music21_native-xml, already done[0m
+2023-04-07 17:59:45: [1m------------------------------[0m
+2023-04-07 17:59:45: [1m------------------------------[0m
+2023-04-07 17:59:45: [1mStarting AutoML on asap-performance-musif_native-jsymbolic-mid[0m
+2023-04-07 17:59:45: [1mShape of the X dataframe: (1027, 20)[0m
+2023-04-07 17:59:45: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-07 17:59:56: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-07 18:00:01,338:Client-AutoML(1993):3e0e8328-d55d-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.263115)
+[WARNING] [2023-04-07 18:00:01,338:Client-AutoML(1993):3e0e8328-d55d-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 18:29:56: [1mBalanced accuracy: 9.62e-01[0m
+2023-04-07 18:29:57: [1m------------------------------[0m
+2023-04-07 18:29:57: [1m------------------------------[0m
+2023-04-07 18:29:57: [1mStarting AutoML on asap-performance-musif_native-music21_native-mid[0m
+2023-04-07 18:29:57: [1mShape of the X dataframe: (1027, 20)[0m
+2023-04-07 18:29:57: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-07 18:30:08: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-07 18:30:12,755:Client-AutoML(1993):762587a6-d561-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.466371)
+[WARNING] [2023-04-07 18:30:12,755:Client-AutoML(1993):762587a6-d561-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 19:00:13: [1mBalanced accuracy: 9.72e-01[0m
+2023-04-07 19:00:13: [1m------------------------------[0m
+2023-04-07 19:00:13: [1m------------------------------[0m
+2023-04-07 19:00:13: [1mStarting AutoML on asap-performance-music21_native-jsymbolic-mid[0m
+2023-04-07 19:00:13: [1mShape of the X dataframe: (1027, 20)[0m
+2023-04-07 19:00:13: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-07 19:00:24: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-07 19:00:29,222:Client-AutoML(1993):b091e834-d565-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.269671)
+[WARNING] [2023-04-07 19:00:29,222:Client-AutoML(1993):b091e834-d565-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 19:30:25: [1mBalanced accuracy: 9.80e-01[0m
+2023-04-07 19:30:25: [1m------------------------------[0m
+2023-04-07 19:30:25: [1m------------------------------[0m
+2023-04-07 19:30:25: [1mStarting AutoML on asap-performance-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-07 19:30:25: [1mShape of the X dataframe: (1027, 30)[0m
+2023-04-07 19:30:25: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-07 19:30:37: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-07 19:30:40,643:Client-AutoML(1993):e8dee533-d569-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.264757)
+[WARNING] [2023-04-07 19:30:40,643:Client-AutoML(1993):e8dee533-d569-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 20:00:38: [1mBalanced accuracy: 9.79e-01[0m
+2023-04-07 20:00:38: [1m------------------------------[0m
+2023-04-07 20:00:38: [1m------------------------------[0m
+2023-04-07 20:00:38: [1mStarting AutoML on didone-musif_native-jsymbolic-mid[0m
+2023-04-07 20:00:38: [1mShape of the X dataframe: (1622, 20)[0m
+2023-04-07 20:00:38: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-07 20:00:52: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-07 20:00:55,999:Client-AutoML(1993):22c539bb-d56e-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.258554)
+[WARNING] [2023-04-07 20:00:55,999:Client-AutoML(1993):22c539bb-d56e-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 20:30:52: [1mBalanced accuracy: 4.51e-01[0m
+2023-04-07 20:30:53: [1m------------------------------[0m
+2023-04-07 20:30:53: [1m------------------------------[0m
+2023-04-07 20:30:53: [1mStarting AutoML on didone-musif_native-music21_native-mid[0m
+2023-04-07 20:30:53: [1mShape of the X dataframe: (1622, 20)[0m
+2023-04-07 20:30:53: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-07 20:31:06: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-07 20:31:08,474:Client-AutoML(1993):5c40c7df-d572-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.261934)
+[WARNING] [2023-04-07 20:31:08,475:Client-AutoML(1993):5c40c7df-d572-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 21:01:08: [1mBalanced accuracy: 4.14e-01[0m
+2023-04-07 21:01:08: [1m------------------------------[0m
+2023-04-07 21:01:08: [1m------------------------------[0m
+2023-04-07 21:01:08: [1mStarting AutoML on didone-music21_native-jsymbolic-mid[0m
+2023-04-07 21:01:08: [1mShape of the X dataframe: (1622, 20)[0m
+2023-04-07 21:01:08: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-07 21:01:21: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-07 21:01:23,449:Client-AutoML(1993):95ffcaa8-d576-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.234652)
+[WARNING] [2023-04-07 21:01:23,449:Client-AutoML(1993):95ffcaa8-d576-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 21:31:22: [1mBalanced accuracy: 4.79e-01[0m
+2023-04-07 21:31:23: [1m------------------------------[0m
+2023-04-07 21:31:23: [1m------------------------------[0m
+2023-04-07 21:31:23: [1mStarting AutoML on didone-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-07 21:31:23: [1mShape of the X dataframe: (1622, 30)[0m
+2023-04-07 21:31:23: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-07 21:31:37: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-07 21:31:38,558:Client-AutoML(1993):d02b5c16-d57a-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.267180)
+[WARNING] [2023-04-07 21:31:38,558:Client-AutoML(1993):d02b5c16-d57a-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 22:01:38: [1mBalanced accuracy: 4.62e-01[0m
+2023-04-07 22:01:38: [1m------------------------------[0m
+2023-04-07 22:01:38: [1m------------------------------[0m
+2023-04-07 22:01:38: [1mStarting AutoML on didone-musif_native-music21_native-xml[0m
+2023-04-07 22:01:38: [1mShape of the X dataframe: (1636, 20)[0m
+2023-04-07 22:01:38: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-07 22:01:52: [1mRandom Guessing: 0.12561257363796077[0m
+[WARNING] [2023-04-07 22:01:53,919:Client-AutoML(1993):0a219e02-d57f-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.248197)
+[WARNING] [2023-04-07 22:01:53,919:Client-AutoML(1993):0a219e02-d57f-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 22:31:51: [1mBalanced accuracy: 3.92e-01[0m
+2023-04-07 22:31:52: [1mSkipping didone-musif_native-music21_native-xml, already done[0m
+2023-04-07 22:31:52: [1m------------------------------[0m
+2023-04-07 22:31:52: [1m------------------------------[0m
+2023-04-07 22:31:52: [1mStarting AutoML on EWLD-musif_native-jsymbolic-mid[0m
+2023-04-07 22:31:52: [1mShape of the X dataframe: (2645, 20)[0m
+2023-04-07 22:31:52: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-07 22:32:10: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-07 22:32:15,720:Client-AutoML(1993):457cfb11-d583-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.209331)
+[WARNING] [2023-04-07 22:32:15,720:Client-AutoML(1993):457cfb11-d583-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 23:02:15: [1mBalanced accuracy: 2.45e-01[0m
+2023-04-07 23:02:15: [1m------------------------------[0m
+2023-04-07 23:02:15: [1m------------------------------[0m
+2023-04-07 23:02:15: [1mStarting AutoML on EWLD-musif_native-music21_native-mid[0m
+2023-04-07 23:02:15: [1mShape of the X dataframe: (2645, 20)[0m
+2023-04-07 23:02:15: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-07 23:02:34: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-07 23:02:36,203:Client-AutoML(1993):84ffa3f4-d587-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.221134)
+[WARNING] [2023-04-07 23:02:36,203:Client-AutoML(1993):84ffa3f4-d587-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-07 23:32:31: [1mBalanced accuracy: 2.19e-01[0m
+2023-04-07 23:32:31: [1m------------------------------[0m
+2023-04-07 23:32:31: [1m------------------------------[0m
+2023-04-07 23:32:31: [1mStarting AutoML on EWLD-music21_native-jsymbolic-mid[0m
+2023-04-07 23:32:31: [1mShape of the X dataframe: (2645, 20)[0m
+2023-04-07 23:32:31: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-07 23:32:51: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-07 23:32:55,078:Client-AutoML(1993):bfd47c6f-d58b-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.230154)
+[WARNING] [2023-04-07 23:32:55,078:Client-AutoML(1993):bfd47c6f-d58b-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 00:02:53: [1mBalanced accuracy: 2.42e-01[0m
+2023-04-08 00:02:53: [1m------------------------------[0m
+2023-04-08 00:02:53: [1m------------------------------[0m
+2023-04-08 00:02:53: [1mStarting AutoML on EWLD-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-08 00:02:53: [1mShape of the X dataframe: (2645, 30)[0m
+2023-04-08 00:02:53: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 00:03:15: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 00:03:19,169:Client-AutoML(1993):ff1f2514-d58f-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.234144)
+[WARNING] [2023-04-08 00:03:19,169:Client-AutoML(1993):ff1f2514-d58f-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 00:33:15: [1mBalanced accuracy: 2.59e-01[0m
+2023-04-08 00:33:15: [1m------------------------------[0m
+2023-04-08 00:33:15: [1m------------------------------[0m
+2023-04-08 00:33:15: [1mStarting AutoML on EWLD-musif_native-music21_native-xml[0m
+2023-04-08 00:33:15: [1mShape of the X dataframe: (3197, 20)[0m
+2023-04-08 00:33:15: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 00:33:37: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-08 00:33:39,195:Client-AutoML(1993):3cda89b5-d594-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.224090)
+[WARNING] [2023-04-08 00:33:39,195:Client-AutoML(1993):3cda89b5-d594-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 01:03:41: [1mBalanced accuracy: 2.31e-01[0m
+2023-04-08 01:03:41: [1mSkipping EWLD-musif_native-music21_native-xml, already done[0m
+2023-04-08 01:03:41: [1m------------------------------[0m
+2023-04-08 01:03:41: [1m------------------------------[0m
+2023-04-08 01:03:41: [1mStarting AutoML on JLR-musif_native-jsymbolic-mid[0m
+2023-04-08 01:03:41: [1mShape of the X dataframe: (109, 20)[0m
+2023-04-08 01:03:41: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 01:03:50: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 01:03:51,263:Client-AutoML(1993):756cd82f-d598-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.248152)
+[WARNING] [2023-04-08 01:03:51,263:Client-AutoML(1993):756cd82f-d598-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 01:33:50: [1mBalanced accuracy: 7.51e-01[0m
+2023-04-08 01:33:50: [1m------------------------------[0m
+2023-04-08 01:33:50: [1m------------------------------[0m
+2023-04-08 01:33:50: [1mStarting AutoML on JLR-musif_native-music21_native-mid[0m
+2023-04-08 01:33:50: [1mShape of the X dataframe: (109, 20)[0m
+2023-04-08 01:33:50: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 01:33:59: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 01:34:01,630:Client-AutoML(1993):abb187a4-d59c-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.280693)
+[WARNING] [2023-04-08 01:34:01,630:Client-AutoML(1993):abb187a4-d59c-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 02:03:57: [1mBalanced accuracy: 7.11e-01[0m
+2023-04-08 02:03:57: [1m------------------------------[0m
+2023-04-08 02:03:57: [1m------------------------------[0m
+2023-04-08 02:03:57: [1mStarting AutoML on JLR-music21_native-jsymbolic-mid[0m
+2023-04-08 02:03:57: [1mShape of the X dataframe: (109, 20)[0m
+2023-04-08 02:03:57: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 02:04:06: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 02:04:07,405:Client-AutoML(1993):e0cdbd13-d5a0-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.274923)
+[WARNING] [2023-04-08 02:04:07,405:Client-AutoML(1993):e0cdbd13-d5a0-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 02:34:02: [1mBalanced accuracy: 7.42e-01[0m
+2023-04-08 02:34:03: [1m------------------------------[0m
+2023-04-08 02:34:03: [1m------------------------------[0m
+2023-04-08 02:34:03: [1mStarting AutoML on JLR-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-08 02:34:03: [1mShape of the X dataframe: (109, 30)[0m
+2023-04-08 02:34:03: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 02:34:11: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 02:34:12,844:Client-AutoML(1993):14eed005-d5a5-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.253742)
+[WARNING] [2023-04-08 02:34:12,844:Client-AutoML(1993):14eed005-d5a5-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 03:04:13: [1mBalanced accuracy: 7.41e-01[0m
+2023-04-08 03:04:14: [1m------------------------------[0m
+2023-04-08 03:04:14: [1m------------------------------[0m
+2023-04-08 03:04:14: [1mStarting AutoML on JLR-musif_native-music21_native-xml[0m
+2023-04-08 03:04:14: [1mShape of the X dataframe: (109, 20)[0m
+2023-04-08 03:04:14: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 03:04:22: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 03:04:25,168:Client-AutoML(1993):4c28fb09-d5a9-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.250514)
+[WARNING] [2023-04-08 03:04:25,168:Client-AutoML(1993):4c28fb09-d5a9-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 03:04:36,164:Client-EnsembleBuilder] No models better than random - using Dummy losses!
+	Models besides current dummy model: 0
+	Dummy models: 1
+2023-04-08 03:34:23: [1mBalanced accuracy: 7.93e-01[0m
+2023-04-08 03:34:23: [1mSkipping JLR-musif_native-music21_native-xml, already done[0m
+2023-04-08 03:34:23: [1m------------------------------[0m
+2023-04-08 03:34:23: [1m------------------------------[0m
+2023-04-08 03:34:23: [1mStarting AutoML on quartets-musif_native-jsymbolic-mid[0m
+2023-04-08 03:34:23: [1mShape of the X dataframe: (363, 20)[0m
+2023-04-08 03:34:23: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 03:34:32: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-08 03:34:33,966:Client-AutoML(1993):831cc9a2-d5ad-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.253855)
+[WARNING] [2023-04-08 03:34:33,966:Client-AutoML(1993):831cc9a2-d5ad-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 04:04:33: [1mBalanced accuracy: 8.31e-01[0m
+2023-04-08 04:04:33: [1m------------------------------[0m
+2023-04-08 04:04:33: [1m------------------------------[0m
+2023-04-08 04:04:33: [1mStarting AutoML on quartets-musif_native-music21_native-mid[0m
+2023-04-08 04:04:33: [1mShape of the X dataframe: (363, 20)[0m
+2023-04-08 04:04:33: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 04:04:42: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-08 04:04:45,769:Client-AutoML(1993):ba0ed29c-d5b1-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.248255)
+[WARNING] [2023-04-08 04:04:45,769:Client-AutoML(1993):ba0ed29c-d5b1-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 04:34:45: [1mBalanced accuracy: 7.68e-01[0m
+2023-04-08 04:34:45: [1m------------------------------[0m
+2023-04-08 04:34:45: [1m------------------------------[0m
+2023-04-08 04:34:45: [1mStarting AutoML on quartets-music21_native-jsymbolic-mid[0m
+2023-04-08 04:34:45: [1mShape of the X dataframe: (363, 20)[0m
+2023-04-08 04:34:45: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 04:34:54: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-08 04:34:56,367:Client-AutoML(1993):f2297b86-d5b5-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.245820)
+[WARNING] [2023-04-08 04:34:56,367:Client-AutoML(1993):f2297b86-d5b5-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 05:04:51: [1mBalanced accuracy: 7.91e-01[0m
+2023-04-08 05:04:51: [1m------------------------------[0m
+2023-04-08 05:04:51: [1m------------------------------[0m
+2023-04-08 05:04:51: [1mStarting AutoML on quartets-musif_native-music21_native-jsymbolic-mid[0m
+2023-04-08 05:04:51: [1mShape of the X dataframe: (363, 30)[0m
+2023-04-08 05:04:51: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 05:05:01: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-08 05:05:02,347:Client-AutoML(1993):26db46b3-d5ba-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.248003)
+[WARNING] [2023-04-08 05:05:02,347:Client-AutoML(1993):26db46b3-d5ba-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 05:35:00: [1mBalanced accuracy: 8.22e-01[0m
+2023-04-08 05:35:01: [1m------------------------------[0m
+2023-04-08 05:35:01: [1m------------------------------[0m
+2023-04-08 05:35:01: [1mStarting AutoML on quartets-musif_native-music21_native-krn[0m
+2023-04-08 05:35:01: [1mShape of the X dataframe: (363, 20)[0m
+2023-04-08 05:35:01: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 05:35:10: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-08 05:35:12,068:Client-AutoML(1993):5d1824b1-d5be-11ed-8e2e-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.250536)
+[WARNING] [2023-04-08 05:35:12,068:Client-AutoML(1993):5d1824b1-d5be-11ed-8e2e-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 06:05:10: [1mBalanced accuracy: 8.10e-01[0m
+2023-04-08 06:05:11: [1mSkipping quartets-musif_native-music21_native-krn, already done[0m
+[?25h2023-04-08 06:05:28: [1m34 concat tasks created[0m
+[?25h2023-04-08 06:05:29: [1m84 tasks loaded[0m
+2023-04-08 06:05:29: [1mSaving tasks to file[0m
+2023-04-08 06:05:29: [1m------------------------------[0m
+2023-04-08 06:05:29: [1m------------------------------[0m
+2023-04-08 06:05:29: [1mStarting AutoML on asap-scores-musif-mid-no-pc[0m
+2023-04-08 06:05:29: [1mShape of the X dataframe: (211, 710)[0m
+2023-04-08 06:05:29: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-08 06:05:41: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-08 06:06:45,564:Client-AutoML(1993):a09cbd29-d5c2-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.291275)
+[WARNING] [2023-04-08 06:06:45,564:Client-AutoML(1993):a09cbd29-d5c2-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 06:06:51,077:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 06:06:53,764:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 06:36:45: [1mBalanced accuracy: 8.43e-01[0m
+2023-04-08 06:36:45: [1m------------------------------[0m
+2023-04-08 06:36:45: [1m------------------------------[0m
+2023-04-08 06:36:45: [1mStarting AutoML on asap-scores-musif_native-mid-no-pc[0m
+2023-04-08 06:36:45: [1mShape of the X dataframe: (211, 91)[0m
+2023-04-08 06:36:45: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-08 06:36:54: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-08 06:36:55,338:Client-AutoML(1993):fcea1e9d-d5c6-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.287054)
+[WARNING] [2023-04-08 06:36:55,338:Client-AutoML(1993):fcea1e9d-d5c6-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 06:37:00,960:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 07:06:51: [1mBalanced accuracy: 6.26e-01[0m
+2023-04-08 07:06:51: [1m------------------------------[0m
+2023-04-08 07:06:51: [1m------------------------------[0m
+2023-04-08 07:06:51: [1mStarting AutoML on asap-scores-music21-mid-no-pc[0m
+2023-04-08 07:06:51: [1mShape of the X dataframe: (211, 633)[0m
+2023-04-08 07:06:51: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-08 07:07:03: [1mRandom Guessing: 0.14576156462585033[0m
+[WARNING] [2023-04-08 07:07:12,320:Client-AutoML(1993):3368ca85-d5cb-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.255123)
+[WARNING] [2023-04-08 07:07:12,320:Client-AutoML(1993):3368ca85-d5cb-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 07:07:17,706:Client-EnsembleBuilder] No runs were available to build an ensemble from
+init_gesdd failed init
+2023-04-08 07:37:17: [1mBalanced accuracy: 8.77e-01[0m
+2023-04-08 07:37:17: [1m------------------------------[0m
+2023-04-08 07:37:17: [1m------------------------------[0m
+2023-04-08 07:37:17: [1mStarting AutoML on asap-scores-music21_native-mid-no-pc[0m
+2023-04-08 07:37:17: [1mShape of the X dataframe: (211, 602)[0m
+2023-04-08 07:37:17: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-08 07:37:29: [1mRandom Guessing: 0.14576156462585033[0m
+[WARNING] [2023-04-08 07:37:34,141:Client-AutoML(1993):73ae58da-d5cf-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.231277)
+[WARNING] [2023-04-08 07:37:34,141:Client-AutoML(1993):73ae58da-d5cf-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 07:37:40,123:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 08:07:59: [1mBalanced accuracy: 8.87e-01[0m
+2023-04-08 08:07:59: [1m------------------------------[0m
+2023-04-08 08:07:59: [1m------------------------------[0m
+2023-04-08 08:07:59: [1mStarting AutoML on asap-scores-jsymbolic-mid-no-pc[0m
+2023-04-08 08:07:59: [1mShape of the X dataframe: (211, 225)[0m
+2023-04-08 08:07:59: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-08 08:08:08: [1mRandom Guessing: 0.14576156462585033[0m
+[WARNING] [2023-04-08 08:08:11,535:Client-AutoML(1993):bc1120c9-d5d3-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.206379)
+[WARNING] [2023-04-08 08:08:11,535:Client-AutoML(1993):bc1120c9-d5d3-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 08:08:20,552:Client-EnsembleBuilder] No runs were available to build an ensemble from
+init_gesdd failed init
+2023-04-08 08:38:08: [1mBalanced accuracy: 8.86e-01[0m
+2023-04-08 08:38:08: [1m------------------------------[0m
+2023-04-08 08:38:08: [1m------------------------------[0m
+2023-04-08 08:38:08: [1mStarting AutoML on asap-scores-musif-xml-no-pc[0m
+2023-04-08 08:38:08: [1mShape of the X dataframe: (201, 710)[0m
+2023-04-08 08:38:08: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-08 08:38:20: [1mRandom Guessing: 0.17071273809523807[0m
+[WARNING] [2023-04-08 08:38:29,879:Client-AutoML(1993):f3cef5cb-d5d7-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.236318)
+[WARNING] [2023-04-08 08:38:29,879:Client-AutoML(1993):f3cef5cb-d5d7-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 08:38:35,790:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 08:38:37,803:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 09:08:28: [1mBalanced accuracy: 8.30e-01[0m
+2023-04-08 09:08:29: [1m------------------------------[0m
+2023-04-08 09:08:29: [1m------------------------------[0m
+2023-04-08 09:08:29: [1mStarting AutoML on asap-scores-musif_native-xml-no-pc[0m
+2023-04-08 09:08:29: [1mShape of the X dataframe: (201, 91)[0m
+2023-04-08 09:08:29: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-08 09:08:38: [1mRandom Guessing: 0.17071273809523807[0m
+[WARNING] [2023-04-08 09:08:39,971:Client-AutoML(1993):2f4c9f95-d5dc-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.257650)
+[WARNING] [2023-04-08 09:08:39,971:Client-AutoML(1993):2f4c9f95-d5dc-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 09:08:46,295:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 09:38:38: [1mBalanced accuracy: 7.10e-01[0m
+2023-04-08 09:38:38: [1m------------------------------[0m
+2023-04-08 09:38:38: [1m------------------------------[0m
+2023-04-08 09:38:38: [1mStarting AutoML on asap-scores-music21-xml-no-pc[0m
+2023-04-08 09:38:38: [1mShape of the X dataframe: (201, 633)[0m
+2023-04-08 09:38:38: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-08 09:38:50: [1mRandom Guessing: 0.16968448412698411[0m
+[WARNING] [2023-04-08 09:38:53,206:Client-AutoML(1993):674b5831-d5e0-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.238915)
+[WARNING] [2023-04-08 09:38:53,206:Client-AutoML(1993):674b5831-d5e0-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 09:38:58,929:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 10:08:50: [1mBalanced accuracy: 8.80e-01[0m
+2023-04-08 10:08:50: [1m------------------------------[0m
+2023-04-08 10:08:50: [1m------------------------------[0m
+2023-04-08 10:08:50: [1mStarting AutoML on asap-scores-music21_native-xml-no-pc[0m
+2023-04-08 10:08:50: [1mShape of the X dataframe: (201, 602)[0m
+2023-04-08 10:08:50: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-08 10:09:02: [1mRandom Guessing: 0.16968448412698411[0m
+[WARNING] [2023-04-08 10:09:03,511:Client-AutoML(1993):9f5ec8c2-d5e4-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.246700)
+[WARNING] [2023-04-08 10:09:03,511:Client-AutoML(1993):9f5ec8c2-d5e4-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 10:09:09,935:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 10:39:07: [1mBalanced accuracy: 8.41e-01[0m
+2023-04-08 10:39:07: [1m------------------------------[0m
+2023-04-08 10:39:07: [1m------------------------------[0m
+2023-04-08 10:39:07: [1mStarting AutoML on asap-performance-musif-mid-no-pc[0m
+2023-04-08 10:39:07: [1mShape of the X dataframe: (1027, 710)[0m
+2023-04-08 10:39:07: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-08 10:39:37: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-08 10:39:40,280:Client-AutoML(1993):e57a31c0-d5e8-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.148690)
+[WARNING] [2023-04-08 10:39:40,280:Client-AutoML(1993):e57a31c0-d5e8-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 10:39:48,274:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 10:39:51,090:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 10:39:58,301:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 11:09:36: [1mBalanced accuracy: 9.83e-01[0m
+2023-04-08 11:09:36: [1m------------------------------[0m
+2023-04-08 11:09:36: [1m------------------------------[0m
+2023-04-08 11:09:36: [1mStarting AutoML on asap-performance-musif_native-mid-no-pc[0m
+2023-04-08 11:09:36: [1mShape of the X dataframe: (1027, 91)[0m
+2023-04-08 11:09:36: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-08 11:09:49: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-08 11:09:50,565:Client-AutoML(1993):1d1bff9f-d5ed-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.242059)
+[WARNING] [2023-04-08 11:09:50,565:Client-AutoML(1993):1d1bff9f-d5ed-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 11:09:57,336:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 11:39:51: [1mBalanced accuracy: 8.39e-01[0m
+2023-04-08 11:39:51: [1m------------------------------[0m
+2023-04-08 11:39:51: [1m------------------------------[0m
+2023-04-08 11:39:51: [1mStarting AutoML on asap-performance-music21-mid-no-pc[0m
+2023-04-08 11:39:51: [1mShape of the X dataframe: (1027, 633)[0m
+2023-04-08 11:39:51: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-08 11:40:19: [1mRandom Guessing: 0.10000000000000002[0m
+[WARNING] [2023-04-08 11:40:23,975:Client-AutoML(1993):60144908-d5f1-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.203971)
+[WARNING] [2023-04-08 11:40:23,975:Client-AutoML(1993):60144908-d5f1-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 11:40:29,175:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 11:40:33,362:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 11:40:39,104:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 12:10:19: [1mBalanced accuracy: 9.83e-01[0m
+2023-04-08 12:10:19: [1m------------------------------[0m
+2023-04-08 12:10:19: [1m------------------------------[0m
+2023-04-08 12:10:19: [1mStarting AutoML on asap-performance-music21_native-mid-no-pc[0m
+2023-04-08 12:10:19: [1mShape of the X dataframe: (1027, 602)[0m
+2023-04-08 12:10:19: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-08 12:10:46: [1mRandom Guessing: 0.10000000000000002[0m
+[WARNING] [2023-04-08 12:10:48,696:Client-AutoML(1993):a10fc6d4-d5f5-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.198150)
+[WARNING] [2023-04-08 12:10:48,696:Client-AutoML(1993):a10fc6d4-d5f5-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 12:10:55,897:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 12:10:58,158:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 12:40:49: [1mBalanced accuracy: 9.84e-01[0m
+2023-04-08 12:40:49: [1m------------------------------[0m
+2023-04-08 12:40:49: [1m------------------------------[0m
+2023-04-08 12:40:49: [1mStarting AutoML on asap-performance-jsymbolic-mid-no-pc[0m
+2023-04-08 12:40:49: [1mShape of the X dataframe: (1027, 225)[0m
+2023-04-08 12:40:49: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-08 12:41:03: [1mRandom Guessing: 0.10000000000000002[0m
+[WARNING] [2023-04-08 12:41:07,115:Client-AutoML(1993):dc34908d-d5f9-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.224459)
+[WARNING] [2023-04-08 12:41:07,116:Client-AutoML(1993):dc34908d-d5f9-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 12:41:13,018:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 13:11:09: [1mBalanced accuracy: 9.85e-01[0m
+2023-04-08 13:11:10: [1m------------------------------[0m
+2023-04-08 13:11:10: [1m------------------------------[0m
+2023-04-08 13:11:10: [1mStarting AutoML on didone-musif-mid-no-pc[0m
+2023-04-08 13:11:10: [1mShape of the X dataframe: (1622, 745)[0m
+2023-04-08 13:11:10: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 13:11:48: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-08 13:11:50,192:Client-AutoML(1993):2789ae3a-d5fe-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.135202)
+[WARNING] [2023-04-08 13:11:50,192:Client-AutoML(1993):2789ae3a-d5fe-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 13:11:56,592:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 13:12:03,632:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 13:41:53: [1mBalanced accuracy: 4.80e-01[0m
+2023-04-08 13:41:53: [1m------------------------------[0m
+2023-04-08 13:41:53: [1m------------------------------[0m
+2023-04-08 13:41:53: [1mStarting AutoML on didone-musif_native-mid-no-pc[0m
+2023-04-08 13:41:53: [1mShape of the X dataframe: (1622, 126)[0m
+2023-04-08 13:41:53: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 13:42:09: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-08 13:42:11,592:Client-AutoML(1993):6541cdac-d602-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.189561)
+[WARNING] [2023-04-08 13:42:11,592:Client-AutoML(1993):6541cdac-d602-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 13:42:18,915:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 14:12:10: [1mBalanced accuracy: 4.29e-01[0m
+2023-04-08 14:12:10: [1m------------------------------[0m
+2023-04-08 14:12:10: [1m------------------------------[0m
+2023-04-08 14:12:10: [1mStarting AutoML on didone-music21-mid-no-pc[0m
+2023-04-08 14:12:10: [1mShape of the X dataframe: (1622, 633)[0m
+2023-04-08 14:12:10: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 14:12:45: [1mRandom Guessing: 0.12543658244625727[0m
+[WARNING] [2023-04-08 14:12:48,062:Client-AutoML(1993):aba775b3-d606-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.153839)
+[WARNING] [2023-04-08 14:12:48,062:Client-AutoML(1993):aba775b3-d606-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 14:12:54,993:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 14:42:49: [1mBalanced accuracy: 5.25e-01[0m
+2023-04-08 14:42:50: [1m------------------------------[0m
+2023-04-08 14:42:50: [1m------------------------------[0m
+2023-04-08 14:42:50: [1mStarting AutoML on didone-music21_native-mid-no-pc[0m
+2023-04-08 14:42:50: [1mShape of the X dataframe: (1622, 602)[0m
+2023-04-08 14:42:50: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 14:43:23: [1mRandom Guessing: 0.12543658244625727[0m
+[WARNING] [2023-04-08 14:43:27,142:Client-AutoML(1993):f340741a-d60a-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.084839)
+[WARNING] [2023-04-08 14:43:27,143:Client-AutoML(1993):f340741a-d60a-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 14:43:33,295:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 14:43:40,500:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 15:13:25: [1mBalanced accuracy: 5.08e-01[0m
+2023-04-08 15:13:25: [1m------------------------------[0m
+2023-04-08 15:13:25: [1m------------------------------[0m
+2023-04-08 15:13:25: [1mStarting AutoML on didone-jsymbolic-mid-no-pc[0m
+2023-04-08 15:13:25: [1mShape of the X dataframe: (1622, 225)[0m
+2023-04-08 15:13:25: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 15:13:44: [1mRandom Guessing: 0.12543658244625727[0m
+[WARNING] [2023-04-08 15:13:47,163:Client-AutoML(1993):304e914b-d60f-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.198259)
+[WARNING] [2023-04-08 15:13:47,163:Client-AutoML(1993):304e914b-d60f-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 15:13:52,857:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 15:13:56,718:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 15:43:46: [1mBalanced accuracy: 5.86e-01[0m
+2023-04-08 15:43:46: [1m------------------------------[0m
+2023-04-08 15:43:46: [1m------------------------------[0m
+2023-04-08 15:43:46: [1mStarting AutoML on didone-musif-xml-no-pc[0m
+2023-04-08 15:43:46: [1mShape of the X dataframe: (1636, 971)[0m
+2023-04-08 15:43:46: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 15:44:42: [1mRandom Guessing: 0.12561257363796077[0m
+[WARNING] [2023-04-08 15:44:44,222:Client-AutoML(1993):83b13e80-d613-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.093003)
+[WARNING] [2023-04-08 15:44:44,222:Client-AutoML(1993):83b13e80-d613-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 15:44:51,531:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 16:14:45: [1mBalanced accuracy: 5.10e-01[0m
+2023-04-08 16:14:45: [1m------------------------------[0m
+2023-04-08 16:14:45: [1m------------------------------[0m
+2023-04-08 16:14:45: [1mStarting AutoML on didone-musif_native-xml-no-pc[0m
+2023-04-08 16:14:45: [1mShape of the X dataframe: (1636, 352)[0m
+2023-04-08 16:14:45: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 16:15:10: [1mRandom Guessing: 0.12561257363796077[0m
+[WARNING] [2023-04-08 16:15:13,025:Client-AutoML(1993):c5b5f5f1-d617-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.195705)
+[WARNING] [2023-04-08 16:15:13,025:Client-AutoML(1993):c5b5f5f1-d617-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 16:15:20,663:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 16:15:22,957:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 16:15:35,966:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 16:45:11: [1mBalanced accuracy: 5.04e-01[0m
+2023-04-08 16:45:11: [1m------------------------------[0m
+2023-04-08 16:45:11: [1m------------------------------[0m
+2023-04-08 16:45:11: [1mStarting AutoML on didone-music21-xml-no-pc[0m
+2023-04-08 16:45:11: [1mShape of the X dataframe: (1636, 633)[0m
+2023-04-08 16:45:11: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 16:45:46: [1mRandom Guessing: 0.1254581452150997[0m
+[WARNING] [2023-04-08 16:45:49,002:Client-AutoML(1993):0c2c5992-d61c-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.140590)
+[WARNING] [2023-04-08 16:45:49,002:Client-AutoML(1993):0c2c5992-d61c-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 16:45:55,349:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 17:15:46: [1mBalanced accuracy: 5.27e-01[0m
+2023-04-08 17:15:47: [1m------------------------------[0m
+2023-04-08 17:15:47: [1m------------------------------[0m
+2023-04-08 17:15:47: [1mStarting AutoML on didone-music21_native-xml-no-pc[0m
+2023-04-08 17:15:47: [1mShape of the X dataframe: (1636, 602)[0m
+2023-04-08 17:15:47: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-08 17:16:26: [1mRandom Guessing: 0.1254581452150997[0m
+[WARNING] [2023-04-08 17:16:29,373:Client-AutoML(1993):548f4f9b-d620-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.150776)
+[WARNING] [2023-04-08 17:16:29,373:Client-AutoML(1993):548f4f9b-d620-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 17:16:35,569:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 17:16:42,594:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 17:46:25: [1mBalanced accuracy: 5.16e-01[0m
+2023-04-08 17:46:25: [1m------------------------------[0m
+2023-04-08 17:46:25: [1m------------------------------[0m
+2023-04-08 17:46:25: [1mStarting AutoML on EWLD-musif-mid-no-pc[0m
+2023-04-08 17:46:25: [1mShape of the X dataframe: (2645, 710)[0m
+2023-04-08 17:46:25: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 17:47:21: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 17:47:22,934:Client-AutoML(1993):a62752af-d624-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.096687)
+[WARNING] [2023-04-08 17:47:22,934:Client-AutoML(1993):a62752af-d624-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 17:47:30,383:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 17:47:35,145:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 18:17:24: [1mBalanced accuracy: 2.24e-01[0m
+2023-04-08 18:17:24: [1m------------------------------[0m
+2023-04-08 18:17:24: [1m------------------------------[0m
+2023-04-08 18:17:24: [1mStarting AutoML on EWLD-musif_native-mid-no-pc[0m
+2023-04-08 18:17:24: [1mShape of the X dataframe: (2645, 91)[0m
+2023-04-08 18:17:24: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 18:17:45: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 18:17:47,094:Client-AutoML(1993):e552291b-d628-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.189740)
+[WARNING] [2023-04-08 18:17:47,094:Client-AutoML(1993):e552291b-d628-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 18:47:47: [1mBalanced accuracy: 1.80e-01[0m
+2023-04-08 18:47:47: [1m------------------------------[0m
+2023-04-08 18:47:47: [1m------------------------------[0m
+2023-04-08 18:47:47: [1mStarting AutoML on EWLD-music21-mid-no-pc[0m
+2023-04-08 18:47:47: [1mShape of the X dataframe: (2645, 633)[0m
+2023-04-08 18:47:47: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 18:48:38: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 18:48:40,842:Client-AutoML(1993):3617e72a-d62d-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.121222)
+[WARNING] [2023-04-08 18:48:40,842:Client-AutoML(1993):3617e72a-d62d-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 18:48:50,586:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 18:48:52,693:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 19:18:38: [1mBalanced accuracy: 2.49e-01[0m
+2023-04-08 19:18:38: [1m------------------------------[0m
+2023-04-08 19:18:38: [1m------------------------------[0m
+2023-04-08 19:18:38: [1mStarting AutoML on EWLD-music21_native-mid-no-pc[0m
+2023-04-08 19:18:38: [1mShape of the X dataframe: (2645, 602)[0m
+2023-04-08 19:18:38: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 19:19:37: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 19:19:39,432:Client-AutoML(1993):89dd85ab-d631-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.097891)
+[WARNING] [2023-04-08 19:19:39,432:Client-AutoML(1993):89dd85ab-d631-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 19:19:47,358:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 19:19:49,331:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 19:49:35: [1mBalanced accuracy: 2.27e-01[0m
+2023-04-08 19:49:36: [1m------------------------------[0m
+2023-04-08 19:49:36: [1m------------------------------[0m
+2023-04-08 19:49:36: [1mStarting AutoML on EWLD-jsymbolic-mid-no-pc[0m
+2023-04-08 19:49:36: [1mShape of the X dataframe: (2645, 225)[0m
+2023-04-08 19:49:36: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 19:50:04: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-08 19:50:06,470:Client-AutoML(1993):cab647d0-d635-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.164116)
+[WARNING] [2023-04-08 19:50:06,471:Client-AutoML(1993):cab647d0-d635-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 19:50:14,102:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 19:50:16,592:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 19:50:30,200:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 20:20:02: [1mBalanced accuracy: 2.48e-01[0m
+2023-04-08 20:20:02: [1m------------------------------[0m
+2023-04-08 20:20:02: [1m------------------------------[0m
+2023-04-08 20:20:02: [1mStarting AutoML on EWLD-musif-xml-no-pc[0m
+2023-04-08 20:20:02: [1mShape of the X dataframe: (3197, 724)[0m
+2023-04-08 20:20:02: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 20:21:08: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-08 20:21:10,800:Client-AutoML(1993):223c4c58-d63a-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.927170)
+[WARNING] [2023-04-08 20:21:10,800:Client-AutoML(1993):223c4c58-d63a-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 20:21:19,037:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 20:21:25,497:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 20:51:12: [1mBalanced accuracy: 2.51e-01[0m
+2023-04-08 20:51:12: [1m------------------------------[0m
+2023-04-08 20:51:12: [1m------------------------------[0m
+2023-04-08 20:51:12: [1mStarting AutoML on EWLD-musif_native-xml-no-pc[0m
+2023-04-08 20:51:12: [1mShape of the X dataframe: (3197, 105)[0m
+2023-04-08 20:51:12: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 20:51:37: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-08 20:51:39,284:Client-AutoML(1993):640b02b2-d63e-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.164052)
+[WARNING] [2023-04-08 20:51:39,284:Client-AutoML(1993):640b02b2-d63e-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 21:21:39: [1mBalanced accuracy: 2.00e-01[0m
+2023-04-08 21:21:39: [1m------------------------------[0m
+2023-04-08 21:21:39: [1m------------------------------[0m
+2023-04-08 21:21:39: [1mStarting AutoML on EWLD-music21-xml-no-pc[0m
+2023-04-08 21:21:39: [1mShape of the X dataframe: (3197, 633)[0m
+2023-04-08 21:21:39: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 21:22:39: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-08 21:22:41,618:Client-AutoML(1993):ba3d4963-d642-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.093806)
+[WARNING] [2023-04-08 21:22:41,619:Client-AutoML(1993):ba3d4963-d642-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 21:22:50,032:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 21:22:54,517:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 21:52:44: [1mBalanced accuracy: 2.66e-01[0m
+2023-04-08 21:52:44: [1m------------------------------[0m
+2023-04-08 21:52:44: [1m------------------------------[0m
+2023-04-08 21:52:44: [1mStarting AutoML on EWLD-music21_native-xml-no-pc[0m
+2023-04-08 21:52:44: [1mShape of the X dataframe: (3197, 602)[0m
+2023-04-08 21:52:44: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-08 21:53:42: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-08 21:53:44,561:Client-AutoML(1993):10b0177f-d647-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.087004)
+[WARNING] [2023-04-08 21:53:44,561:Client-AutoML(1993):10b0177f-d647-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-08 21:53:53,640:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-08 21:53:58,283:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-08 22:23:43: [1mBalanced accuracy: 2.53e-01[0m
+2023-04-08 22:23:43: [1m------------------------------[0m
+2023-04-08 22:23:43: [1m------------------------------[0m
+2023-04-08 22:23:43: [1mStarting AutoML on JLR-musif-mid-no-pc[0m
+2023-04-08 22:23:43: [1mShape of the X dataframe: (109, 732)[0m
+2023-04-08 22:23:43: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 22:23:54: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 22:23:56,907:Client-AutoML(1993):485f8660-d64b-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.183859)
+[WARNING] [2023-04-08 22:23:56,908:Client-AutoML(1993):485f8660-d64b-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+init_gesdd failed init
+2023-04-08 22:53:54: [1mBalanced accuracy: 7.46e-01[0m
+2023-04-08 22:53:54: [1m------------------------------[0m
+2023-04-08 22:53:54: [1m------------------------------[0m
+2023-04-08 22:53:54: [1mStarting AutoML on JLR-musif_native-mid-no-pc[0m
+2023-04-08 22:53:54: [1mShape of the X dataframe: (109, 113)[0m
+2023-04-08 22:53:54: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 22:54:03: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-08 22:54:05,251:Client-AutoML(1993):7eaba7e5-d64f-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.196711)
+[WARNING] [2023-04-08 22:54:05,251:Client-AutoML(1993):7eaba7e5-d64f-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 23:24:01: [1mBalanced accuracy: 6.97e-01[0m
+2023-04-08 23:24:01: [1m------------------------------[0m
+2023-04-08 23:24:01: [1m------------------------------[0m
+2023-04-08 23:24:01: [1mStarting AutoML on JLR-music21-mid-no-pc[0m
+2023-04-08 23:24:01: [1mShape of the X dataframe: (109, 633)[0m
+2023-04-08 23:24:01: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 23:24:11: [1mRandom Guessing: 0.34417499999999995[0m
+[WARNING] [2023-04-08 23:24:13,744:Client-AutoML(1993):b4920aa0-d653-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.194332)
+[WARNING] [2023-04-08 23:24:13,744:Client-AutoML(1993):b4920aa0-d653-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-08 23:54:09: [1mBalanced accuracy: 8.06e-01[0m
+2023-04-08 23:54:09: [1m------------------------------[0m
+2023-04-08 23:54:09: [1m------------------------------[0m
+2023-04-08 23:54:09: [1mStarting AutoML on JLR-music21_native-mid-no-pc[0m
+2023-04-08 23:54:09: [1mShape of the X dataframe: (109, 602)[0m
+2023-04-08 23:54:09: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-08 23:54:20: [1mRandom Guessing: 0.34417499999999995[0m
+[WARNING] [2023-04-08 23:54:21,772:Client-AutoML(1993):ea6e3dc9-d657-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.182808)
+[WARNING] [2023-04-08 23:54:21,772:Client-AutoML(1993):ea6e3dc9-d657-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 00:24:17: [1mBalanced accuracy: 7.61e-01[0m
+2023-04-09 00:24:18: [1m------------------------------[0m
+2023-04-09 00:24:18: [1m------------------------------[0m
+2023-04-09 00:24:18: [1mStarting AutoML on JLR-jsymbolic-mid-no-pc[0m
+2023-04-09 00:24:18: [1mShape of the X dataframe: (109, 226)[0m
+2023-04-09 00:24:18: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 00:24:27: [1mRandom Guessing: 0.34417499999999995[0m
+[WARNING] [2023-04-09 00:24:28,956:Client-AutoML(1993):1f8e992a-d65c-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.220603)
+[WARNING] [2023-04-09 00:24:28,956:Client-AutoML(1993):1f8e992a-d65c-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 00:54:31: [1mBalanced accuracy: 7.47e-01[0m
+2023-04-09 00:54:31: [1m------------------------------[0m
+2023-04-09 00:54:31: [1m------------------------------[0m
+2023-04-09 00:54:31: [1mStarting AutoML on JLR-musif-xml-no-pc[0m
+2023-04-09 00:54:31: [1mShape of the X dataframe: (109, 739)[0m
+2023-04-09 00:54:31: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 00:54:42: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 00:54:44,282:Client-AutoML(1993):5956382c-d660-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.168108)
+[WARNING] [2023-04-09 00:54:44,282:Client-AutoML(1993):5956382c-d660-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+init_gesdd failed init
+2023-04-09 01:24:43: [1mBalanced accuracy: 7.97e-01[0m
+2023-04-09 01:24:43: [1m------------------------------[0m
+2023-04-09 01:24:43: [1m------------------------------[0m
+2023-04-09 01:24:43: [1mStarting AutoML on JLR-musif_native-xml-no-pc[0m
+2023-04-09 01:24:43: [1mShape of the X dataframe: (109, 120)[0m
+2023-04-09 01:24:43: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 01:24:52: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 01:24:54,085:Client-AutoML(1993):905c0494-d664-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.187919)
+[WARNING] [2023-04-09 01:24:54,085:Client-AutoML(1993):905c0494-d664-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 01:54:53: [1mBalanced accuracy: 7.04e-01[0m
+2023-04-09 01:54:53: [1m------------------------------[0m
+2023-04-09 01:54:53: [1m------------------------------[0m
+2023-04-09 01:54:53: [1mStarting AutoML on JLR-music21-xml-no-pc[0m
+2023-04-09 01:54:53: [1mShape of the X dataframe: (109, 633)[0m
+2023-04-09 01:54:53: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 01:55:03: [1mRandom Guessing: 0.34417499999999995[0m
+[WARNING] [2023-04-09 01:55:05,065:Client-AutoML(1993):c7d58f0d-d668-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.186022)
+[WARNING] [2023-04-09 01:55:05,065:Client-AutoML(1993):c7d58f0d-d668-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 02:25:03: [1mBalanced accuracy: 8.15e-01[0m
+2023-04-09 02:25:03: [1m------------------------------[0m
+2023-04-09 02:25:03: [1m------------------------------[0m
+2023-04-09 02:25:03: [1mStarting AutoML on JLR-music21_native-xml-no-pc[0m
+2023-04-09 02:25:03: [1mShape of the X dataframe: (109, 602)[0m
+2023-04-09 02:25:03: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 02:25:13: [1mRandom Guessing: 0.34417499999999995[0m
+[WARNING] [2023-04-09 02:25:15,381:Client-AutoML(1993):febfe874-d66c-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.191796)
+[WARNING] [2023-04-09 02:25:15,381:Client-AutoML(1993):febfe874-d66c-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 02:55:18: [1mBalanced accuracy: 8.06e-01[0m
+2023-04-09 02:55:19: [1m------------------------------[0m
+2023-04-09 02:55:19: [1m------------------------------[0m
+2023-04-09 02:55:19: [1mStarting AutoML on quartets-musif-mid-no-pc[0m
+2023-04-09 02:55:19: [1mShape of the X dataframe: (363, 1593)[0m
+2023-04-09 02:55:19: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 02:55:40: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 02:55:42,217:Client-AutoML(1993):3f51b458-d671-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.110474)
+[WARNING] [2023-04-09 02:55:42,217:Client-AutoML(1993):3f51b458-d671-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 02:55:49,864:Client-EnsembleBuilder] No runs were available to build an ensemble from
+init_gesdd failed init
+2023-04-09 03:25:42: [1mBalanced accuracy: 8.28e-01[0m
+2023-04-09 03:25:42: [1m------------------------------[0m
+2023-04-09 03:25:42: [1m------------------------------[0m
+2023-04-09 03:25:42: [1mStarting AutoML on quartets-musif_native-mid-no-pc[0m
+2023-04-09 03:25:42: [1mShape of the X dataframe: (363, 974)[0m
+2023-04-09 03:25:42: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 03:25:59: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 03:26:01,638:Client-AutoML(1993):7bbb52d5-d675-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.154105)
+[WARNING] [2023-04-09 03:26:01,639:Client-AutoML(1993):7bbb52d5-d675-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 03:26:08,735:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 03:56:00: [1mBalanced accuracy: 7.71e-01[0m
+2023-04-09 03:56:01: [1m------------------------------[0m
+2023-04-09 03:56:01: [1m------------------------------[0m
+2023-04-09 03:56:01: [1mStarting AutoML on quartets-music21-mid-no-pc[0m
+2023-04-09 03:56:01: [1mShape of the X dataframe: (363, 633)[0m
+2023-04-09 03:56:01: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 03:56:16: [1mRandom Guessing: 0.3336902116402117[0m
+[WARNING] [2023-04-09 03:56:17,824:Client-AutoML(1993):b6b5c0ca-d679-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.176716)
+[WARNING] [2023-04-09 03:56:17,824:Client-AutoML(1993):b6b5c0ca-d679-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 04:26:15: [1mBalanced accuracy: 8.43e-01[0m
+2023-04-09 04:26:15: [1m------------------------------[0m
+2023-04-09 04:26:15: [1m------------------------------[0m
+2023-04-09 04:26:15: [1mStarting AutoML on quartets-music21_native-mid-no-pc[0m
+2023-04-09 04:26:15: [1mShape of the X dataframe: (363, 602)[0m
+2023-04-09 04:26:15: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 04:26:30: [1mRandom Guessing: 0.3336902116402117[0m
+[WARNING] [2023-04-09 04:26:31,890:Client-AutoML(1993):effef4c1-d67d-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.179656)
+[WARNING] [2023-04-09 04:26:31,890:Client-AutoML(1993):effef4c1-d67d-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 04:56:33: [1mBalanced accuracy: 8.13e-01[0m
+2023-04-09 04:56:34: [1m------------------------------[0m
+2023-04-09 04:56:34: [1m------------------------------[0m
+2023-04-09 04:56:34: [1mStarting AutoML on quartets-jsymbolic-mid-no-pc[0m
+2023-04-09 04:56:34: [1mShape of the X dataframe: (363, 225)[0m
+2023-04-09 04:56:34: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 04:56:44: [1mRandom Guessing: 0.3336902116402117[0m
+[WARNING] [2023-04-09 04:56:47,069:Client-AutoML(1993):298cf292-d682-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.179455)
+[WARNING] [2023-04-09 04:56:47,069:Client-AutoML(1993):298cf292-d682-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 05:26:47: [1mBalanced accuracy: 9.01e-01[0m
+2023-04-09 05:26:47: [1m------------------------------[0m
+2023-04-09 05:26:47: [1m------------------------------[0m
+2023-04-09 05:26:47: [1mStarting AutoML on quartets-musif-krn-no-pc[0m
+2023-04-09 05:26:47: [1mShape of the X dataframe: (363, 734)[0m
+2023-04-09 05:26:47: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 05:27:02: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 05:27:04,502:Client-AutoML(1993):64cb1876-d686-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.162767)
+[WARNING] [2023-04-09 05:27:04,502:Client-AutoML(1993):64cb1876-d686-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 05:27:16,310:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 05:57:00: [1mBalanced accuracy: 8.22e-01[0m
+2023-04-09 05:57:01: [1m------------------------------[0m
+2023-04-09 05:57:01: [1m------------------------------[0m
+2023-04-09 05:57:01: [1mStarting AutoML on quartets-musif_native-krn-no-pc[0m
+2023-04-09 05:57:01: [1mShape of the X dataframe: (363, 115)[0m
+2023-04-09 05:57:01: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 05:57:11: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 05:57:13,000:Client-AutoML(1993):9b34613d-d68a-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.155167)
+[WARNING] [2023-04-09 05:57:13,000:Client-AutoML(1993):9b34613d-d68a-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 06:27:11: [1mBalanced accuracy: 7.86e-01[0m
+2023-04-09 06:27:12: [1m------------------------------[0m
+2023-04-09 06:27:12: [1m------------------------------[0m
+2023-04-09 06:27:12: [1mStarting AutoML on quartets-music21-krn-no-pc[0m
+2023-04-09 06:27:12: [1mShape of the X dataframe: (363, 633)[0m
+2023-04-09 06:27:12: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 06:27:27: [1mRandom Guessing: 0.3336902116402117[0m
+[WARNING] [2023-04-09 06:27:28,596:Client-AutoML(1993):d54e2529-d68e-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.176568)
+[WARNING] [2023-04-09 06:27:28,596:Client-AutoML(1993):d54e2529-d68e-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 06:57:24: [1mBalanced accuracy: 8.30e-01[0m
+2023-04-09 06:57:25: [1m------------------------------[0m
+2023-04-09 06:57:25: [1m------------------------------[0m
+2023-04-09 06:57:25: [1mStarting AutoML on quartets-music21_native-krn-no-pc[0m
+2023-04-09 06:57:25: [1mShape of the X dataframe: (363, 602)[0m
+2023-04-09 06:57:25: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 06:57:40: [1mRandom Guessing: 0.3336902116402117[0m
+[WARNING] [2023-04-09 06:57:43,354:Client-AutoML(1993):0deab0b4-d693-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.160344)
+[WARNING] [2023-04-09 06:57:43,354:Client-AutoML(1993):0deab0b4-d693-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+ ** On entry to DGESDDM parameter number 10 had an illegal value
+ ** On entry to DGESDDM parameter number 10 had an illegal value
+2023-04-09 07:27:47: [1mBalanced accuracy: 8.20e-01[0m
+2023-04-09 07:27:47: [1m------------------------------[0m
+2023-04-09 07:27:47: [1m------------------------------[0m
+2023-04-09 07:27:47: [1mStarting AutoML on asap-scores-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 07:27:47: [1mShape of the X dataframe: (211, 316)[0m
+2023-04-09 07:27:47: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-09 07:27:58: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-09 07:28:01,173:Client-AutoML(1993):49f7389c-d697-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.158485)
+[WARNING] [2023-04-09 07:28:01,173:Client-AutoML(1993):49f7389c-d697-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 07:28:07,514:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 07:28:10,073:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 07:58:01: [1mBalanced accuracy: 8.98e-01[0m
+2023-04-09 07:58:01: [1m------------------------------[0m
+2023-04-09 07:58:01: [1m------------------------------[0m
+2023-04-09 07:58:01: [1mStarting AutoML on asap-scores-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 07:58:01: [1mShape of the X dataframe: (211, 693)[0m
+2023-04-09 07:58:01: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-09 07:58:15: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-09 07:58:17,333:Client-AutoML(1993):84f111fd-d69b-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.143403)
+[WARNING] [2023-04-09 07:58:17,334:Client-AutoML(1993):84f111fd-d69b-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 07:58:23,668:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 07:58:27,661:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 08:28:15: [1mBalanced accuracy: 9.11e-01[0m
+2023-04-09 08:28:16: [1m------------------------------[0m
+2023-04-09 08:28:16: [1m------------------------------[0m
+2023-04-09 08:28:16: [1mStarting AutoML on asap-scores-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 08:28:16: [1mShape of the X dataframe: (211, 827)[0m
+2023-04-09 08:28:16: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-09 08:28:33: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-09 08:28:34,869:Client-AutoML(1993):c041ebdb-d69f-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.158535)
+[WARNING] [2023-04-09 08:28:34,869:Client-AutoML(1993):c041ebdb-d69f-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 08:28:41,505:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 08:28:45,698:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 08:58:32: [1mBalanced accuracy: 9.12e-01[0m
+2023-04-09 08:58:32: [1m------------------------------[0m
+2023-04-09 08:58:32: [1m------------------------------[0m
+2023-04-09 08:58:32: [1mStarting AutoML on asap-scores-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 08:58:32: [1mShape of the X dataframe: (211, 918)[0m
+2023-04-09 08:58:32: [1mNumber of labels in y: (7,)[0m
+[?25h2023-04-09 08:58:51: [1mRandom Guessing: 0.1428571428571428[0m
+[WARNING] [2023-04-09 08:58:53,772:Client-AutoML(1993):fc466bc5-d6a3-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.180802)
+[WARNING] [2023-04-09 08:58:53,772:Client-AutoML(1993):fc466bc5-d6a3-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 08:59:00,902:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 08:59:04,853:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 08:59:06,993:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 09:28:52: [1mBalanced accuracy: 9.37e-01[0m
+2023-04-09 09:28:52: [1m------------------------------[0m
+2023-04-09 09:28:52: [1m------------------------------[0m
+2023-04-09 09:28:52: [1mStarting AutoML on asap-scores-musif_native-music21_native-xml-no-pc[0m
+2023-04-09 09:28:52: [1mShape of the X dataframe: (201, 693)[0m
+2023-04-09 09:28:52: [1mNumber of labels in y: (6,)[0m
+[?25h2023-04-09 09:29:07: [1mRandom Guessing: 0.17071273809523807[0m
+[WARNING] [2023-04-09 09:29:08,952:Client-AutoML(1993):36716d39-d6a8-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.171540)
+[WARNING] [2023-04-09 09:29:08,952:Client-AutoML(1993):36716d39-d6a8-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 09:29:15,939:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 09:29:19,045:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 09:59:11: [1mBalanced accuracy: 8.47e-01[0m
+2023-04-09 09:59:11: [1mSkipping asap-scores-musif_native-music21_native-xml-no-pc, already done[0m
+2023-04-09 09:59:11: [1m------------------------------[0m
+2023-04-09 09:59:11: [1m------------------------------[0m
+2023-04-09 09:59:11: [1mStarting AutoML on asap-performance-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 09:59:11: [1mShape of the X dataframe: (1027, 316)[0m
+2023-04-09 09:59:11: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-09 09:59:33: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-09 09:59:36,014:Client-AutoML(1993):771429b2-d6ac-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.118872)
+[WARNING] [2023-04-09 09:59:36,014:Client-AutoML(1993):771429b2-d6ac-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 09:59:43,109:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 09:59:44,589:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 10:29:33: [1mBalanced accuracy: 9.85e-01[0m
+2023-04-09 10:29:33: [1m------------------------------[0m
+2023-04-09 10:29:33: [1m------------------------------[0m
+2023-04-09 10:29:33: [1mStarting AutoML on asap-performance-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 10:29:33: [1mShape of the X dataframe: (1027, 693)[0m
+2023-04-09 10:29:33: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-09 10:30:16: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-09 10:30:18,394:Client-AutoML(1993):c17c3bfa-d6b0-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.108078)
+[WARNING] [2023-04-09 10:30:18,394:Client-AutoML(1993):c17c3bfa-d6b0-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 10:30:25,522:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 10:30:27,604:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 11:00:17: [1mBalanced accuracy: 9.83e-01[0m
+2023-04-09 11:00:17: [1m------------------------------[0m
+2023-04-09 11:00:17: [1m------------------------------[0m
+2023-04-09 11:00:17: [1mStarting AutoML on asap-performance-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 11:00:17: [1mShape of the X dataframe: (1027, 827)[0m
+2023-04-09 11:00:17: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-09 11:01:04: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-09 11:01:06,233:Client-AutoML(1993):0eac4ba0-d6b5-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.001761)
+[WARNING] [2023-04-09 11:01:06,234:Client-AutoML(1993):0eac4ba0-d6b5-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 11:01:13,487:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 11:01:16,794:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 11:31:06: [1mBalanced accuracy: 9.90e-01[0m
+2023-04-09 11:31:06: [1m------------------------------[0m
+2023-04-09 11:31:06: [1m------------------------------[0m
+2023-04-09 11:31:06: [1mStarting AutoML on asap-performance-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 11:31:06: [1mShape of the X dataframe: (1027, 918)[0m
+2023-04-09 11:31:06: [1mNumber of labels in y: (10,)[0m
+[?25h2023-04-09 11:32:00: [1mRandom Guessing: 0.10030268278920763[0m
+[WARNING] [2023-04-09 11:32:02,393:Client-AutoML(1993):610d7629-d6b9-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.079154)
+[WARNING] [2023-04-09 11:32:02,393:Client-AutoML(1993):610d7629-d6b9-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 11:32:09,757:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 11:32:15,390:Client-EnsembleBuilder] No runs were available to build an ensemble from
+ ** On entry to DGESDDM parameter number 10 had an illegal value
+2023-04-09 12:02:01: [1mBalanced accuracy: 9.88e-01[0m
+2023-04-09 12:02:01: [1m------------------------------[0m
+2023-04-09 12:02:01: [1m------------------------------[0m
+2023-04-09 12:02:01: [1mStarting AutoML on didone-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 12:02:01: [1mShape of the X dataframe: (1622, 351)[0m
+2023-04-09 12:02:01: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-09 12:02:40: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-09 12:02:42,272:Client-AutoML(1993):a9c10790-d6bd-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.082369)
+[WARNING] [2023-04-09 12:02:42,272:Client-AutoML(1993):a9c10790-d6bd-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 12:02:49,327:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 12:02:53,315:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 12:03:04,624:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 12:32:39: [1mBalanced accuracy: 5.72e-01[0m
+2023-04-09 12:32:39: [1m------------------------------[0m
+2023-04-09 12:32:39: [1m------------------------------[0m
+2023-04-09 12:32:39: [1mStarting AutoML on didone-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 12:32:39: [1mShape of the X dataframe: (1622, 728)[0m
+2023-04-09 12:32:39: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-09 12:33:47: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-09 12:33:50,678:Client-AutoML(1993):027980f0-d6c2-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.879468)
+[WARNING] [2023-04-09 12:33:50,678:Client-AutoML(1993):027980f0-d6c2-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 12:33:57,745:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 13:03:50: [1mBalanced accuracy: 5.15e-01[0m
+2023-04-09 13:03:50: [1m------------------------------[0m
+2023-04-09 13:03:50: [1m------------------------------[0m
+2023-04-09 13:03:50: [1mStarting AutoML on didone-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 13:03:50: [1mShape of the X dataframe: (1622, 827)[0m
+2023-04-09 13:03:50: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-09 13:05:03: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-09 13:05:06,606:Client-AutoML(1993):610febfd-d6c6-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.735171)
+[WARNING] [2023-04-09 13:05:06,606:Client-AutoML(1993):610febfd-d6c6-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 13:05:14,552:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 13:35:10: [1mBalanced accuracy: 5.96e-01[0m
+2023-04-09 13:35:10: [1m------------------------------[0m
+2023-04-09 13:35:10: [1m------------------------------[0m
+2023-04-09 13:35:10: [1mStarting AutoML on didone-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 13:35:10: [1mShape of the X dataframe: (1622, 953)[0m
+2023-04-09 13:35:10: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-09 13:36:36: [1mRandom Guessing: 0.12543133994225802[0m
+[WARNING] [2023-04-09 13:36:40,768:Client-AutoML(1993):c90460f1-d6ca-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.685320)
+[WARNING] [2023-04-09 13:36:40,768:Client-AutoML(1993):c90460f1-d6ca-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 13:36:48,491:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 14:06:40: [1mBalanced accuracy: 5.57e-01[0m
+2023-04-09 14:06:40: [1m------------------------------[0m
+2023-04-09 14:06:40: [1m------------------------------[0m
+2023-04-09 14:06:40: [1mStarting AutoML on didone-musif_native-music21_native-xml-no-pc[0m
+2023-04-09 14:06:40: [1mShape of the X dataframe: (1636, 954)[0m
+2023-04-09 14:06:40: [1mNumber of labels in y: (8,)[0m
+[?25h2023-04-09 14:08:05: [1mRandom Guessing: 0.12561257363796077[0m
+[WARNING] [2023-04-09 14:08:08,793:Client-AutoML(1993):2f146578-d6cf-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.668806)
+[WARNING] [2023-04-09 14:08:08,793:Client-AutoML(1993):2f146578-d6cf-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 14:08:16,835:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 14:38:03: [1mBalanced accuracy: 5.35e-01[0m
+2023-04-09 14:38:03: [1mSkipping didone-musif_native-music21_native-xml-no-pc, already done[0m
+2023-04-09 14:38:03: [1m------------------------------[0m
+2023-04-09 14:38:03: [1m------------------------------[0m
+2023-04-09 14:38:03: [1mStarting AutoML on EWLD-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 14:38:03: [1mShape of the X dataframe: (2645, 316)[0m
+2023-04-09 14:38:03: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-09 14:38:56: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-09 14:39:00,509:Client-AutoML(1993):7e66db1d-d6d3-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.046580)
+[WARNING] [2023-04-09 14:39:00,509:Client-AutoML(1993):7e66db1d-d6d3-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 14:39:09,445:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 14:39:12,581:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 14:39:28,305:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 15:08:58: [1mBalanced accuracy: 2.50e-01[0m
+2023-04-09 15:08:58: [1m------------------------------[0m
+2023-04-09 15:08:58: [1m------------------------------[0m
+2023-04-09 15:08:58: [1mStarting AutoML on EWLD-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 15:08:58: [1mShape of the X dataframe: (2645, 693)[0m
+2023-04-09 15:08:58: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-09 15:10:33: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-09 15:10:35,538:Client-AutoML(1993):e91e25b2-d6d7-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.998786)
+[WARNING] [2023-04-09 15:10:35,538:Client-AutoML(1993):e91e25b2-d6d7-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 15:10:43,907:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 15:10:48,221:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 15:40:33: [1mBalanced accuracy: 2.36e-01[0m
+2023-04-09 15:40:33: [1m------------------------------[0m
+2023-04-09 15:40:33: [1m------------------------------[0m
+2023-04-09 15:40:33: [1mStarting AutoML on EWLD-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 15:40:33: [1mShape of the X dataframe: (2645, 827)[0m
+2023-04-09 15:40:33: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-09 15:42:29: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-09 15:42:33,666:Client-AutoML(1993):5f207820-d6dc-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.799481)
+[WARNING] [2023-04-09 15:42:33,666:Client-AutoML(1993):5f207820-d6dc-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 15:42:43,047:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 15:42:48,657:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 16:12:32: [1mBalanced accuracy: 2.49e-01[0m
+2023-04-09 16:12:32: [1m------------------------------[0m
+2023-04-09 16:12:32: [1m------------------------------[0m
+2023-04-09 16:12:32: [1mStarting AutoML on EWLD-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 16:12:32: [1mShape of the X dataframe: (2645, 918)[0m
+2023-04-09 16:12:32: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-09 16:14:54: [1mRandom Guessing: 0.09122029102117565[0m
+[WARNING] [2023-04-09 16:14:58,452:Client-AutoML(1993):e66d2a97-d6e0-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.509307)
+[WARNING] [2023-04-09 16:14:58,452:Client-AutoML(1993):e66d2a97-d6e0-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 16:15:08,182:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 16:15:15,881:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 16:44:56: [1mBalanced accuracy: 2.51e-01[0m
+2023-04-09 16:44:56: [1m------------------------------[0m
+2023-04-09 16:44:56: [1m------------------------------[0m
+2023-04-09 16:44:56: [1mStarting AutoML on EWLD-musif_native-music21_native-xml-no-pc[0m
+2023-04-09 16:44:56: [1mShape of the X dataframe: (3197, 707)[0m
+2023-04-09 16:44:56: [1mNumber of labels in y: (11,)[0m
+[?25h2023-04-09 16:47:03: [1mRandom Guessing: 0.09094994455092983[0m
+[WARNING] [2023-04-09 16:47:06,979:Client-AutoML(1993):63efe6e5-d6e5-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1798.741267)
+[WARNING] [2023-04-09 16:47:06,979:Client-AutoML(1993):63efe6e5-d6e5-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 16:47:18,563:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 16:47:24,677:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 17:17:06: [1mBalanced accuracy: 2.45e-01[0m
+2023-04-09 17:17:06: [1mSkipping EWLD-musif_native-music21_native-xml-no-pc, already done[0m
+2023-04-09 17:17:06: [1m------------------------------[0m
+2023-04-09 17:17:06: [1m------------------------------[0m
+2023-04-09 17:17:06: [1mStarting AutoML on JLR-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 17:17:06: [1mShape of the X dataframe: (109, 339)[0m
+2023-04-09 17:17:06: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 17:17:17: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 17:17:18,652:Client-AutoML(1993):9d2c3fd9-d6e9-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.146336)
+[WARNING] [2023-04-09 17:17:18,652:Client-AutoML(1993):9d2c3fd9-d6e9-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 17:47:18: [1mBalanced accuracy: 7.87e-01[0m
+2023-04-09 17:47:19: [1m------------------------------[0m
+2023-04-09 17:47:19: [1m------------------------------[0m
+2023-04-09 17:47:19: [1mStarting AutoML on JLR-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 17:47:19: [1mShape of the X dataframe: (109, 715)[0m
+2023-04-09 17:47:19: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 17:47:30: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 17:47:33,799:Client-AutoML(1993):d6550fbc-d6ed-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.106710)
+[WARNING] [2023-04-09 17:47:33,799:Client-AutoML(1993):d6550fbc-d6ed-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+init_gesdd failed init
+2023-04-09 18:17:38: [1mBalanced accuracy: 7.89e-01[0m
+2023-04-09 18:17:38: [1m------------------------------[0m
+2023-04-09 18:17:38: [1m------------------------------[0m
+2023-04-09 18:17:38: [1mStarting AutoML on JLR-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 18:17:38: [1mShape of the X dataframe: (109, 828)[0m
+2023-04-09 18:17:38: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 18:17:50: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 18:17:52,370:Client-AutoML(1993):12ccd603-d6f2-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.127374)
+[WARNING] [2023-04-09 18:17:52,370:Client-AutoML(1993):12ccd603-d6f2-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 18:18:00,523:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 18:48:09: [1mBalanced accuracy: 7.51e-01[0m
+2023-04-09 18:48:09: [1m------------------------------[0m
+2023-04-09 18:48:09: [1m------------------------------[0m
+2023-04-09 18:48:09: [1mStarting AutoML on JLR-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 18:48:09: [1mShape of the X dataframe: (109, 941)[0m
+2023-04-09 18:48:09: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 18:48:22: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 18:48:25,559:Client-AutoML(1993):570d8a57-d6f6-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.080372)
+[WARNING] [2023-04-09 18:48:25,560:Client-AutoML(1993):570d8a57-d6f6-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 18:48:35,684:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 19:18:21: [1mBalanced accuracy: 7.74e-01[0m
+2023-04-09 19:18:22: [1m------------------------------[0m
+2023-04-09 19:18:22: [1m------------------------------[0m
+2023-04-09 19:18:22: [1mStarting AutoML on JLR-musif_native-music21_native-xml-no-pc[0m
+2023-04-09 19:18:22: [1mShape of the X dataframe: (109, 722)[0m
+2023-04-09 19:18:22: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 19:18:34: [1mRandom Guessing: 0.33374166666666666[0m
+[WARNING] [2023-04-09 19:18:37,673:Client-AutoML(1993):8eb3af81-d6fa-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.132956)
+[WARNING] [2023-04-09 19:18:37,673:Client-AutoML(1993):8eb3af81-d6fa-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+2023-04-09 19:48:35: [1mBalanced accuracy: 7.50e-01[0m
+2023-04-09 19:48:35: [1mSkipping JLR-musif_native-music21_native-xml-no-pc, already done[0m
+2023-04-09 19:48:35: [1m------------------------------[0m
+2023-04-09 19:48:35: [1m------------------------------[0m
+2023-04-09 19:48:35: [1mStarting AutoML on quartets-musif_native-jsymbolic-mid-no-pc[0m
+2023-04-09 19:48:35: [1mShape of the X dataframe: (363, 1199)[0m
+2023-04-09 19:48:35: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 19:49:18: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 19:49:21,536:Client-AutoML(1993):da3f57a3-d6fe-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.038421)
+[WARNING] [2023-04-09 19:49:21,536:Client-AutoML(1993):da3f57a3-d6fe-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 19:49:29,758:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 20:19:18: [1mBalanced accuracy: 8.96e-01[0m
+2023-04-09 20:19:18: [1m------------------------------[0m
+2023-04-09 20:19:18: [1m------------------------------[0m
+2023-04-09 20:19:18: [1mStarting AutoML on quartets-musif_native-music21_native-mid-no-pc[0m
+2023-04-09 20:19:18: [1mShape of the X dataframe: (363, 1576)[0m
+2023-04-09 20:19:18: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 20:20:09: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 20:20:11,961:Client-AutoML(1993):296f174d-d703-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.036813)
+[WARNING] [2023-04-09 20:20:11,961:Client-AutoML(1993):296f174d-d703-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 20:20:20,583:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 20:50:10: [1mBalanced accuracy: 8.43e-01[0m
+2023-04-09 20:50:10: [1m------------------------------[0m
+2023-04-09 20:50:10: [1m------------------------------[0m
+2023-04-09 20:50:10: [1mStarting AutoML on quartets-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 20:50:10: [1mShape of the X dataframe: (363, 827)[0m
+2023-04-09 20:50:10: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 20:50:43: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 20:50:48,767:Client-AutoML(1993):6e5ca2c3-d707-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.041042)
+[WARNING] [2023-04-09 20:50:48,767:Client-AutoML(1993):6e5ca2c3-d707-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 20:50:56,304:Client-EnsembleBuilder] No runs were available to build an ensemble from
+[WARNING] [2023-04-09 20:51:01,637:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 21:20:49: [1mBalanced accuracy: 8.80e-01[0m
+2023-04-09 21:20:50: [1m------------------------------[0m
+2023-04-09 21:20:50: [1m------------------------------[0m
+2023-04-09 21:20:50: [1mStarting AutoML on quartets-musif_native-music21_native-jsymbolic-mid-no-pc[0m
+2023-04-09 21:20:50: [1mShape of the X dataframe: (363, 1801)[0m
+2023-04-09 21:20:50: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 21:21:55: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 21:21:57,120:Client-AutoML(1993):c9e7444e-d70b-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.025766)
+[WARNING] [2023-04-09 21:21:57,120:Client-AutoML(1993):c9e7444e-d70b-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 21:22:06,049:Client-EnsembleBuilder] No runs were available to build an ensemble from
+init_gesdd failed init
+2023-04-09 21:51:55: [1mBalanced accuracy: 9.04e-01[0m
+2023-04-09 21:51:55: [1m------------------------------[0m
+2023-04-09 21:51:55: [1m------------------------------[0m
+2023-04-09 21:51:55: [1mStarting AutoML on quartets-musif_native-music21_native-krn-no-pc[0m
+2023-04-09 21:51:55: [1mShape of the X dataframe: (363, 717)[0m
+2023-04-09 21:51:55: [1mNumber of labels in y: (3,)[0m
+[?25h2023-04-09 21:52:26: [1mRandom Guessing: 0.34014384920634916[0m
+[WARNING] [2023-04-09 21:52:34,845:Client-AutoML(1993):0d94f13d-d710-11ed-8781-84a93e670e90] Time limit for a single run is higher than total time limit. Capping the limit for a single run to the total time given to SMAC (1799.132959)
+[WARNING] [2023-04-09 21:52:34,845:Client-AutoML(1993):0d94f13d-d710-11ed-8781-84a93e670e90] Capping the per_run_time_limit to 899.0 to have time for a least 2 models in each process.
+[WARNING] [2023-04-09 21:52:45,791:Client-EnsembleBuilder] No runs were available to build an ensemble from
+2023-04-09 22:22:32: [1mBalanced accuracy: 8.42e-01[0m
+2023-04-09 22:22:33: [1mSkipping quartets-musif_native-music21_native-krn-no-pc, already done[0m
+2023-04-09 22:22:37: [1mLoading tasks from file[0m
+2023-04-09 22:22:37: [1m84 tasks loaded[0m
