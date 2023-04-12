@@ -43,7 +43,7 @@ def main(dir: str, ext: str, output: str, njobs: int = -1):
         exts = ext
     features = []
     for ext in exts:
-        files = list(Path(dir).glob("**/*" + ext))
+        files = list(Path(dir).glob("**/*" + ext)) # we should check if it's a file!
         features += Parallel(n_jobs=njobs)(
             delayed(extract)(file) for file in tqdm(files)
         )
