@@ -1,7 +1,10 @@
 #!/bin/sh
 
+VENV_DIR=./venv
+AUTOML_TIME=1800 # time for each experiment in seconds
+
 # Command to check everything works
-python -m symbolic_features.effectiveness classification --featureset=$1 --dataset=$2 --extension=$3 --keep_first_10_pc=$4 2>&1 | tee -a $5
+$VENV_DIR/bin/python -m symbolic_features.effectiveness classification --featureset=$1 --dataset=$2 --extension=$3 --keep_first_10_pc=$4 --automl_time=$AUTOML_TIME 2>&1 | tee -a $5
 
 # Command to run all the experiments
 # featuresets="musif musif_native music21 music21_native jsymbolic musif_native-jsymbolic musif_native-music21_native music21_native-jsymbolic musif_native-music21_native-jsymbolic"
@@ -15,7 +18,7 @@ python -m symbolic_features.effectiveness classification --featureset=$1 --datas
 #       for extension in $extensions; do
 #         echo "-----------------" | tee $1
 #         echo "Experiment started: $pca $featureset $dataset $extension" | tee $1
-#   			python -m symbolic_features.effectiveness classification --featureset=$featureset --dataset=$dataset --extension=$extension --keep_first_10_pc=$pca 2>&1 | tee -a $1
+#   			python -m symbolic_features.effectiveness classification --featureset=$featureset --dataset=$dataset --extension=$extension --keep_first_10_pc=$pca --automl_time=$AUTOML_TIME 2>&1 | tee -a $1
 #         echo "Experiment ended" | tee $1
 #         echo "-----------------" | tee $1
 #       done

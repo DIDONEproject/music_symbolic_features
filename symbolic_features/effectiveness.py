@@ -137,6 +137,7 @@ def add_task_result(performances, pot, task):
 class Main(AbstractMain):
     debug: bool = False
     keep_first_10_pc: bool = False
+    automl_time: int = 1800
 
     def classification(
         self, featureset: str = None, dataset: str = None, extension: str = None

@@ -1,5 +1,7 @@
 from pathlib import Path
 
+if not Path('datasets/').exists():
+    Path('datasets/').mkdir()
 DATASETS = {Path(f).name: f for f in Path('datasets/').iterdir() if f.is_dir()}
 OUTPUT = "features/"
 

@@ -4,12 +4,13 @@
     * Install Python 3.10: `pyenv install 3.10.8`
     * Set-up shell environment: https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
     * `pyenv shell 3.10.8`
-    * other standard ways for installing python a good as well (e.g. OS package manager)
+    * other standard ways for installing python are good as well (e.g. OS package manager)
 2. Create a Python environment
-    * `python3 -m venv musif`
+    * `python3 -m venv venv`
 3. Install dependencies in the environment:
-    * Install pip: `pyenv activate musif && python -m ensure_pip`
-    * Install dependencies from `pyproject.toml`: `pyenv activate musif && pip install -e .`
+    * Activate it: `source venv/bin/activate`
+    * Install pip: `./venv/bin/python -m ensurepip`
+    * Install dependencies from `requirements.txt`: `./venv/bin/python -m pip install requirements.txt`
 4. Run experiments:
     * test: `sh effectiveness.sh musif didone mid True output.log`
     * uncomment the for loop and run: `sh experiments.sh output.log`

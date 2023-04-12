@@ -8,6 +8,7 @@
   - `pip install pdm` (environment specific)
   - see https://pdm.fming.dev/latest/ for other alternatives
 * `pdm sync` to create the environment and install python packages
+* Alternatively to `pdm`, see `cluster.md` for bare venv approach
 * MuseScore: download AppImage (4.0.1 has a [bug](https://github.com/musescore/MuseScore/issues/16444), use [3.6.2](https://github.com/musescore/MuseScore/releases/tag/v3.6.2), instead)
 * Java: install using you OS package manager and check that the `java` command is
   available in the PATH
@@ -75,5 +76,6 @@ Detailed commands
   Components from each task (where a task is a combination of dataset, feature set, and
   extension)
 * `pdm plot`: plot the AutoML optimization score across time
-* `pdm classification --featureset='music21' --dataset='EWLD' --extension='mid'`: run an
-  experiment on a single task
+* `pdm classification --featureset='music21' --dataset='EWLD' --extension='mid'
+  --automl_time=60`: run an
+  experiment on a single task for 60 seconds
