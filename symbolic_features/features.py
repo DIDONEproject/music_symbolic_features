@@ -45,6 +45,10 @@ class Main(AbstractMain):
             if n_music_scores[str(dataset)] == 0:
                 # skip datasets that have no files with this extension
                 continue
+            if '-harm' in feature_set:
+                # skip datasets that have no musescore files
+                if not (dataset / 'musescore').exists():
+                    continue
             logger.info(f"Using {feature_set} on {dataset} extension {self.extension}")
             cmd = self._get_cmd(feature_set, dataset, output)
             ram_sequence, real_time, cpu_time = benchmark_command(
@@ -121,6 +125,20 @@ class Main(AbstractMain):
                 "symbolic_features.music21",
                 str(dataset),
                 self.extension,
+                str(csv_name),
+            ]
+        elif feature_set == "musif-harm":
+            return [
+                "python",
+                "-m",
+                "musif",
+                "-e",
+                self.extension,
+                "-s",
+                str(dataset),
+                "--harm",
+                str(dataset / "musescore"),
+                "-o",
                 str(csv_name),
             ]
 
