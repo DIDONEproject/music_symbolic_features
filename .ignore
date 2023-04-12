@@ -7,3 +7,5 @@ humdrum-tools
 musicxml2midi.sh
 *.csv
 *.log
+*.html
+*.svg
