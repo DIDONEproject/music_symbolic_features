@@ -1,6 +1,6 @@
 [project]
-name = ""
-version = ""
+name = "symbolic_features"
+version = "0.1.0"
 description = ""
 authors = [
     {name = "Federico Simonetta", email = "fsimonetta@iccmu.es"},
@@ -17,6 +17,10 @@ dependencies = [
     "pandas==1.5.3",
     "numpy==1.24.2",
     "plotly==5.13.1",
+    # "musif>=1.0.2",
+    "rich>=13.3.3",
+    "chardet>=5.1.0",
+    "music21>=8.1.0",
 ]
 [project.optional-dependencies]
 
@@ -38,7 +42,7 @@ update_pip = "python -m pip install -U pip"
 dev = [
     "ipdb>=0.13.11",
     "ipython>=8.10.0",
-    "-e file:///${PROJECT_ROOT}/../musiF_tests/musiF#egg=musif",
+    # "-e file:///${PROJECT_ROOT}/../musiF_tests/musiF#egg=musif",
 ]
 [[tool.pdm.source]]
 url = "https://pypi.anaconda.org/intel/simple"
