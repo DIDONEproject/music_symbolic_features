@@ -167,6 +167,22 @@ feature_sets = [
         music21_filter="all",
         csvname="musif",
     ),
+    FeatureSet(
+        "musif-harm",
+        "FileName",
+        "FileName",
+        ["Id", "WindowId"],
+        __all_exts__,
+    ),
+    FeatureSet(
+        "musif-harm_native",
+        "FileName",
+        "FileName",
+        ["Id", "WindowId"],
+        __all_exts__,
+        music21_filter="all",
+        csvname="musif-harm",
+    ),
     FeatureSet("music21", "FileName_0", "FileName_0", [], __all_exts__),
     FeatureSet(
         "music21_native",
@@ -198,6 +214,7 @@ class Dataset:
     legal_filenames: str = r".*"
     friendly_name: str = None
     nsplits: int = S.SPLITS
+    accept_harm: bool = False
 
     def __post_init__(self):
         if self.friendly_name is None:
@@ -347,7 +364,7 @@ datasets = [
         legal_filenames=r".*/[A-Z]+\w*.mid",
         friendly_name="asap-performance",
     ),
-    Dataset("didone", didone_label, "Aria Title", [".mid", ".xml"]),
+    Dataset("didone", didone_label, "Aria Title", [".mid", ".xml"], accept_harm=True),
     Dataset("EWLD", ewld_label, "Genre", [".mid", ".xml"]),
     Dataset(
         "mass-duos-corpus-josquin-larue",
@@ -442,6 +459,7 @@ class Task:
 
             # keep only numeric data
             self.x = self.x.select_dtypes([int, float])
+            self.x.replace([np.inf, -np.inf], 0, inplace=True)
 
             # take only the first 10 Principal Components
             if S.KEEP_FIRST_10_PC:
@@ -567,10 +585,13 @@ class ConcatTask(Task):
 
 concat_tasks = [
     ("musif_native", "jsymbolic"),
+    ("musif-harm_native", "jsymbolic"),
     ("musif_native", "music21_native"),
+    ("musif-harm_native", "music21_native"),
     # ("musif_native", "music21"),
     ("music21_native", "jsymbolic"),
     ("musif_native", "music21_native", "jsymbolic"),
+    ("musif-harm_native", "music21_native", "jsymbolic"),
 ]
 
 
@@ -622,6 +643,7 @@ def load_tasks():
         for e in d.extensions
         for f in feature_sets
         if f.accepts(e)
+        and ("-harm" not in f.name or ("-harm" in f.name and d.accept_harm))
     ]
 
     # 1. load all csv files
