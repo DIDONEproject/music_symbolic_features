@@ -149,9 +149,9 @@ class Main(AbstractMain):
 
         for task in load_tasks():
             # skipping tasks not matching the filters
-            if featureset is not None and featureset not in task.name:
+            if featureset is not None and featureset != task.name:
                 continue
-            if dataset is not None and dataset not in task.name:
+            if dataset is not None and dataset != task.name:
                 continue
             if extension is not None and extension not in task.name:
                 continue
