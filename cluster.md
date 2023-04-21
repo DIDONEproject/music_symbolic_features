@@ -1,3 +1,5 @@
+0. Create zip:
+    `sh cluster.sh`
 1. Install Python >= 3.10 (es. using pyenv):
     * Install pyenv: `curl https://pyenv.run | bash`
     * Install Python build dependencies `https://github.com/pyenv/pyenv/wiki#suggested-build-environment`
