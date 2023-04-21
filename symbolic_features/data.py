@@ -423,7 +423,7 @@ class Task:
             + self.extension[1:]
         )
 
-    def load_csv(self):
+    def load_csv(self, keep_first_10_pc):
         """
         A method to load the CSV file and clean it.
 
@@ -462,7 +462,7 @@ class Task:
             self.x.replace([np.inf, -np.inf], 0, inplace=True)
 
             # take only the first 10 Principal Components
-            if S.KEEP_FIRST_10_PC:
+            if keep_first_10_pc:
                 index = self.x.index
                 N = 10
                 scaler = StandardScaler()
@@ -555,18 +555,18 @@ class ConcatTask(Task):
             + extensions[0][1:]
         )
 
-    def load_csv(self):
+    def load_csv(self, keep_first_10_pc):
         """
         Load the csv files of the tasks and concatenate them across columns, using
         the columns with names `feature_set.filename_col` as index of the dataframes.
         """
         if not self.__loaded:
-            self.tasks[0].load_csv()
+            self.tasks[0].load_csv(keep_first_10_pc)
             self.filenames_ = self.tasks[0].filenames_.sort_values()
             self.y = self.tasks[0].y[self.filenames_.index].reset_index(drop=True)
             self.x = self.tasks[0].x.loc[self.filenames_.index].reset_index(drop=True)
             for i, task in enumerate(self.tasks[1:]):
-                task.load_csv()
+                task.load_csv(keep_first_10_pc)
                 # forcing the order of the files to be the same
                 y = task.y[task.filenames_.sort_values().index].reset_index(drop=True)
                 x = task.x.loc[task.filenames_.sort_values().index].reset_index(
@@ -595,17 +595,17 @@ concat_tasks = [
 ]
 
 
-def load_task_csvs(tasks):
+def load_task_csvs(tasks, keep_first_10_pc):
     # 1. load all csv files
     for t in track(tasks, description="Loading CSV files"):
         try:
-            t.load_csv()
+            t.load_csv(keep_first_10_pc)
         except FileNotFoundError:
             print(t.name, "not found")
             continue
 
 
-def load_tasks():
+def load_tasks(keep_first_10_pc):
     """
     Loads tasks from datasets and feature sets, and creates an intersection of files.
 
@@ -624,7 +624,7 @@ def load_tasks():
 
     """
     fname = "tasks"
-    if not S.KEEP_FIRST_10_PC:
+    if not keep_first_10_pc:
         fname += "-no-pc"
     fname += ".pkl"
 
@@ -647,7 +647,7 @@ def load_tasks():
     ]
 
     # 1. load all csv files
-    load_task_csvs(tasks)
+    load_task_csvs(tasks, keep_first_10_pc)
 
     # 2. use the other csv files to create the intersection
     for t in tasks:
@@ -672,7 +672,7 @@ def load_tasks():
     logger.info(f"{len(concat_tasks_)} concat tasks created")
 
     # 4. load concat tasks
-    load_task_csvs(concat_tasks_)
+    load_task_csvs(concat_tasks_, keep_first_10_pc)
     tasks += concat_tasks_
 
     logger.info(f"{len(tasks)} tasks loaded")

@@ -147,7 +147,7 @@ class Main(AbstractMain):
             __import__("ipdb").set_trace()
         splitter = StratifiedKFold(S.SPLITS, random_state=42, shuffle=True)
 
-        for task in load_tasks():
+        for task in load_tasks(self.keep_first_10_pc):
             # skipping tasks not matching the filters
             if featureset is not None and featureset != task.name:
                 continue
