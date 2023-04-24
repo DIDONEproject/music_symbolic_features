@@ -18,4 +18,4 @@ if [ -f "cluster.zip" ]; then
 fi
 
 
-zip -r cluster.zip $(find . -type f | grep -vE '__pycache__|~$|\.log$|\.pkl$|^output$|^humdrum-tools$|^\./\.')
+zip -r cluster.zip $(find . -type f | grep -vE 'cluster.zip*|__pycache__|~$|\.log$|\.pkl$|^output$|^humdrum-tools$|^\./\.')
