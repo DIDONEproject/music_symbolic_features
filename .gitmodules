@@ -1,3 +1,6 @@
 [submodule "humdrum-tools"]
 	path = humdrum-tools
 	url = https://github.com/humdrum-tools/humdrum-tools.git
+[submodule "musif"]
+	path = musif
+	url = git@github.com:DIDONEproject/musiF.git

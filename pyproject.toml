@@ -43,6 +43,7 @@ dev = [
     "ipdb>=0.13.11",
     "ipython>=8.10.0",
     # "-e file:///${PROJECT_ROOT}/../musiF_tests/musiF#egg=musif",
+    "-e file:///${PROJECT_ROOT}/musif#egg=musif",
 ]
 [[tool.pdm.source]]
 url = "https://pypi.anaconda.org/intel/simple"
