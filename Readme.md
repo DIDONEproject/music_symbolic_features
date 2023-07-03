@@ -1,5 +1,10 @@
 # Benchamrking symbolic music features
 
+This is the code used for benchmarking different feature sets, including [musif](https://github.com/DIDONEproject/musif).
+Please, cite us:
+
+Simonetta F., Llorens A., Serrano M., García-Portugués E., Torrente A., "Optimizing Feature Extraction for Symbolic Music", ISMIR 2023.
+
 ### Dependencies
 
 * Python 3.10 (e.g. via conda or pyenv)
