@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import autosklearn.metrics
 import numpy as np
 import plotly.express as px
-from autosklearn.classification import AutoSklearnClassifier
+from autosklearn.estimators import AutoSklearnClassifier
 from joblib import Parallel, delayed
 from rich.progress import track
 from sklearn.dummy import DummyClassifier
@@ -50,7 +50,6 @@ def random_guessing(task, splitter):
     )
 
     scores = [np.mean([v for k_, v in scores if k_ == k]) for k in strategies]
-
     return max(scores)
 
 
@@ -69,7 +68,7 @@ def plot_time_performance(performance_data, fname=None):
     return fig
 
 
-def automl(task: Task, splitter=None, automl_time=3600, output=None):
+def automl(task: Task, keep_first_10_pc, splitter=None, automl_time=3600, output=None):
     """
     Apply AutoSklearn to a task and saves csv of the optimization if output is not
     None
@@ -85,7 +84,7 @@ def automl(task: Task, splitter=None, automl_time=3600, output=None):
         smac_scenario_args = None
         metalearning = 25
 
-    task.load_csv()
+    task.load_csv(keep_first_10_pc)
     logger.info(f"Shape of the X dataframe: {task.x.shape}")
     logger.info(f"Number of labels in y: {task.y.unique().shape}")
 
@@ -149,31 +148,33 @@ class Main(AbstractMain):
 
         for task in load_tasks(self.keep_first_10_pc):
             # skipping tasks not matching the filters
-            if featureset is not None and featureset != task.name:
+            if featureset is not None and featureset != task.feature_set.name:
                 continue
-            if dataset is not None and dataset != task.name:
+            if dataset is not None and dataset != task.dataset.friendly_name:
                 continue
-            if extension is not None and extension not in task.name:
+            if extension is not None and extension not in task.extension:
                 continue
             if os.path.exists(task.name + ".csv"):
                 logger.info(f"Skipping {task.name}, already done")
                 continue
-            automl(task, splitter, S.AUTOML_TIME, output=task.name + ".csv")
+            automl(task, self.keep_first_10_pc, splitter, S.AUTOML_TIME, output=task.name + ".csv")
 
     def plot_performances(self):
         import pandas as pd
 
         performances = {}
-        for task in load_tasks():
+        for task in load_tasks(self.keep_first_10_pc):
             try:
                 pot = pd.read_csv(task.name + ".csv")
             except FileNotFoundError:
                 logger.warning(f"File {task.name}.csv not found")
+                continue
 
             try:
                 pot["Timestamp"] = pd.to_datetime(pot["Timestamp"])
             except Exception as e:
                 logger.warning(f"Error converting Timestamp to datetime: {e}")
+
             add_task_result(performances, pot, task)
 
         # plotting the performances over time

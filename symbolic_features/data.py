@@ -575,7 +575,7 @@ class ConcatTask(Task):
                 x.rename(columns=lambda x: str(i) + "_" + x, inplace=True)
                 assert np.all(y.values == self.y.values), "Labels must match"
                 self.x = pd.concat([self.x, x], axis=1, join="inner")
-            if not S.KEEP_FIRST_10_PC:
+            if not keep_first_10_pc:
                 self.name += "-no-pc"
             self.__loaded = True
 
