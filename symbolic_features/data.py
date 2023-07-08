@@ -3,7 +3,7 @@ import pickle
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable, List, Optional, Tuple, Union
+from typing import Callable, List, Optional, Tuple, Union, Iterable
 
 import chardet
 import music21
@@ -154,6 +154,18 @@ class FeatureSet:
             True if the file extension is accepted, False otherwise.
         """
         return ext in self.accepted_exts
+
+
+class ConcatFeatureSet:
+    def __init__(self, feature_sets: Iterable[FeatureSet]):
+        self.feature_sets = list(feature_sets)
+        self.name = "-".join([f.name for f in feature_sets])
+
+    def accepts(self, ext: str) -> bool:
+        return all([f.accepts(ext) for f in self.feature_sets])
+
+    def parse(self, df: pd.DataFrame) -> pd.DataFrame:
+        return pd.concat([f.parse(df) for f in self.feature_sets])
 
 
 feature_sets = [
@@ -541,7 +553,9 @@ class ConcatTask(Task):
             name == friendly_names[0] for name in friendly_names
         ), "Datasets must match"
         super().__init__(
-            self.tasks[0].dataset, self.tasks[0].feature_set, extensions[0]
+            self.tasks[0].dataset,
+            ConcatFeatureSet([t.feature_set for t in self.tasks]),
+            extensions[0],
         )
 
         # self.dataset = self.tasks[0].dataset
